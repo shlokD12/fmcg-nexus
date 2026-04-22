@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Globe, Zap } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Globe, Zap, Briefcase, TrendingUp, Warehouse } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -27,8 +27,8 @@ const CATEGORIES = [
 const TRUST_FACTORS = [
   { icon: Shield, title: "QUALITY ASSURED", desc: "Rigorous quality control for manufactured products and verified sourcing for stocked items", color: "text-primary", bg: "bg-primary/10", border: "border-primary" },
   { icon: Truck, title: "RELIABLE SUPPLY", desc: "Consistent inventory management and timely delivery across India", color: "text-manufacturer-accent", bg: "bg-manufacturer-accent/10", border: "border-manufacturer-accent" },
-  { icon: Package, title: "WIDE RANGE", desc: "Extensive product portfolio covering manufactured and branded items", color: "text-stockist-accent", bg: "bg-stockist-accent/10", border: "border-stockist-accent" },
-  { icon: Users, title: "PARTNER SUPPORT", desc: "Dedicated account management and business growth assistance", color: "text-primary", bg: "bg-primary/10", border: "border-primary" }
+  { icon: Warehouse, title: "BULK AVAILABILITY", desc: "Large inventory capacity for immediate fulfillment of bulk orders", color: "text-stockist-accent", bg: "bg-stockist-accent/10", border: "border-stockist-accent" },
+  { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary", bg: "bg-primary/10", border: "border-primary" }
 ];
 
 // --- Animation Variants ---
@@ -393,7 +393,210 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. FINAL CTA - The Catalyst */}
+      {/* 7. BUSINESS SEGMENTS - Clear Differentiation */}
+      <section className="w-full bg-background py-24 lg:py-32 border-t-2 border-foreground/10">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-20">
+            <h2 className="font-heading text-5xl lg:text-7xl text-foreground uppercase">
+              Our<br />
+              <span className="text-primary">Business Segments</span>
+            </h2>
+            <p className="font-paragraph text-lg text-foreground/70 max-w-2xl mx-auto mt-6">
+              Tailored solutions for every buyer type—from large distributors to individual retailers.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Manufactured Products */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="bg-manufacturer-accent/5 border-2 border-manufacturer-accent p-12 lg:p-16"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 bg-manufacturer-accent/10 border-2 border-manufacturer-accent flex items-center justify-center">
+                  <Factory className="w-8 h-8 text-manufacturer-accent" />
+                </div>
+                <h3 className="font-heading text-3xl text-foreground uppercase">In-House<br />Manufacturing</h3>
+              </div>
+              <p className="font-paragraph text-lg text-foreground/70 mb-8">
+                Premium FMCG and mouth-freshener products manufactured with strict quality control and compliance standards.
+              </p>
+              <ul className="space-y-3 mb-10">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-manufacturer-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">Herbal Tobacco & Sweet Supari</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-manufacturer-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">Custom formulations available</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-manufacturer-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">Bulk manufacturing capacity</span>
+                </li>
+              </ul>
+              <Link to="/products/manufactured">
+                <button className="px-8 py-4 bg-manufacturer-accent text-accent-dark font-heading text-lg uppercase tracking-wider hover:bg-manufacturer-accent/90 transition-colors flex items-center gap-3">
+                  View Manufactured <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Stockist Products */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="bg-stockist-accent/5 border-2 border-stockist-accent p-12 lg:p-16"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 bg-stockist-accent/10 border-2 border-stockist-accent flex items-center justify-center">
+                  <Warehouse className="w-8 h-8 text-stockist-accent" />
+                </div>
+                <h3 className="font-heading text-3xl text-foreground uppercase">Stocked<br />Brands</h3>
+              </div>
+              <p className="font-paragraph text-lg text-foreground/70 mb-8">
+                Extensive inventory of trusted national and regional brands for immediate distribution and retail access.
+              </p>
+              <ul className="space-y-3 mb-10">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-stockist-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">Pan Masala & Mouth Fresheners</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-stockist-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">FMCG & Trade Products</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-stockist-accent flex-shrink-0" />
+                  <span className="font-paragraph text-sm text-foreground/80">Ready-to-ship inventory</span>
+                </li>
+              </ul>
+              <Link to="/products/stockist">
+                <button className="px-8 py-4 bg-stockist-accent text-accent-dark font-heading text-lg uppercase tracking-wider hover:bg-stockist-accent/90 transition-colors flex items-center gap-3">
+                  View Stockist <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Buyer Types */}
+          <div className="mt-20 grid md:grid-cols-2 gap-8">
+            {/* Wholesale Buyers */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="bg-accent-dark p-12 border-2 border-foreground/20"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase className="w-8 h-8 text-manufacturer-accent" />
+                <h3 className="font-heading text-2xl text-secondary-foreground uppercase">Wholesale Buyers</h3>
+              </div>
+              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
+                Bulk orders with competitive pricing, flexible MOQ, and dedicated account management for large-scale distribution.
+              </p>
+              <Link to="/wholesale">
+                <button className="px-6 py-3 bg-manufacturer-accent text-accent-dark font-heading text-sm uppercase tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                  Wholesale Info <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Retail Buyers */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.3 }}
+              className="bg-accent-dark p-12 border-2 border-foreground/20"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Package className="w-8 h-8 text-stockist-accent" />
+                <h3 className="font-heading text-2xl text-secondary-foreground uppercase">Retail Buyers</h3>
+              </div>
+              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
+                No minimum orders, easy online purchasing, fast delivery, and secure payment options for shop owners and retailers.
+              </p>
+              <Link to="/retail">
+                <button className="px-6 py-3 bg-stockist-accent text-accent-dark font-heading text-sm uppercase tracking-wider hover:bg-white transition-colors flex items-center gap-2">
+                  Retail Info <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. QUICK ACTION SECTION - Conversion Focused */}
+      <section className="w-full bg-foreground py-20 lg:py-28 relative overflow-hidden">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+          <div className="grid md:grid-cols-4 gap-6">
+            {/* Distributor Enquiry CTA */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="bg-primary p-8 text-center group hover:shadow-xl transition-all duration-300"
+            >
+              <Briefcase className="w-12 h-12 text-primary-foreground mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="font-heading text-xl text-primary-foreground mb-3 uppercase">Distributor<br />Enquiry</h3>
+              <p className="font-paragraph text-sm text-primary-foreground/80 mb-6">
+                Become a partner and grow your business with us.
+              </p>
+              <Link to="/distributor-enquiry" className="inline-block">
+                <button className="px-6 py-2 bg-primary-foreground text-primary font-heading text-sm uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors">
+                  Enquire Now
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Wholesale CTA */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="bg-manufacturer-accent p-8 text-center group hover:shadow-xl transition-all duration-300"
+            >
+              <Truck className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="font-heading text-xl text-accent-dark mb-3 uppercase">Wholesale<br />Orders</h3>
+              <p className="font-paragraph text-sm text-accent-dark/80 mb-6">
+                Bulk pricing and dedicated support.
+              </p>
+              <Link to="/wholesale" className="inline-block">
+                <button className="px-6 py-2 bg-accent-dark text-manufacturer-accent font-heading text-sm uppercase tracking-wider hover:bg-white transition-colors">
+                  Learn More
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Retail CTA */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="bg-stockist-accent p-8 text-center group hover:shadow-xl transition-all duration-300"
+            >
+              <Package className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="font-heading text-xl text-accent-dark mb-3 uppercase">Retail<br />Buyers</h3>
+              <p className="font-paragraph text-sm text-accent-dark/80 mb-6">
+                No minimum orders, fast delivery.
+              </p>
+              <Link to="/retail" className="inline-block">
+                <button className="px-6 py-2 bg-accent-dark text-stockist-accent font-heading text-sm uppercase tracking-wider hover:bg-white transition-colors">
+                  Shop Now
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Payments CTA */}
+            <motion.div 
+              variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.3 }}
+              className="bg-secondary p-8 text-center group hover:shadow-xl transition-all duration-300"
+            >
+              <TrendingUp className="w-12 h-12 text-secondary-foreground mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="font-heading text-xl text-secondary-foreground mb-3 uppercase">Payments &<br />Invoicing</h3>
+              <p className="font-paragraph text-sm text-secondary-foreground/80 mb-6">
+                Flexible payment options available.
+              </p>
+              <Link to="/payments" className="inline-block">
+                <button className="px-6 py-2 bg-secondary-foreground text-secondary font-heading text-sm uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors">
+                  Details
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. FINAL CTA - The Catalyst */}
       <section className="w-full bg-primary py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary-foreground rounded-full blur-3xl"></div>
@@ -402,22 +605,22 @@ export default function HomePage() {
         
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10 text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="font-heading text-5xl lg:text-8xl text-primary-foreground mb-8 uppercase leading-none">
-              Ready to Scale<br />Your Business?
+            <h2 className="font-heading text-5xl lg:text-7xl text-primary-foreground mb-8 uppercase leading-none">
+              Ready to Partner<br />with Trisha Agency?
             </h2>
             <p className="font-paragraph text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
-              Join hundreds of distributors and retailers who trust Trisha Agency for their FMCG supply needs.
+              Join hundreds of successful distributors and retailers across India who trust us for reliable FMCG supply.
             </p>
             
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/distributor-enquiry">
-                <button className="px-10 py-6 bg-secondary-foreground text-foreground font-heading text-xl uppercase tracking-wider hover:bg-accent-dark hover:text-secondary-foreground transition-colors flex items-center gap-3 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
-                  Distributor Enquiry <ArrowRight className="w-6 h-6" />
+                <button className="px-10 py-6 bg-secondary-foreground text-foreground font-heading text-lg uppercase tracking-wider hover:bg-accent-dark hover:text-secondary-foreground transition-colors flex items-center gap-3 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
+                  Get Started <ArrowRight className="w-6 h-6" />
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="px-10 py-6 border-4 border-primary-foreground text-primary-foreground font-heading text-xl uppercase tracking-wider hover:bg-primary-foreground hover:text-primary transition-colors">
-                  Contact Sales
+                <button className="px-10 py-6 border-4 border-primary-foreground text-primary-foreground font-heading text-lg uppercase tracking-wider hover:bg-primary-foreground hover:text-primary transition-colors">
+                  Contact Us
                 </button>
               </Link>
             </div>
