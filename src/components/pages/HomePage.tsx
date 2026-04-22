@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Globe, Zap, Briefcase, TrendingUp, Warehouse } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Globe, Zap, Briefcase, TrendingUp, Warehouse, CreditCard } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -581,7 +581,7 @@ export default function HomePage() {
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="bg-secondary p-8 text-center group hover:shadow-xl transition-all duration-300"
             >
-              <TrendingUp className="w-12 h-12 text-secondary-foreground mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <CreditCard className="w-12 h-12 text-secondary-foreground mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-heading text-xl text-secondary-foreground mb-3 uppercase">Payments &<br />Invoicing</h3>
               <p className="font-paragraph text-sm text-secondary-foreground/80 mb-6">
                 Flexible payment options available.

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { CreditCard, Shield, CheckCircle, ArrowRight, FileText, Phone } from 'lucide-react';
+import { CreditCard, Shield, CheckCircle, ArrowRight, FileText, Phone, Lock, Zap, Clock, AlertCircle, Download, HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { PAYMENT_CONFIG } from '@/lib/payment-gateway';
 
 export default function PaymentsPage() {
   return (
@@ -363,6 +364,224 @@ export default function PaymentsPage() {
               All payments are protected and encrypted
             </p>
             <p className="font-paragraph text-lg text-stockist-accent">100% Secure</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Security & Compliance Section */}
+      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-heading text-5xl lg:text-7xl text-foreground mb-6">
+            SECURITY &<span className="text-primary block">COMPLIANCE</span>
+          </h2>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {PAYMENT_CONFIG.securityFeatures.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-accent-dark p-8 text-center border-l-4 border-primary"
+            >
+              <Lock className="w-12 h-12 text-primary mx-auto mb-6" />
+              <p className="font-paragraph text-lg text-secondary-foreground font-bold">{feature}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full bg-accent-dark py-24">
+        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground mb-6">
+              FREQUENTLY ASKED<span className="text-primary block">QUESTIONS</span>
+            </h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-background p-8 border-l-4 border-primary"
+            >
+              <h3 className="font-heading text-2xl text-foreground mb-4 flex items-center gap-3">
+                <HelpCircle className="w-6 h-6 text-primary" />
+                What payment methods do you accept?
+              </h3>
+              <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                We accept online payments through secure gateways, bank transfers, UPI, digital wallets, and credit terms for verified distributors.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-background p-8 border-l-4 border-manufacturer-accent"
+            >
+              <h3 className="font-heading text-2xl text-foreground mb-4 flex items-center gap-3">
+                <Clock className="w-6 h-6 text-manufacturer-accent" />
+                How long does payment processing take?
+              </h3>
+              <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                Online payments are processed instantly. Bank transfers typically take 1-2 hours. Credit terms are processed within 24 hours.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-background p-8 border-l-4 border-stockist-accent"
+            >
+              <h3 className="font-heading text-2xl text-foreground mb-4 flex items-center gap-3">
+                <AlertCircle className="w-6 h-6 text-stockist-accent" />
+                Is my payment information secure?
+              </h3>
+              <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                Yes, all transactions are encrypted with 256-bit SSL and comply with PCI DSS standards. We never store sensitive payment data.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-background p-8 border-l-4 border-primary"
+            >
+              <h3 className="font-heading text-2xl text-foreground mb-4 flex items-center gap-3">
+                <Download className="w-6 h-6 text-primary" />
+                Can I get an invoice for my payment?
+              </h3>
+              <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                Yes, invoices are automatically generated and sent to your email after payment confirmation. You can also download them anytime.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Architecture Info */}
+      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-heading text-5xl lg:text-7xl text-foreground mb-6">
+            FLEXIBLE PAYMENT<span className="text-primary block">ARCHITECTURE</span>
+          </h2>
+          <p className="font-paragraph text-lg text-foreground/70 max-w-3xl mx-auto">
+            Our payment system is built to support multiple integration options, ensuring you can choose the payment solution that works best for your business.
+          </p>
+        </motion.div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-primary/5 p-10 border-2 border-primary"
+          >
+            <Zap className="w-12 h-12 text-primary mb-6" />
+            <h3 className="font-heading text-2xl text-foreground mb-4">Supported Gateways</h3>
+            <p className="font-paragraph text-sm text-foreground/70 mb-6 leading-relaxed">
+              Ready for integration with Razorpay, PayU, Stripe, and other major payment gateways.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span className="font-paragraph text-sm text-foreground/80">Razorpay</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span className="font-paragraph text-sm text-foreground/80">PayU</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span className="font-paragraph text-sm text-foreground/80">Stripe</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-manufacturer-accent/5 p-10 border-2 border-manufacturer-accent"
+          >
+            <Shield className="w-12 h-12 text-manufacturer-accent mb-6" />
+            <h3 className="font-heading text-2xl text-foreground mb-4">External Integration</h3>
+            <p className="font-paragraph text-sm text-foreground/70 mb-6 leading-relaxed">
+              Seamlessly connect third-party payment providers and custom gateway solutions.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-manufacturer-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">API Ready</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-manufacturer-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">Webhook Support</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-manufacturer-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">Custom Routing</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-stockist-accent/5 p-10 border-2 border-stockist-accent"
+          >
+            <Zap className="w-12 h-12 text-stockist-accent mb-6" />
+            <h3 className="font-heading text-2xl text-foreground mb-4">Future Ready</h3>
+            <p className="font-paragraph text-sm text-foreground/70 mb-6 leading-relaxed">
+              Extensible architecture for emerging payment technologies and custom solutions.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-stockist-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">Modular Design</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-stockist-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">Easy Upgrades</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-stockist-accent" />
+                <span className="font-paragraph text-sm text-foreground/80">Scalable</span>
+              </li>
+            </ul>
           </motion.div>
         </div>
       </section>
