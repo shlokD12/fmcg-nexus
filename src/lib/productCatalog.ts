@@ -26,7 +26,7 @@ export interface WholesaleCatalogItem {
   id: string;
   division: 'wholesale';
   category: 'Pan Masala' | 'Elaichi & Mouth Fresheners';
-  brandName: string;
+  companyName: string;
   itemName: string;
   packFormat: string;
   description: string;
@@ -118,7 +118,7 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     id: 'wholesale-rajnigandha-pan-masala',
     division: 'wholesale',
     category: 'Pan Masala',
-    brandName: 'DS Group',
+    companyName: 'DS Group',
     itemName: 'Rajnigandha Pan Masala',
     packFormat: 'trade box',
     description:
@@ -127,12 +127,13 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 420,
     pricingUnit: 'per box',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_79c23e464a6f4e4cb15ef3f0a98a9f30~mv2.jpg',
   },
   {
     id: 'wholesale-pan-vilas-pan-masala',
     division: 'wholesale',
     category: 'Pan Masala',
-    brandName: 'Godfrey Phillips India',
+    companyName: 'Godfrey Phillips India',
     itemName: 'Pan Vilas Pan Masala',
     packFormat: 'trade box',
     description:
@@ -141,12 +142,13 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 395,
     pricingUnit: 'per box',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_591b266d1a1343eb9f031f475dcf326e~mv2.jpg',
   },
   {
     id: 'wholesale-vimal-pan-masala',
     division: 'wholesale',
     category: 'Pan Masala',
-    brandName: 'Vimal',
+    companyName: 'Vimal',
     itemName: 'Vimal Pan Masala',
     packFormat: 'trade box',
     description:
@@ -155,12 +157,13 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 390,
     pricingUnit: 'per box',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_e91adeebac9142ceb866523f4469d0b4~mv2.jpg',
   },
   {
     id: 'wholesale-rajnigandha-silver-pearls',
     division: 'wholesale',
     category: 'Elaichi & Mouth Fresheners',
-    brandName: 'DS Group',
+    companyName: 'DS Group',
     itemName: 'Rajnigandha Silver Pearls',
     packFormat: 'dozen packs',
     description:
@@ -169,12 +172,13 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 980,
     pricingUnit: 'per dozen packs',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_79c23e464a6f4e4cb15ef3f0a98a9f30~mv2.jpg',
   },
   {
     id: 'wholesale-baba-elaichi',
     division: 'wholesale',
     category: 'Elaichi & Mouth Fresheners',
-    brandName: 'DS Group',
+    companyName: 'DS Group',
     itemName: 'BABA Elaichi',
     packFormat: 'dozen packs',
     description:
@@ -183,12 +187,13 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 840,
     pricingUnit: 'per dozen packs',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_cb4b9aa08d514443b5423fe1ce0e29d1~mv2.jpg',
   },
   {
     id: 'wholesale-pan-vilas-silver-dewz',
     division: 'wholesale',
     category: 'Elaichi & Mouth Fresheners',
-    brandName: 'Godfrey Phillips India',
+    companyName: 'Godfrey Phillips India',
     itemName: 'Pan Vilas Silver Dewz Elaichi',
     packFormat: 'dozen packs',
     description:
@@ -197,5 +202,6 @@ export const WHOLESALE_CATALOG: WholesaleCatalogItem[] = [
     price: 900,
     pricingUnit: 'per dozen packs',
     pricingNote: 'Indicative trade price',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_591b266d1a1343eb9f031f475dcf326e~mv2.jpg',
   },
 ];

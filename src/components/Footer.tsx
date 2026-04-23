@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, ShoppingCart } from 'lucide-react';
 import { useRetailCart } from '@/lib/retailCart';
 
+const SITE_LOGO_URL = 'https://static.wixstatic.com/shapes/92c2a1_b158c75737cf4d0f9d99bfb085a8122f.svg';
+
 export default function Footer() {
   const { itemCount } = useRetailCart();
 
@@ -10,15 +12,13 @@ export default function Footer() {
       <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
           <div>
-            <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <span className="font-heading text-lg text-primary-foreground font-bold">T</span>
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <img src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
               <div>
-                <h2 className="font-heading text-base text-secondary-foreground leading-tight font-bold tracking-tight">
+                <h2 className="font-heading text-lg text-secondary-foreground leading-none font-bold tracking-tight">
                   TRISHA
                 </h2>
-                <p className="font-paragraph text-xs text-secondary-foreground/55 tracking-[0.04em] font-medium">
+                <p className="font-paragraph text-[11px] text-secondary-foreground/55 tracking-[0.08em] font-medium mt-0.5">
                   AGENCY
                 </p>
               </div>

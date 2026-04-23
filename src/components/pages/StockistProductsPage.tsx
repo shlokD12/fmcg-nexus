@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Package, Truck } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Image } from '@/components/ui/image';
 import { formatPrice } from '@/integrations';
 import { PRODUCT_CHANNELS, WHOLESALE_CATALOG } from '@/lib/productCatalog';
 
@@ -89,6 +90,16 @@ export default function StockistProductsPage() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="bg-accent-dark border-t-4 border-stockist-accent p-8 lg:p-10"
             >
+              {product.imageUrl && (
+                <div className="mb-6 aspect-[4/3] overflow-hidden border border-secondary-foreground/10 bg-background">
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.itemName}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div>
                   <div className="flex flex-wrap gap-3 mb-4">
@@ -103,7 +114,7 @@ export default function StockistProductsPage() {
                     {product.itemName}
                   </h2>
                   <p className="font-paragraph text-sm text-secondary-foreground/60">
-                    Brand: {product.brandName}
+                    Company: {product.companyName}
                   </p>
                 </div>
                 <div className="w-14 h-14 bg-stockist-accent/10 border border-stockist-accent flex items-center justify-center flex-shrink-0">

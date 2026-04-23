@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ShoppingCart } from 'lucide-react';
 import { useRetailCart } from '@/lib/retailCart';
-import { Image } from '@/components/ui/image';
+
+const SITE_LOGO_URL = 'https://static.wixstatic.com/shapes/92c2a1_b158c75737cf4d0f9d99bfb085a8122f.svg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,19 +19,13 @@ export default function Header() {
     <header className="w-full bg-background/95 border-b border-foreground/6 sticky top-0 z-50 backdrop-blur-md">
       <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-3">
         <div className="flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2.5">
-            <Image 
-              src="https://static.wixstatic.com/media/92c2a1_fd55e275003341179cc9dc0cdd6f0b95~mv2.png" 
-              alt="Trisha Agency Logo" 
-              width={40}
-              height={40}
-              className="object-contain"
-            />
+          <Link to="/" className="flex items-center gap-3">
+            <img src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
             <div>
-              <h1 className="font-heading text-base text-foreground leading-tight font-bold tracking-tight">
+              <h1 className="font-heading text-lg text-foreground leading-none font-bold tracking-tight">
                 TRISHA
               </h1>
-              <p className="font-paragraph text-xs text-foreground/55 tracking-[0.04em] font-medium">
+              <p className="font-paragraph text-[11px] text-foreground/55 tracking-[0.08em] font-medium mt-0.5">
                 AGENCY
               </p>
             </div>
