@@ -151,9 +151,9 @@ export default function RetailCheckoutPage() {
                     {GATEWAY_OPTIONS.map((provider) => {
                       const isActive = gatewayProvider === provider.name.toLowerCase();
                       const logoMap: Record<string, string> = {
-                        razorpay: 'https://static.wixstatic.com/media/92c2a1_0af3bc5864394cfda0636fd9f945d608~mv2.png?originWidth=128&originHeight=128',
-                        payu: 'https://static.wixstatic.com/media/92c2a1_170e7e34371949ec8aecbec8c0fcc92a~mv2.png?originWidth=128&originHeight=128',
-                        stripe: 'https://static.wixstatic.com/media/92c2a1_81688c0d44bd4ffe94ffe26e9aecf723~mv2.png?originWidth=128&originHeight=128',
+                        razorpay: 'https://static.wixstatic.com/media/92c2a1_b89d423595524038be739cc0ca0c0f4b~mv2.png?originWidth=128&originHeight=128',
+                        payu: 'https://static.wixstatic.com/media/92c2a1_71ee29dd01934c68942441d1a652d324~mv2.png?originWidth=128&originHeight=128',
+                        stripe: 'https://static.wixstatic.com/media/92c2a1_153e08a18d934effac03cf6a8083ee6e~mv2.png?originWidth=128&originHeight=128',
                       };
                       const logoUrl = logoMap[provider.name.toLowerCase()];
                       return (
