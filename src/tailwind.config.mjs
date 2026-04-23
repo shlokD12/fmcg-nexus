@@ -19,8 +19,8 @@ export default {
                 '9xl': ['8rem', { lineHeight: '1', letterSpacing: '0.12em', fontWeight: '900' }],
             },
             fontFamily: {
-                heading: "syne-extrabold",
-                paragraph: "azeret-mono"
+                heading: "'Clash Display', 'Inter', sans-serif",
+                paragraph: "'Inter', 'Helvetica Neue', sans-serif"
             },
             colors: {
                 destructive: '#DC2626',

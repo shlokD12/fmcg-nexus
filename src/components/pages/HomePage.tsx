@@ -1,45 +1,50 @@
-// HPI 2.0-PREMIUM
+// TRISHA AGENCY - PREMIUM REDESIGN
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Briefcase, TrendingUp, Warehouse, CreditCard, Sparkles } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Briefcase, TrendingUp, Warehouse, CreditCard } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 // --- Canonical Data Sources ---
 const STATS = [
-  { icon: Factory, value: "500+", label: "Products Manufactured", color: "text-manufacturer-accent", border: "border-manufacturer-accent" },
-  { icon: Package, value: "1000+", label: "Stocked Products", color: "text-stockist-accent", border: "border-stockist-accent" },
-  { icon: Users, value: "200+", label: "Active Distributors", color: "text-primary", border: "border-primary" },
-  { icon: Truck, value: "15+", label: "States Covered", color: "text-foreground", border: "border-foreground" }
+  { icon: Factory, value: "500+", label: "Products Manufactured", color: "text-manufacturer-accent" },
+  { icon: Package, value: "1000+", label: "Stocked Products", color: "text-stockist-accent" },
+  { icon: Users, value: "200+", label: "Active Distributors", color: "text-primary" },
+  { icon: Truck, value: "15+", label: "States Covered", color: "text-foreground" }
 ];
 
 const CATEGORIES = [
-  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
-  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
-  { title: "PAN MASALA", desc: "Wide range of branded pan masala variants in stock", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "MOUTH FRESHENERS", desc: "Baba elaichi and premium mouth freshener brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "FMCG PRODUCTS", desc: "Fast-moving consumer goods from trusted brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "TRADE PRODUCTS", desc: "Bulk trade items for wholesale distribution", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" }
+  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
+  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
+  { title: "PAN MASALA", desc: "Wide range of branded pan masala variants in stock", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "MOUTH FRESHENERS", desc: "Baba elaichi and premium mouth freshener brands", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "FMCG PRODUCTS", desc: "Fast-moving consumer goods from trusted brands", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "TRADE PRODUCTS", desc: "Bulk trade items for wholesale distribution", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" }
 ];
 
 const TRUST_FACTORS = [
-  { icon: Shield, title: "QUALITY ASSURED", desc: "Rigorous quality control for manufactured products and verified sourcing for stocked items", color: "text-primary", bg: "bg-primary/5", border: "border-primary/30" },
-  { icon: Truck, title: "RELIABLE SUPPLY", desc: "Consistent inventory management and timely delivery across India", color: "text-manufacturer-accent", bg: "bg-manufacturer-accent/5", border: "border-manufacturer-accent/30" },
-  { icon: Warehouse, title: "BULK AVAILABILITY", desc: "Large inventory capacity for immediate fulfillment of bulk orders", color: "text-stockist-accent", bg: "bg-stockist-accent/5", border: "border-stockist-accent/30" },
-  { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary", bg: "bg-primary/5", border: "border-primary/30" }
+  { icon: Shield, title: "QUALITY ASSURED", desc: "Rigorous quality control for manufactured products and verified sourcing for stocked items", color: "text-primary" },
+  { icon: Truck, title: "RELIABLE SUPPLY", desc: "Consistent inventory management and timely delivery across India", color: "text-manufacturer-accent" },
+  { icon: Warehouse, title: "BULK AVAILABILITY", desc: "Large inventory capacity for immediate fulfillment of bulk orders", color: "text-stockist-accent" },
+  { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary" }
 ];
 
 // --- Animation Variants ---
 const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.05 } }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } }
 };
 
 export default function HomePage() {
@@ -57,18 +62,6 @@ export default function HomePage() {
       <Header />
       
       <style>{`
-        .architectural-grid {
-          background-image: 
-            linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-          background-size: 4rem 4rem;
-        }
-        .architectural-grid-dark {
-          background-image: 
-            linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
-          background-size: 4rem 4rem;
-        }
         .marquee-container {
           display: flex;
           width: 200%;
@@ -80,58 +73,60 @@ export default function HomePage() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION - Premium & Immersive */}
+      {/* 1. HERO SECTION - Immersive & Editorial */}
       <section ref={heroRef} className="relative w-full h-[100vh] min-h-[900px] bg-gradient-to-br from-accent-dark via-[#1a2332] to-secondary overflow-hidden flex flex-col justify-end pb-20">
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/92c2a1_4579c87bb8b34eda9573438f27ed1c5f~mv2.png?originWidth=1920&originHeight=1024"
             alt="Trisha Agency Industrial Facility"
             width={1920}
-            className="w-full h-full object-cover opacity-25 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/60 to-transparent" />
-          <div className="absolute inset-0 architectural-grid-dark opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/70 to-transparent" />
           {/* Premium accent elements */}
-          <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-manufacturer-accent/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/3 rounded-full blur-3xl" />
+          <div className="absolute top-32 -right-40 w-[800px] h-[800px] bg-manufacturer-accent/8 rounded-full blur-3xl" />
+          <div className="absolute -bottom-32 left-1/3 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div style={{ opacity: opacityText }} className="max-w-5xl">
-            <div className="flex items-center gap-4 mb-10 overflow-hidden">
+          <motion.div style={{ opacity: opacityText }} className="max-w-6xl">
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+              className="flex items-center gap-4 mb-12 overflow-hidden"
+            >
               <motion.div 
-                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                className="h-1.5 w-20 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
+                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                className="h-1 w-16 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
               />
               <motion.span 
-                initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.4em] uppercase font-bold"
+                initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.3em] uppercase font-semibold"
               >
-                Industrial Excellence
+                Premium FMCG Distribution
               </motion.span>
-            </div>
+            </motion.div>
 
             <motion.h1 
-              initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="font-heading text-[12vw] leading-[0.85] text-secondary-foreground tracking-tighter mb-8 font-black"
+              initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-heading text-[13vw] leading-[0.8] text-secondary-foreground tracking-tighter mb-10 font-bold"
             >
               TRISHA<br />
               <span className="bg-gradient-to-r from-primary via-manufacturer-accent to-primary bg-clip-text text-transparent">AGENCY</span>
             </motion.h1>
 
             <motion.p 
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.7 }}
-              className="font-paragraph text-lg md:text-2xl text-secondary-foreground/85 max-w-3xl mb-14 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.6 }}
+              className="font-paragraph text-lg md:text-2xl text-secondary-foreground/80 max-w-3xl mb-16 leading-relaxed font-light"
             >
-              Premium FMCG manufacturing and strategic distribution across India. Trusted by 200+ distributors and retailers.
+              Manufacturing excellence meets strategic distribution. Trusted by 200+ partners across India.
             </motion.p>
 
             <motion.div 
-              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 1 }}
-              className="flex flex-wrap gap-5"
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.9 }}
+              className="flex flex-wrap gap-6"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-10 py-6 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-widest overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <button className="group relative px-12 py-5 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-lg hover:shadow-2xl">
                   <span className="relative z-10 flex items-center gap-3">
                     Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
@@ -142,7 +137,7 @@ export default function HomePage() {
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-10 py-6 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-widest hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="px-12 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl">
                   Explore Products
                 </button>
               </Link>
@@ -165,13 +160,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 3. INTRODUCTION - Sticky Narrative */}
-      <section className="w-full bg-background relative architectural-grid">
+      {/* 3. INTRODUCTION - Asymmetric Layout */}
+      <section className="w-full bg-background relative py-24 lg:py-32">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             
-            {/* Sticky Left Column */}
-            <div className="lg:col-span-5 py-24 lg:py-32">
+            {/* Left Column - Sticky Text */}
+            <div className="lg:col-span-5">
               <div className="sticky top-32">
                 <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
                   <h2 className="font-heading text-5xl lg:text-7xl text-foreground leading-[0.9] mb-8 uppercase">
@@ -179,7 +174,7 @@ export default function HomePage() {
                     <span className="text-primary">India's</span><br />
                     Network
                   </h2>
-                  <p className="font-paragraph text-lg text-foreground/70 mb-8 leading-relaxed">
+                  <p className="font-paragraph text-lg text-foreground/70 mb-8 leading-relaxed max-w-md">
                     Trisha Agency operates at the intersection of manufacturing excellence and strategic wholesale distribution. We produce premium in-house FMCG products while maintaining extensive inventory of trusted brands for rapid distribution.
                   </p>
                   <Link to="/about" className="inline-flex items-center gap-2 font-heading text-lg text-foreground hover:text-primary transition-colors group">
@@ -190,35 +185,31 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Scrolling Right Column - Stats */}
-            <div className="lg:col-span-7 py-12 lg:py-32">
-              <div className="grid sm:grid-cols-2 gap-6">
+            {/* Right Column - Stats Grid with Image */}
+            <div className="lg:col-span-7">
+              <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="grid sm:grid-cols-2 gap-6 mb-12">
                 {STATS.map((stat, index) => (
                   <motion.div 
                     key={index}
                     variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ delay: index * 0.1 }}
-                    className={`bg-white p-8 border-2 ${stat.border} shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200`}
+                    className="bg-white p-8 border-2 border-foreground/20 hover:border-foreground transition-all duration-300 group"
                   >
-                    <stat.icon className={`w-12 h-12 ${stat.color} mb-6`} />
+                    <stat.icon className={`w-12 h-12 ${stat.color} mb-6 group-hover:scale-110 transition-transform`} />
                     <h3 className="font-heading text-5xl text-foreground mb-2">{stat.value}</h3>
-                    <p className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider font-bold">{stat.label}</p>
+                    <p className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider font-semibold">{stat.label}</p>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
               
               <motion.div 
                 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                className="mt-12 relative h-[400px] border-2 border-foreground overflow-hidden"
+                className="relative h-[400px] border-2 border-foreground overflow-hidden group"
               >
                 <Image
                   src="https://static.wixstatic.com/media/92c2a1_8ef7ced56b2e4e129514abbba5a0e32e~mv2.png?originWidth=768&originHeight=768"
                   alt="Distribution Network"
                   width={800}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
               </motion.div>
@@ -228,10 +219,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. DIVISIONS - Split Screen Architectural */}
+      {/* 4. DIVISIONS - Asymmetric Split */}
       <section className="w-full bg-accent-dark border-y-2 border-secondary relative overflow-hidden">
-        <div className="absolute inset-0 architectural-grid-dark opacity-50" />
-        
         <div className="max-w-[120rem] mx-auto">
           <div className="grid lg:grid-cols-2 min-h-[80vh]">
             
@@ -309,11 +298,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CATEGORIES - Premium Grid with Division Labels */}
+      {/* 5. CATEGORIES - Editorial Grid */}
       <section className="w-full bg-background py-24 lg:py-32">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <h2 className="font-heading text-5xl lg:text-7xl text-foreground uppercase leading-none">
                 Product<br />
@@ -321,7 +310,7 @@ export default function HomePage() {
               </h2>
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <p className="font-paragraph text-lg text-foreground/70 max-w-md border-l-2 border-primary pl-4">
+              <p className="font-paragraph text-lg text-foreground/70 max-w-md border-l-2 border-primary pl-6">
                 Explore our diverse range of manufactured and stocked products, engineered for market demand.
               </p>
             </motion.div>
@@ -366,9 +355,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. WHY CHOOSE US - Trust Architecture */}
+      {/* 6. WHY CHOOSE US - Minimal Trust Section */}
       <section className="w-full bg-accent-dark py-24 lg:py-32 border-t-2 border-secondary relative">
-        <div className="absolute inset-0 architectural-grid-dark opacity-30" />
         
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-20">
@@ -386,7 +374,7 @@ export default function HomePage() {
                 className="bg-background p-8 border-t-4 border-transparent hover:border-current transition-colors duration-300 group"
                 style={{ color: factor.color === 'text-primary' ? '#FF005C' : factor.color === 'text-manufacturer-accent' ? '#00C49F' : '#FFC107' }}
               >
-                <div className={`w-16 h-16 ${factor.bg} border-2 ${factor.border} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="w-16 h-16 bg-background/50 border-2 border-current flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <factor.icon className={`w-8 h-8 ${factor.color}`} />
                 </div>
                 <h3 className="font-heading text-2xl text-foreground mb-4 uppercase">{factor.title}</h3>
@@ -399,7 +387,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. BUSINESS SEGMENTS - Clear Differentiation */}
+      {/* 7. BUSINESS SEGMENTS - Varied Layout */}
       <section className="w-full bg-background py-24 lg:py-32 border-t-2 border-foreground/10">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-20">
@@ -412,7 +400,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
             {/* Manufactured Products */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -484,8 +472,8 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Buyer Types */}
-          <div className="mt-20 grid md:grid-cols-2 gap-8">
+          {/* Buyer Types - Asymmetric */}
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Wholesale Buyers */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}
