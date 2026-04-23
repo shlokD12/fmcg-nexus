@@ -1,8 +1,8 @@
-// TRISHA AGENCY - PREMIUM REDESIGN
+// TRISHA AGENCY - PREMIUM INDUSTRIAL REDESIGN
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Briefcase, TrendingUp, Warehouse, CreditCard } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Briefcase, TrendingUp, Warehouse, CreditCard, Zap, Award, Globe } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -31,6 +31,12 @@ const TRUST_FACTORS = [
   { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary" }
 ];
 
+const CAPABILITIES = [
+  { icon: Zap, title: "RAPID DEPLOYMENT", desc: "Fast-track order fulfillment with optimized logistics" },
+  { icon: Award, title: "CERTIFIED QUALITY", desc: "Industry-standard compliance and quality certifications" },
+  { icon: Globe, title: "NATIONAL REACH", desc: "Established distribution network across 15+ states" }
+];
+
 // --- Animation Variants ---
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -45,6 +51,11 @@ const staggerContainer = {
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } }
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] } }
 };
 
 export default function HomePage() {
@@ -73,153 +84,191 @@ export default function HomePage() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION - Immersive & Editorial */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[900px] bg-gradient-to-br from-accent-dark via-[#1a2332] to-secondary overflow-hidden flex flex-col justify-end pb-20">
+      {/* 1. HERO SECTION - Powerful Industrial Statement */}
+      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[950px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-32 pb-20">
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/92c2a1_4579c87bb8b34eda9573438f27ed1c5f~mv2.png?originWidth=1920&originHeight=1024"
             alt="Trisha Agency Industrial Facility"
             width={1920}
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-15 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/70 to-transparent" />
-          {/* Premium accent elements */}
-          <div className="absolute top-32 -right-40 w-[800px] h-[800px] bg-manufacturer-accent/8 rounded-full blur-3xl" />
-          <div className="absolute -bottom-32 left-1/3 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/60 to-transparent" />
+          {/* Industrial accent elements - larger, bolder */}
+          <div className="absolute top-20 -right-32 w-[900px] h-[900px] bg-manufacturer-accent/6 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 left-1/4 w-[700px] h-[700px] bg-primary/4 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 -left-40 w-[600px] h-[600px] bg-stockist-accent/5 rounded-full blur-3xl" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div style={{ opacity: opacityText }} className="max-w-6xl">
+          <motion.div style={{ opacity: opacityText }} className="max-w-7xl">
+            {/* Premium badge */}
             <motion.div 
               initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
-              className="flex items-center gap-4 mb-12 overflow-hidden"
+              className="flex items-center gap-4 mb-16 overflow-hidden"
             >
               <motion.div 
-                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                className="h-1 w-16 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
+                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                className="h-1.5 w-20 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
               />
               <motion.span 
                 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.3em] uppercase font-semibold"
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.4em] uppercase font-bold"
               >
-                Premium FMCG Distribution
+                Industrial FMCG Distribution
               </motion.span>
             </motion.div>
 
+            {/* Main headline - larger, bolder */}
             <motion.h1 
-              initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-heading text-[13vw] leading-[0.8] text-secondary-foreground tracking-tighter mb-10 font-bold"
+              initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-heading text-[14vw] leading-[0.75] text-secondary-foreground tracking-tighter mb-12 font-black"
             >
               TRISHA<br />
               <span className="bg-gradient-to-r from-primary via-manufacturer-accent to-primary bg-clip-text text-transparent">AGENCY</span>
             </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.6 }}
-              className="font-paragraph text-lg md:text-2xl text-secondary-foreground/80 max-w-3xl mb-16 leading-relaxed font-light"
+            {/* Subheading - stronger positioning */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.5 }}
+              className="max-w-4xl mb-20"
             >
-              Manufacturing excellence meets strategic distribution. Trusted by 200+ partners across India.
-            </motion.p>
+              <p className="font-paragraph text-2xl md:text-3xl text-secondary-foreground/90 leading-tight font-semibold mb-6">
+                Manufacturing Excellence. Strategic Distribution. Uncompromising Quality.
+              </p>
+              <p className="font-paragraph text-lg text-secondary-foreground/70 leading-relaxed">
+                Powering India's FMCG supply chain with 500+ manufactured products, 1000+ stocked brands, and a trusted network of 200+ distributors across 15 states.
+              </p>
+            </motion.div>
 
+            {/* CTA Buttons - more prominent */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.9 }}
-              className="flex flex-wrap gap-6"
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.8 }}
+              className="flex flex-wrap gap-6 items-center"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-12 py-5 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-lg hover:shadow-2xl">
-                  <span className="relative z-10 flex items-center gap-3">
+                <button className="group relative px-14 py-6 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <span className="relative z-10 flex items-center gap-3 font-bold">
                     Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-secondary-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-400 ease-out" />
-                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 font-bold">
                     Become a Distributor <ArrowRight className="w-5 h-5" />
                   </span>
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-12 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="px-14 py-6 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl font-bold">
                   Explore Products
                 </button>
               </Link>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div 
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12 flex justify-center"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="font-paragraph text-xs text-secondary-foreground/60 uppercase tracking-widest">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-secondary-foreground/40 rounded-full flex justify-center">
+              <motion.div className="w-1 h-2 bg-secondary-foreground/60 rounded-full mt-2" />
+            </div>
+          </div>
+        </motion.div>
       </section>
 
-      {/* 2. MARQUEE - Dynamic Energy */}
-      <div className="w-full bg-primary py-5 overflow-hidden border-y-2 border-secondary">
-        <div className="marquee-container font-heading text-2xl md:text-4xl text-primary-foreground uppercase tracking-widest whitespace-nowrap">
-          <span className="mx-8">FMCG Distribution</span> <span className="mx-8">•</span>
-          <span className="mx-8">Premium Manufacturing</span> <span className="mx-8">•</span>
-          <span className="mx-8">Wholesale Supply</span> <span className="mx-8">•</span>
-          <span className="mx-8">Retail Network</span> <span className="mx-8">•</span>
-          <span className="mx-8">FMCG Distribution</span> <span className="mx-8">•</span>
-          <span className="mx-8">Premium Manufacturing</span> <span className="mx-8">•</span>
-          <span className="mx-8">Wholesale Supply</span> <span className="mx-8">•</span>
-          <span className="mx-8">Retail Network</span> <span className="mx-8">•</span>
+      {/* 2. MARQUEE - Industrial Strength */}
+      <div className="w-full bg-gradient-to-r from-primary via-manufacturer-accent to-primary py-6 overflow-hidden border-y-4 border-secondary">
+        <div className="marquee-container font-heading text-2xl md:text-3xl text-primary-foreground uppercase tracking-widest whitespace-nowrap font-bold">
+          <span className="mx-12">MANUFACTURING EXCELLENCE</span> <span className="mx-12">•</span>
+          <span className="mx-12">STRATEGIC DISTRIBUTION</span> <span className="mx-12">•</span>
+          <span className="mx-12">NATIONAL REACH</span> <span className="mx-12">•</span>
+          <span className="mx-12">TRUSTED PARTNERS</span> <span className="mx-12">•</span>
+          <span className="mx-12">MANUFACTURING EXCELLENCE</span> <span className="mx-12">•</span>
+          <span className="mx-12">STRATEGIC DISTRIBUTION</span> <span className="mx-12">•</span>
+          <span className="mx-12">NATIONAL REACH</span> <span className="mx-12">•</span>
+          <span className="mx-12">TRUSTED PARTNERS</span> <span className="mx-12">•</span>
         </div>
       </div>
 
-      {/* 3. INTRODUCTION - Asymmetric Layout */}
-      <section className="w-full bg-background relative py-24 lg:py-32">
+      {/* 3. CAPABILITIES - Industrial Strength Blocks */}
+      <section className="w-full bg-background py-24 lg:py-32 border-b-4 border-foreground/10">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            
-            {/* Left Column - Sticky Text */}
-            <div className="lg:col-span-5">
-              <div className="sticky top-32">
-                <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
-                  <h2 className="font-heading text-5xl lg:text-7xl text-foreground leading-[0.9] mb-8 uppercase">
-                    Powering<br />
-                    <span className="text-primary">India's</span><br />
-                    Network
-                  </h2>
-                  <p className="font-paragraph text-lg text-foreground/70 mb-8 leading-relaxed max-w-md">
-                    Trisha Agency operates at the intersection of manufacturing excellence and strategic wholesale distribution. We produce premium in-house FMCG products while maintaining extensive inventory of trusted brands for rapid distribution.
-                  </p>
-                  <Link to="/about" className="inline-flex items-center gap-2 font-heading text-lg text-foreground hover:text-primary transition-colors group">
-                    <span className="border-b-2 border-foreground group-hover:border-primary pb-1">DISCOVER OUR STORY</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-20">
+            <h2 className="font-heading text-6xl lg:text-8xl text-foreground uppercase leading-none font-black">
+              Why We<br />
+              <span className="text-primary">Lead</span>
+            </h2>
+          </motion.div>
 
-            {/* Right Column - Stats Grid with Image */}
-            <div className="lg:col-span-7">
-              <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="grid sm:grid-cols-2 gap-6 mb-12">
-                {STATS.map((stat, index) => (
-                  <motion.div 
-                    key={index}
-                    variants={fadeUp}
-                    className="bg-white p-8 border-2 border-foreground/20 hover:border-foreground transition-all duration-300 group"
-                  >
-                    <stat.icon className={`w-12 h-12 ${stat.color} mb-6 group-hover:scale-110 transition-transform`} />
-                    <h3 className="font-heading text-5xl text-foreground mb-2">{stat.value}</h3>
-                    <p className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider font-semibold">{stat.label}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-              
+          <motion.div 
+            variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            className="grid md:grid-cols-3 gap-8 lg:gap-12"
+          >
+            {CAPABILITIES.map((cap, index) => (
               <motion.div 
-                variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-                className="relative h-[400px] border-2 border-foreground overflow-hidden group"
+                key={index}
+                variants={fadeUp}
+                className="group relative bg-accent-dark border-4 border-foreground/20 p-12 lg:p-16 hover:border-primary transition-all duration-300 overflow-hidden"
               >
-                <Image
-                  src="https://static.wixstatic.com/media/92c2a1_8ef7ced56b2e4e129514abbba5a0e32e~mv2.png?originWidth=768&originHeight=768"
-                  alt="Distribution Network"
-                  width={800}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-primary/10 border-3 border-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                    <cap.icon className="w-10 h-10 text-primary" />
+                  </div>
+                  <h3 className="font-heading text-3xl text-secondary-foreground mb-6 uppercase font-bold">{cap.title}</h3>
+                  <p className="font-paragraph text-lg text-secondary-foreground/70 leading-relaxed">{cap.desc}</p>
+                </div>
               </motion.div>
-            </div>
-
-          </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* 4. DIVISIONS - Asymmetric Split */}
+      {/* 4. STATS & NETWORK - Full Width Impact */}
+      <section className="w-full bg-accent-dark py-24 lg:py-32 border-y-4 border-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-manufacturer-accent rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-20">
+            <h2 className="font-heading text-6xl lg:text-8xl text-secondary-foreground uppercase leading-none font-black mb-6">
+              By The Numbers
+            </h2>
+            <p className="font-paragraph text-xl text-secondary-foreground/70 max-w-2xl mx-auto">
+              Proven scale and reliability across India's FMCG distribution network.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {STATS.map((stat, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeUp}
+                className="bg-background/50 backdrop-blur-sm p-12 border-2 border-secondary-foreground/20 hover:border-primary transition-all duration-300 group text-center"
+              >
+                <div className="flex justify-center mb-8">
+                  <div className="w-24 h-24 bg-primary/10 border-3 border-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className={`w-12 h-12 ${stat.color}`} />
+                  </div>
+                </div>
+                <h3 className="font-heading text-6xl text-secondary-foreground mb-4 font-black">{stat.value}</h3>
+                <p className="font-paragraph text-sm text-secondary-foreground/70 uppercase tracking-wider font-semibold">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
       <section className="w-full bg-accent-dark border-y-2 border-secondary relative overflow-hidden">
         <div className="max-w-[120rem] mx-auto">
           <div className="grid lg:grid-cols-2 min-h-[80vh]">
