@@ -1,8 +1,8 @@
-// HPI 1.7-G
+// HPI 2.0-PREMIUM
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Globe, Zap, Briefcase, TrendingUp, Warehouse, CreditCard } from 'lucide-react';
+import { ArrowRight, Package, Truck, Shield, Users, CheckCircle, Factory, ChevronRight, Briefcase, TrendingUp, Warehouse, CreditCard, Sparkles } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,30 +16,30 @@ const STATS = [
 ];
 
 const CATEGORIES = [
-  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent" },
-  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent" },
-  { title: "PAN MASALA", desc: "Wide range of branded pan masala variants in stock", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent" },
-  { title: "MOUTH FRESHENERS", desc: "Baba elaichi and premium mouth freshener brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent" },
-  { title: "FMCG PRODUCTS", desc: "Fast-moving consumer goods from trusted brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent" },
-  { title: "TRADE PRODUCTS", desc: "Bulk trade items for wholesale distribution", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent" }
+  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
+  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", color: "border-manufacturer-accent", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
+  { title: "PAN MASALA", desc: "Wide range of branded pan masala variants in stock", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "MOUTH FRESHENERS", desc: "Baba elaichi and premium mouth freshener brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "FMCG PRODUCTS", desc: "Fast-moving consumer goods from trusted brands", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "TRADE PRODUCTS", desc: "Bulk trade items for wholesale distribution", link: "/products/stockist", color: "border-stockist-accent", textAccent: "text-stockist-accent", division: "STOCKIST" }
 ];
 
 const TRUST_FACTORS = [
-  { icon: Shield, title: "QUALITY ASSURED", desc: "Rigorous quality control for manufactured products and verified sourcing for stocked items", color: "text-primary", bg: "bg-primary/10", border: "border-primary" },
-  { icon: Truck, title: "RELIABLE SUPPLY", desc: "Consistent inventory management and timely delivery across India", color: "text-manufacturer-accent", bg: "bg-manufacturer-accent/10", border: "border-manufacturer-accent" },
-  { icon: Warehouse, title: "BULK AVAILABILITY", desc: "Large inventory capacity for immediate fulfillment of bulk orders", color: "text-stockist-accent", bg: "bg-stockist-accent/10", border: "border-stockist-accent" },
-  { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary", bg: "bg-primary/10", border: "border-primary" }
+  { icon: Shield, title: "QUALITY ASSURED", desc: "Rigorous quality control for manufactured products and verified sourcing for stocked items", color: "text-primary", bg: "bg-primary/5", border: "border-primary/30" },
+  { icon: Truck, title: "RELIABLE SUPPLY", desc: "Consistent inventory management and timely delivery across India", color: "text-manufacturer-accent", bg: "bg-manufacturer-accent/5", border: "border-manufacturer-accent/30" },
+  { icon: Warehouse, title: "BULK AVAILABILITY", desc: "Large inventory capacity for immediate fulfillment of bulk orders", color: "text-stockist-accent", bg: "bg-stockist-accent/5", border: "border-stockist-accent/30" },
+  { icon: TrendingUp, title: "PARTNER GROWTH", desc: "Dedicated account management and business growth assistance for partners", color: "text-primary", bg: "bg-primary/5", border: "border-primary/30" }
 ];
 
 // --- Animation Variants ---
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } }
 };
 
 export default function HomePage() {
@@ -69,10 +69,6 @@ export default function HomePage() {
             linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
           background-size: 4rem 4rem;
         }
-        .text-stroke {
-          -webkit-text-stroke: 1px rgba(255,255,255,0.2);
-          color: transparent;
-        }
         .marquee-container {
           display: flex;
           width: 200%;
@@ -84,67 +80,70 @@ export default function HomePage() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION - Cinematic & Structural */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] bg-gradient-to-br from-accent-dark via-accent-dark to-secondary overflow-hidden flex flex-col justify-end pb-24">
+      {/* 1. HERO SECTION - Premium & Immersive */}
+      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[900px] bg-gradient-to-br from-accent-dark via-[#1a2332] to-secondary overflow-hidden flex flex-col justify-end pb-20">
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/92c2a1_4579c87bb8b34eda9573438f27ed1c5f~mv2.png?originWidth=1920&originHeight=1024"
             alt="Trisha Agency Industrial Facility"
             width={1920}
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-25 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/70 to-transparent" />
-          <div className="absolute inset-0 architectural-grid-dark opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/60 to-transparent" />
+          <div className="absolute inset-0 architectural-grid-dark opacity-10" />
+          {/* Premium accent elements */}
+          <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-manufacturer-accent/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/3 rounded-full blur-3xl" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div style={{ opacity: opacityText }} className="max-w-6xl">
-            <div className="flex items-center gap-4 mb-8 overflow-hidden">
+          <motion.div style={{ opacity: opacityText }} className="max-w-5xl">
+            <div className="flex items-center gap-4 mb-10 overflow-hidden">
               <motion.div 
-                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.2 }}
-                className="h-1 w-16 bg-gradient-to-r from-primary to-manufacturer-accent origin-left"
+                initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                className="h-1.5 w-20 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
               />
               <motion.span 
-                initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.3em] uppercase font-bold"
+                initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.4em] uppercase font-bold"
               >
-                Premium Distribution Network
+                Industrial Excellence
               </motion.span>
             </div>
 
             <motion.h1 
-              initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="font-heading text-[11vw] leading-[0.9] text-secondary-foreground tracking-tighter mb-6"
+              initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              className="font-heading text-[12vw] leading-[0.85] text-secondary-foreground tracking-tighter mb-8 font-black"
             >
               TRISHA<br />
-              <span className="bg-gradient-to-r from-primary to-manufacturer-accent bg-clip-text text-transparent">AGENCY</span>
+              <span className="bg-gradient-to-r from-primary via-manufacturer-accent to-primary bg-clip-text text-transparent">AGENCY</span>
             </motion.h1>
 
             <motion.p 
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
-              className="font-paragraph text-lg md:text-xl text-secondary-foreground/80 max-w-2xl mb-12 border-l-2 border-primary/40 pl-6"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.7 }}
+              className="font-paragraph text-lg md:text-2xl text-secondary-foreground/85 max-w-3xl mb-14 leading-relaxed"
             >
-              Industrial-grade FMCG distribution. Manufacturing excellence meets strategic wholesale reach across India.
+              Premium FMCG manufacturing and strategic distribution across India. Trusted by 200+ distributors and retailers.
             </motion.p>
 
             <motion.div 
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 1 }}
+              className="flex flex-wrap gap-5"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-8 py-5 bg-primary text-primary-foreground font-heading text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground">
+                <button className="group relative px-10 py-6 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-widest overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-lg hover:shadow-2xl">
                   <span className="relative z-10 flex items-center gap-3">
-                    Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
-                  <div className="absolute inset-0 bg-secondary-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
-                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                  <div className="absolute inset-0 bg-secondary-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-400 ease-out" />
+                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
                     Become a Distributor <ArrowRight className="w-5 h-5" />
                   </span>
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-8 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300">
-                  View Products
+                <button className="px-10 py-6 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-widest hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl">
+                  Explore Products
                 </button>
               </Link>
             </motion.div>
@@ -153,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. MARQUEE - Dynamic Energy */}
-      <div className="w-full bg-primary py-4 overflow-hidden border-y-2 border-secondary">
+      <div className="w-full bg-primary py-5 overflow-hidden border-y-2 border-secondary">
         <div className="marquee-container font-heading text-2xl md:text-4xl text-primary-foreground uppercase tracking-widest whitespace-nowrap">
           <span className="mx-8">FMCG Distribution</span> <span className="mx-8">•</span>
           <span className="mx-8">Premium Manufacturing</span> <span className="mx-8">•</span>
@@ -310,7 +309,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CATEGORIES - The Inventory Grid */}
+      {/* 5. CATEGORIES - Premium Grid with Division Labels */}
       <section className="w-full bg-background py-24 lg:py-32">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           
@@ -333,7 +332,7 @@ export default function HomePage() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {CATEGORIES.map((cat, index) => (
-              <motion.div key={index} variants={fadeUp} className="group relative h-[450px] bg-accent-dark overflow-hidden border-2 border-transparent hover:border-foreground transition-colors duration-300">
+              <motion.div key={index} variants={fadeUp} className="group relative h-[480px] bg-accent-dark overflow-hidden border-2 border-transparent hover:border-foreground transition-colors duration-300">
                 <Image
                   src="https://static.wixstatic.com/media/92c2a1_e07dac4af2e14a70806d24658a590a2c~mv2.png?originWidth=576&originHeight=448"
                   alt={cat.title}
@@ -341,6 +340,13 @@ export default function HomePage() {
                   className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700"
                 />
                 <div className={`absolute top-0 left-0 w-full h-2 bg-current ${cat.textAccent}`} />
+                
+                {/* Division Badge */}
+                <div className="absolute top-6 right-6 z-20">
+                  <span className={`inline-block px-3 py-1 font-paragraph text-xs uppercase tracking-wider font-bold ${cat.textAccent} bg-accent-dark/80 border border-current`}>
+                    {cat.division}
+                  </span>
+                </div>
                 
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">

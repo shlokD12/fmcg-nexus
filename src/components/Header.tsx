@@ -11,8 +11,8 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="w-full bg-background border-b-2 border-foreground/5 sticky top-0 z-50 backdrop-blur-sm">
-      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-6">
+    <header className="w-full bg-background border-b-2 border-foreground/8 sticky top-0 z-50 backdrop-blur-md shadow-sm">
+      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
@@ -137,9 +137,9 @@ export default function Header() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-primary text-primary-foreground font-heading text-sm"
+              className="px-7 py-3 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-widest font-bold shadow-md hover:shadow-lg transition-shadow"
             >
-              GET STARTED
+              Get Started
             </motion.button>
           </Link>
 
@@ -252,8 +252,8 @@ export default function Header() {
                 </Link>
 
                 <Link to="/distributor-enquiry" onClick={() => setIsMenuOpen(false)}>
-                  <button className="w-full px-6 py-3 bg-primary text-primary-foreground font-heading text-sm mt-4">
-                    GET STARTED
+                  <button className="w-full px-6 py-3 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-widest font-bold mt-4">
+                    Get Started
                   </button>
                 </Link>
               </div>
