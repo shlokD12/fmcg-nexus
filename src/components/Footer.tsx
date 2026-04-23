@@ -9,7 +9,7 @@ export default function Footer() {
   const { itemCount } = useRetailCart();
 
   return (
-    <footer className="w-full bg-[#2a211b] text-secondary-foreground border-t border-secondary/15">
+    <footer className="w-full bg-[#3b312a] text-secondary-foreground border-t border-secondary/15">
       <div className="max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 py-10 sm:py-12 lg:py-14">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
           <div>
