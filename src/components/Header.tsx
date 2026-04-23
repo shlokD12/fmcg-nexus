@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ShoppingCart } from 'lucide-react';
 import { useRetailCart } from '@/lib/retailCart';
+import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +19,13 @@ export default function Header() {
       <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-3">
         <div className="flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center">
-              <span className="font-heading text-lg text-primary-foreground font-bold">T</span>
-            </div>
+            <Image 
+              src="https://static.wixstatic.com/media/92c2a1_fd55e275003341179cc9dc0cdd6f0b95~mv2.png" 
+              alt="Trisha Agency Logo" 
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <div>
               <h1 className="font-heading text-base text-foreground leading-tight font-bold tracking-tight">
                 TRISHA
