@@ -9,9 +9,12 @@ import RetailPage from '@/components/pages/RetailPage';
 import ProductsPage from '@/components/pages/ProductsPage';
 import ManufacturedProductsPage from '@/components/pages/ManufacturedProductsPage';
 import StockistProductsPage from '@/components/pages/StockistProductsPage';
+import CartPage from '@/components/pages/CartPage';
 import DistributorEnquiryPage from '@/components/pages/DistributorEnquiryPage';
 import PaymentsPage from '@/components/pages/PaymentsPage';
 import ContactPage from '@/components/pages/ContactPage';
+import PrivacyPolicyPage from '@/components/pages/PrivacyPolicyPage';
+import TermsOfServicePage from '@/components/pages/TermsOfServicePage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -79,6 +82,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "cart",
+        element: <CartPage />,
+        routeMetadata: {
+          pageIdentifier: 'cart',
+        },
+      },
+      {
         path: "distributor-enquiry",
         element: <DistributorEnquiryPage />,
         routeMetadata: {
@@ -97,6 +107,20 @@ const router = createBrowserRouter([
         element: <ContactPage />,
         routeMetadata: {
           pageIdentifier: 'contact',
+        },
+      },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicyPage />,
+        routeMetadata: {
+          pageIdentifier: 'privacy-policy',
+        },
+      },
+      {
+        path: "terms-of-service",
+        element: <TermsOfServicePage />,
+        routeMetadata: {
+          pageIdentifier: 'terms-of-service',
         },
       },
       {

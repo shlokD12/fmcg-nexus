@@ -19,6 +19,7 @@ export interface RetailCatalogItem {
   highlights: string[];
   price: number;
   pricingUnit: string;
+  imageUrl?: string;
 }
 
 export interface WholesaleCatalogItem {
@@ -33,6 +34,7 @@ export interface WholesaleCatalogItem {
   price: number;
   pricingUnit: string;
   pricingNote: string;
+  imageUrl?: string;
 }
 
 export const PRODUCT_CHANNELS: ProductChannel[] = [

@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ShoppingCart } from 'lucide-react';
+import { useRetailCart } from '@/lib/retailCart';
 
 export default function Footer() {
+  const { itemCount } = useRetailCart();
+
   return (
     <footer className="w-full bg-accent-dark text-secondary-foreground border-t border-secondary/15">
       <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
@@ -21,19 +24,19 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed mb-6">
-              Leading manufacturer and stockist of FMCG and mouth-freshener products across India.
+              Manufacturer of in-house herbal tobacco and sweet supari, and stockist supplier of branded pan masala and elaichi lines for distributors across India.
             </p>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 bg-manufacturer-accent/10 border border-manufacturer-accent flex items-center justify-center">
-                <span className="font-paragraph text-xs text-manufacturer-accent font-medium">MFG</span>
+                <span className="font-paragraph text-xs text-manufacturer-accent font-medium">RTL</span>
               </div>
-              <span className="font-paragraph text-xs text-secondary-foreground/70 font-medium">Manufacturing Division</span>
+              <span className="font-paragraph text-xs text-secondary-foreground/70 font-medium">Retail: in-house manufactured products</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-stockist-accent/10 border border-stockist-accent flex items-center justify-center">
-                <span className="font-paragraph text-xs text-stockist-accent-foreground font-medium">STK</span>
+                <span className="font-paragraph text-xs text-stockist-accent-foreground font-medium">WHL</span>
               </div>
-              <span className="font-paragraph text-xs text-secondary-foreground/70 font-medium">Stockist Division</span>
+              <span className="font-paragraph text-xs text-secondary-foreground/70 font-medium">Wholesale: stockist supply for distributors</span>
             </div>
           </div>
 
@@ -42,73 +45,33 @@ export default function Footer() {
               QUICK LINKS
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link to="/" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/wholesale" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Wholesale
-                </Link>
-              </li>
-              <li>
-                <Link to="/retail" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Retail
-                </Link>
-              </li>
-              <li>
-                <Link to="/distributor-enquiry" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Distributor Enquiry
-                </Link>
-              </li>
-              <li>
-                <Link to="/payments" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Payments
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">
-                  Contact
-                </Link>
-              </li>
+              <li><Link to="/" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Home</Link></li>
+              <li><Link to="/about" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">About Us</Link></li>
+              <li><Link to="/products" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Choose Product Channel</Link></li>
+              <li><Link to="/products/manufactured" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Retail Products</Link></li>
+              <li><Link to="/products/stockist" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Wholesale Products</Link></li>
+              <li><Link to="/distributor-enquiry" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Distributor Enquiry</Link></li>
+              <li><Link to="/payments" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Payments</Link></li>
+              <li><Link to="/contact" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-heading text-lg text-secondary-foreground mb-6 border-b border-primary pb-2 inline-block font-bold tracking-tight">
-              PRODUCTS
+              RETAIL & WHOLESALE
             </h3>
             <ul className="space-y-2.5">
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Retail: Herbal Tobacco</span></li>
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Retail: Sweet Supari</span></li>
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Wholesale: Rajnigandha</span></li>
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Wholesale: Pan Vilas</span></li>
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Wholesale: Vimal</span></li>
+              <li><span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Wholesale: Silver Pearls & Elaichi</span></li>
               <li>
-                <Link to="/products/manufactured" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-manufacturer-accent transition-colors font-medium">
-                  Manufactured Products
+                <Link to="/cart" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-primary transition-colors font-medium inline-flex items-center gap-2">
+                  <ShoppingCart className="w-4 h-4" />
+                  Retail Cart {itemCount > 0 ? `(${itemCount})` : ''}
                 </Link>
-              </li>
-              <li>
-                <Link to="/products/stockist" className="font-paragraph text-sm text-secondary-foreground/70 hover:text-stockist-accent transition-colors font-medium">
-                  Stockist Products
-                </Link>
-              </li>
-              <li>
-                <span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Herbal Tobacco</span>
-              </li>
-              <li>
-                <span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Sweet Supari</span>
-              </li>
-              <li>
-                <span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Pan Masala</span>
-              </li>
-              <li>
-                <span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">Mouth Fresheners</span>
-              </li>
-              <li>
-                <span className="font-paragraph text-sm text-secondary-foreground/70 font-medium">FMCG Products</span>
               </li>
             </ul>
           </div>
@@ -129,7 +92,7 @@ export default function Footer() {
                 <Mail className="w-4.5 h-4.5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-paragraph text-sm text-secondary-foreground/70 font-medium">sales@trishaagency.com</p>
-                  <p className="font-paragraph text-sm text-secondary-foreground/70 font-medium">info@trishaagency.com</p>
+                  <p className="font-paragraph text-sm text-secondary-foreground/70 font-medium">accounts@trishaagency.com</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -157,10 +120,10 @@ export default function Footer() {
               Copyright 2026 Trisha Agency. All rights reserved.
             </p>
             <div className="flex items-center gap-8">
-              <Link to="/contact" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">
+              <Link to="/privacy-policy" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">
                 Privacy Policy
               </Link>
-              <Link to="/contact" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">
+              <Link to="/terms-of-service" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">
                 Terms of Service
               </Link>
             </div>

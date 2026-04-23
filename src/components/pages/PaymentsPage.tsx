@@ -4,8 +4,12 @@ import { CreditCard, Shield, CheckCircle, ArrowRight, FileText, Phone, Lock, Zap
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PAYMENT_CONFIG } from '@/lib/payment-gateway';
+import { formatPrice } from '@/integrations';
+import { useRetailCart } from '@/lib/retailCart';
 
 export default function PaymentsPage() {
+  const { items, itemCount, subtotal } = useRetailCart();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -29,10 +33,37 @@ export default function PaymentsPage() {
           </h1>
           
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
-            Multiple payment options for your convenience. We support secure online payments, bank transfers, and credit facilities for verified distributors.
+            Multiple payment options for your convenience. Retail buyers can move from cart to checkout, while wholesale partners can review bank transfer and trade payment terms.
           </p>
         </motion.div>
       </section>
+
+      {items.length > 0 && (
+        <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 pb-8">
+          <div className="bg-manufacturer-accent/10 border border-manufacturer-accent p-8 lg:p-10">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+              <div className="max-w-3xl">
+                <h2 className="font-heading text-3xl lg:text-4xl text-foreground mb-4 font-black">
+                  RETAIL CHECKOUT READY
+                </h2>
+                <p className="font-paragraph text-base text-foreground/75 leading-relaxed">
+                  Your retail cart currently contains {itemCount} item{itemCount === 1 ? '' : 's'} with an estimated subtotal of {formatPrice(subtotal, 'INR')}. Use this page as the payment reference before connecting or confirming the live gateway inside Wix Vibe.
+                </p>
+              </div>
+              <Link to="/cart">
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="px-8 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
+                >
+                  Review Cart
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Payment Methods */}
       <section className="w-full bg-accent-dark py-16">
@@ -382,7 +413,7 @@ export default function PaymentsPage() {
           </h2>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {PAYMENT_CONFIG.securityFeatures.map((feature, index) => (
             <motion.div
               key={index}

@@ -28,7 +28,7 @@ export default function AboutPage() {
           </h1>
           
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
-            Trisha Agency stands at the forefront of India's FMCG distribution network, combining manufacturing excellence with strategic wholesale operations to serve distributors and retailers nationwide.
+            Trisha Agency combines in-house manufacturing with stockist-led wholesale distribution, serving retail buyers with its own products and distributors with established Indian trade brands.
           </p>
         </motion.div>
       </section>
@@ -48,15 +48,15 @@ export default function AboutPage() {
               </h2>
               
               <p className="font-paragraph text-base text-secondary-foreground/80 mb-5 leading-relaxed font-medium">
-                Established as a dual-model business, Trisha Agency operates both as a manufacturer of premium FMCG products and as a strategic stockist for leading brands in the mouth-freshener and fast-moving consumer goods sector.
+                Trisha Agency operates on a dual business model. On the retail side, it manufactures its own herbal tobacco and sweet supari products. On the wholesale side, it acts as a stockist supplying branded pan masala and elaichi lines to distributor networks.
               </p>
               
               <p className="font-paragraph text-base text-secondary-foreground/80 mb-5 leading-relaxed font-medium">
-                Our manufacturing division produces high-quality herbal tobacco without nicotine and sweet supari, maintaining strict quality control and consistent supply. Our stockist division procures bulk quantities from major companies, ensuring competitive pricing and reliable availability for our distribution partners.
+                Our manufacturing division focuses specifically on Trisha Agency&apos;s own herbal tobacco and sweet supari range. Our stockist division procures products such as Rajnigandha, Pan Vilas, Vimal, Rajnigandha Silver Pearls, and BABA Elaichi in larger trade quantities for channel distribution.
               </p>
               
               <p className="font-paragraph text-base text-secondary-foreground/80 leading-relaxed font-medium">
-                This unique combination allows us to offer comprehensive product portfolios, flexible order quantities, and unmatched reliability to distributors and retailers across India.
+                This structure keeps the buying journey clear: direct retail customers purchase Trisha Agency products in smaller quantities, while wholesale partners source branded stock in box and dozen-pack commercial formats.
               </p>
             </motion.div>
             
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </h3>
             
             <p className="font-paragraph text-sm text-secondary-foreground/80 mb-6 leading-relaxed font-medium">
-              Our in-house manufacturing facility produces premium FMCG products with strict quality control, consistent formulations, and reliable supply chains.
+              Our in-house manufacturing division is dedicated to Trisha Agency herbal tobacco and sweet supari, with controlled formulations, repeatable quality, and retail-friendly packaging.
             </p>
             
             <ul className="space-y-3">
@@ -126,7 +126,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle className="w-4.5 h-4.5 text-manufacturer-accent flex-shrink-0 mt-0.5" />
-                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Custom formulations available</span>
+                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Retail pouch and jar packaging</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle className="w-4.5 h-4.5 text-manufacturer-accent flex-shrink-0 mt-0.5" />
@@ -154,7 +154,7 @@ export default function AboutPage() {
             </h3>
             
             <p className="font-paragraph text-sm text-secondary-foreground/80 mb-6 leading-relaxed font-medium">
-              Strategic bulk procurement from leading brands enables us to offer competitive pricing and immediate availability for high-demand products.
+              Strategic bulk procurement from leading brands enables us to supply distributor-demand products in trade quantities with practical wholesale pricing.
             </p>
             
             <ul className="space-y-3">
@@ -164,11 +164,11 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle className="w-4.5 h-4.5 text-stockist-accent flex-shrink-0 mt-0.5" />
-                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Baba elaichi and mouth fresheners</span>
+                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Rajnigandha Silver Pearls and BABA Elaichi</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle className="w-4.5 h-4.5 text-stockist-accent flex-shrink-0 mt-0.5" />
-                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Fast-moving FMCG products</span>
+                <span className="font-paragraph text-xs text-secondary-foreground/80 font-medium">Rajnigandha, Pan Vilas, and Vimal supply lines</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle className="w-4.5 h-4.5 text-stockist-accent flex-shrink-0 mt-0.5" />
@@ -201,7 +201,7 @@ export default function AboutPage() {
                 MISSION
               </h3>
               <p className="font-paragraph text-xs text-secondary-foreground/80 leading-relaxed font-medium">
-                To provide reliable, high-quality FMCG products through efficient manufacturing and strategic distribution, empowering our partners to grow their businesses.
+                To provide reliable manufactured products and dependable distributor supply through clear retail and wholesale channels that support long-term business growth.
               </p>
             </motion.div>
 
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 VALUES
               </h3>
               <p className="font-paragraph text-xs text-secondary-foreground/80 leading-relaxed font-medium">
-                Quality assurance, transparent operations, timely delivery, and long-term partnerships built on trust and mutual growth.
+                Quality assurance, transparent operations, channel clarity, timely delivery, and long-term partnerships built on trust.
               </p>
             </motion.div>
 
@@ -237,7 +237,7 @@ export default function AboutPage() {
                 COMMITMENT
               </h3>
               <p className="font-paragraph text-xs text-secondary-foreground/80 leading-relaxed font-medium">
-                Consistent supply, competitive pricing, and dedicated support to ensure our distributors and retailers succeed in their markets.
+                Consistent supply, trade-ready pricing, and dedicated support to ensure both retail buyers and wholesale partners can buy with confidence.
               </p>
             </motion.div>
           </div>
