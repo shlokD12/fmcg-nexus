@@ -14,7 +14,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
           <div>
             <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-10 h-10 sm:w-11 sm:h-11 object-contain flex-shrink-0" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-sm bg-secondary-foreground/8 border border-secondary-foreground/12 flex-shrink-0">
+                <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-9 h-9 sm:w-11 sm:h-11 object-contain" />
+              </div>
               <div>
                 <h2 className="font-heading text-base sm:text-lg text-secondary-foreground leading-none font-bold tracking-tight">
                   TRISHA
