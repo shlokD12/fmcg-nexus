@@ -10,7 +10,7 @@ import { useRetailCart } from '@/lib/retailCart';
 
 export default function ManufacturedProductsPage() {
   const categories = ['All', 'Herbal Tobacco', 'Sweet Supari'] as const;
-  const { addItem, itemCount } = useRetailCart();
+  const { items, addItem, updateQuantity } = useRetailCart();
 
   return (
     <div className="min-h-screen bg-background">
@@ -62,17 +62,9 @@ export default function ManufacturedProductsPage() {
               })}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="font-paragraph text-sm text-secondary-foreground/70">
-                Retail pricing is shown per pack for direct buyers.
-              </p>
-              <Link to="/cart">
-                <button className="px-5 py-3 bg-background text-foreground font-heading text-xs uppercase tracking-[0.08em] flex items-center gap-2.5">
-                  Cart {itemCount > 0 ? `(${itemCount})` : ''}
-                  <ShoppingCart className="w-4 h-4" />
-                </button>
-              </Link>
-            </div>
+            <p className="font-paragraph text-sm text-secondary-foreground/70">
+              Retail pricing is shown per pack for direct buyers.
+            </p>
           </div>
         </div>
       </section>
@@ -92,7 +84,11 @@ export default function ManufacturedProductsPage() {
 
       <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 pb-20">
         <div className="grid md:grid-cols-2 gap-8">
-          {RETAIL_CATALOG.map((product, index) => (
+          {RETAIL_CATALOG.map((product, index) => {
+            const cartItem = items.find((item) => item.productId === product.id);
+            const quantity = cartItem?.quantity ?? 0;
+
+            return (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
@@ -167,21 +163,41 @@ export default function ManufacturedProductsPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <button
-                      onClick={() => addItem(product, 1)}
-                      className="px-6 py-3 border border-manufacturer-accent text-manufacturer-accent font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors"
-                    >
-                      Add to Cart
-                      <ShoppingCart className="w-4 h-4" />
-                    </button>
+                    {quantity > 0 ? (
+                      <div className="flex items-center border border-manufacturer-accent">
+                        <button
+                          onClick={() => updateQuantity(product.id, quantity - 1)}
+                          className="px-4 py-3 text-manufacturer-accent hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors"
+                        >
+                          -
+                        </button>
+                        <span className="px-5 py-3 font-heading text-sm text-secondary-foreground min-w-14 text-center">
+                          {quantity}
+                        </span>
+                        <button
+                          onClick={() => updateQuantity(product.id, quantity + 1)}
+                          className="px-4 py-3 text-manufacturer-accent hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors"
+                        >
+                          +
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => addItem(product, 1)}
+                        className="px-6 py-3 border border-manufacturer-accent text-manufacturer-accent font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors"
+                      >
+                        Add to Cart
+                        <ShoppingCart className="w-4 h-4" />
+                      </button>
+                    )}
 
-                    <Link to="/payments">
+                    <Link to="/checkout">
                       <motion.button
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                         className="px-6 py-3 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
                       >
-                        Payment Details
+                        Checkout
                         <ShoppingBag className="w-4 h-4" />
                       </motion.button>
                     </Link>
@@ -189,7 +205,7 @@ export default function ManufacturedProductsPage() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          )})}
         </div>
       </section>
 

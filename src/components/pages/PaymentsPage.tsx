@@ -87,27 +87,27 @@ export default function PaymentsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background p-8 border-l-4 border-primary"
+              className="bg-background p-10 border-l-4 border-primary"
             >
-              <CreditCard className="w-11 h-11 text-primary mb-5" />
-              <h3 className="font-heading text-2xl text-foreground mb-3 font-black">
+              <CreditCard className="w-12 h-12 text-primary mb-6" />
+              <h3 className="font-heading text-3xl text-foreground mb-4">
                 Online Payment Gateway
               </h3>
-              <p className="font-paragraph text-xs text-foreground/70 mb-5 leading-relaxed font-medium">
+              <p className="font-paragraph text-sm text-foreground/70 mb-6 leading-relaxed">
                 Secure online payment processing through integrated payment gateway. Accept credit cards, debit cards, UPI, and net banking.
               </p>
-              <ul className="space-y-2.5">
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="font-paragraph text-xs text-foreground/80 font-medium">Instant payment confirmation</span>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="font-paragraph text-sm text-foreground/80">Instant payment confirmation</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="font-paragraph text-xs text-foreground/80 font-medium">SSL encrypted transactions</span>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="font-paragraph text-sm text-foreground/80">SSL encrypted transactions</span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="font-paragraph text-xs text-foreground/80 font-medium">Multiple payment methods</span>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="font-paragraph text-sm text-foreground/80">Multiple payment methods</span>
                 </li>
               </ul>
             </motion.div>

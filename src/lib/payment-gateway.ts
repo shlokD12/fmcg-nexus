@@ -157,7 +157,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Payment gateway initialized. Redirecting to secure checkout...',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}`
+      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=online_gateway`
     };
   }
 
@@ -175,7 +175,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Bank transfer details sent to your email. Please complete payment within 48 hours.',
-      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=bank_transfer`
+      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=bank_transfer&amount=${config.amount}`
     };
   }
 
@@ -193,7 +193,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Credit terms approved. Invoice will be generated for payment within 30 days.',
-      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=credit_terms`
+      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=credit_terms&amount=${config.amount}`
     };
   }
 
@@ -211,7 +211,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'UPI payment initiated. Please complete payment on your device.',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&method=upi`
+      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=upi`
     };
   }
 
@@ -229,7 +229,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Wallet payment processing. Please confirm on your wallet app.',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&method=wallet`
+      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=wallet`
     };
   }
 

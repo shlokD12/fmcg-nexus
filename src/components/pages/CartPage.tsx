@@ -33,7 +33,7 @@ export default function CartPage() {
           </h1>
 
           <p className="font-paragraph text-lg text-foreground/70 leading-relaxed">
-            Review your retail selection, adjust quantities, and proceed to the payment details page to complete checkout.
+            Review your retail selection, adjust quantities, and proceed to checkout to choose a payment method and generate the next payment step.
           </p>
         </motion.div>
       </section>
@@ -160,13 +160,13 @@ export default function CartPage() {
                 </div>
 
                 <p className="font-paragraph text-sm text-foreground/65 leading-relaxed mb-8">
-                  Final online payment, UPI, bank transfer, and gateway details are shown on the payments page.
+                  Continue to checkout to enter customer details, choose the payment method, and generate the temporary payment handoff.
                 </p>
 
                 <div className="space-y-4">
-                  <Link to="/payments">
+                  <Link to="/checkout">
                     <button className="w-full px-6 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center justify-center gap-2.5 font-bold">
-                      Proceed to Payments
+                      Proceed to Checkout
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </Link>

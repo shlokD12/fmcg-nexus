@@ -91,12 +91,6 @@ export default function Header() {
                     >
                       WHOLESALE PRODUCTS
                     </Link>
-                    <Link
-                      to="/cart"
-                      className="block px-5 py-3.5 font-paragraph text-[11px] text-foreground hover:bg-accent-dark hover:text-secondary-foreground transition-colors tracking-[0.04em] font-medium"
-                    >
-                      VIEW CART
-                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -10,6 +10,10 @@ import ProductsPage from '@/components/pages/ProductsPage';
 import ManufacturedProductsPage from '@/components/pages/ManufacturedProductsPage';
 import StockistProductsPage from '@/components/pages/StockistProductsPage';
 import CartPage from '@/components/pages/CartPage';
+import RetailCheckoutPage from '@/components/pages/RetailCheckoutPage';
+import PaymentGatewayPage from '@/components/pages/PaymentGatewayPage';
+import PaymentConfirmationPage from '@/components/pages/PaymentConfirmationPage';
+import TemporaryGatewayPayPage from '@/components/pages/TemporaryGatewayPayPage';
 import DistributorEnquiryPage from '@/components/pages/DistributorEnquiryPage';
 import PaymentsPage from '@/components/pages/PaymentsPage';
 import ContactPage from '@/components/pages/ContactPage';
@@ -86,6 +90,34 @@ const router = createBrowserRouter([
         element: <CartPage />,
         routeMetadata: {
           pageIdentifier: 'cart',
+        },
+      },
+      {
+        path: "checkout",
+        element: <RetailCheckoutPage />,
+        routeMetadata: {
+          pageIdentifier: 'checkout',
+        },
+      },
+      {
+        path: "payment/checkout",
+        element: <PaymentGatewayPage />,
+        routeMetadata: {
+          pageIdentifier: 'payment-checkout',
+        },
+      },
+      {
+        path: "payment/confirmation",
+        element: <PaymentConfirmationPage />,
+        routeMetadata: {
+          pageIdentifier: 'payment-confirmation',
+        },
+      },
+      {
+        path: "gateway/pay",
+        element: <TemporaryGatewayPayPage />,
+        routeMetadata: {
+          pageIdentifier: 'gateway-pay',
         },
       },
       {

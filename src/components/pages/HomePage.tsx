@@ -146,7 +146,7 @@ export default function HomePage() {
               className="flex flex-wrap gap-6 items-center"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-10 py-4.5 bg-primary text-primary-foreground font-heading text-sm uppercase tracking-[0.08em] overflow-hidden border border-primary hover:border-secondary-foreground transition-all duration-300 font-bold">
+                <button className="group relative px-12 py-5 bg-primary text-primary-foreground font-heading text-base uppercase tracking-[0.08em] overflow-hidden border border-primary hover:border-secondary-foreground transition-all duration-300 font-bold shadow-lg shadow-primary/15">
                   <span className="relative z-10 flex items-center gap-2.5 font-bold">
                     Become a Distributor <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -157,7 +157,7 @@ export default function HomePage() {
                 </button>
               </Link>
               <Link to="/products">
-                <button className="px-10 py-4.5 border border-secondary-foreground text-secondary-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
+                <button className="px-12 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base uppercase tracking-[0.08em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
                   Explore Products
                 </button>
               </Link>
