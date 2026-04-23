@@ -46,14 +46,14 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block px-5 py-1.5 bg-primary/10 border border-primary mb-6">
-            <span className="font-paragraph text-xs text-primary uppercase tracking-[0.08em] font-medium">
+            <span className="font-paragraph text-xs text-primary uppercase tracking-[0.04em] font-medium">
               Get In Touch
             </span>
           </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-20">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-16">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <motion.div
@@ -285,8 +285,8 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-20">
+        <div className="max-w-[88rem] mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +322,7 @@ export default function ContactPage() {
       </section>
 
       {/* Quick Links */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[88rem] mx-auto px-6 lg:px-12 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

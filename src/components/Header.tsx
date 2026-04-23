@@ -11,29 +11,29 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="w-full bg-background border-b border-foreground/6 sticky top-0 z-50 backdrop-blur-md">
-      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-3.5">
+    <header className="w-full bg-background/95 border-b border-foreground/6 sticky top-0 z-50 backdrop-blur-md">
+      <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-11 h-11 bg-primary flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary flex items-center justify-center">
               <span className="font-heading text-lg text-primary-foreground font-bold">T</span>
             </div>
             <div>
               <h1 className="font-heading text-base text-foreground leading-tight font-bold tracking-tight">
                 TRISHA
               </h1>
-              <p className="font-paragraph text-xs text-foreground/55 tracking-[0.08em] font-medium">
+              <p className="font-paragraph text-xs text-foreground/55 tracking-[0.04em] font-medium">
                 AGENCY
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
             <Link
               to="/"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -42,7 +42,7 @@ export default function Header() {
             
             <Link
               to="/about"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/about') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -51,7 +51,7 @@ export default function Header() {
             
             <Link
               to="/wholesale"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/wholesale') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -60,7 +60,7 @@ export default function Header() {
             
             <Link
               to="/retail"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/retail') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -73,7 +73,7 @@ export default function Header() {
               onMouseEnter={() => setIsProductsOpen(true)}
               onMouseLeave={() => setIsProductsOpen(false)}
             >
-              <button className="font-paragraph text-xs tracking-[0.08em] text-foreground hover:text-primary transition-colors flex items-center gap-1.5 font-medium">
+              <button className="font-paragraph text-[11px] tracking-[0.04em] text-foreground hover:text-primary transition-colors flex items-center gap-1.5 font-medium">
                 PRODUCTS
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
@@ -85,17 +85,17 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1.5 w-56 bg-background border border-foreground/10"
+                    className="absolute top-full left-0 mt-1.5 w-56 bg-background border border-foreground/10 shadow-xl"
                   >
                     <Link
                       to="/products/manufactured"
-                      className="block px-5 py-3.5 font-paragraph text-xs text-foreground hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors border-b border-foreground/10 tracking-[0.08em] font-medium"
+                      className="block px-5 py-3.5 font-paragraph text-[11px] text-foreground hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors border-b border-foreground/10 tracking-[0.04em] font-medium"
                     >
                       MANUFACTURED PRODUCTS
                     </Link>
                     <Link
                       to="/products/stockist"
-                      className="block px-5 py-3.5 font-paragraph text-xs text-foreground hover:bg-stockist-accent hover:text-stockist-accent-foreground transition-colors tracking-[0.08em] font-medium"
+                      className="block px-5 py-3.5 font-paragraph text-[11px] text-foreground hover:bg-stockist-accent hover:text-stockist-accent-foreground transition-colors tracking-[0.04em] font-medium"
                     >
                       STOCKIST PRODUCTS
                     </Link>
@@ -106,7 +106,7 @@ export default function Header() {
             
             <Link
               to="/distributor-enquiry"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/distributor-enquiry') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -115,7 +115,7 @@ export default function Header() {
             
             <Link
               to="/payments"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/payments') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -124,7 +124,7 @@ export default function Header() {
             
             <Link
               to="/contact"
-              className={`font-paragraph text-xs tracking-[0.08em] transition-colors font-medium ${
+              className={`font-paragraph text-[11px] tracking-[0.04em] transition-colors font-medium ${
                 isActive('/contact') ? 'text-primary' : 'text-foreground hover:text-primary'
               }`}
             >
@@ -137,7 +137,7 @@ export default function Header() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="px-6 py-2.5 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-[0.12em] font-bold transition-all"
+              className="px-5 py-2.5 bg-primary text-primary-foreground font-heading text-[11px] uppercase tracking-[0.08em] font-bold transition-all"
             >
               Get Started
             </motion.button>
@@ -166,7 +166,7 @@ export default function Header() {
                 <Link
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -176,7 +176,7 @@ export default function Header() {
                 <Link
                   to="/about"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/about') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -186,7 +186,7 @@ export default function Header() {
                 <Link
                   to="/wholesale"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/wholesale') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -196,7 +196,7 @@ export default function Header() {
                 <Link
                   to="/retail"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/retail') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -204,18 +204,18 @@ export default function Header() {
                 </Link>
 
                 <div className="pl-3.5 border-l-2 border-primary">
-                  <p className="font-paragraph text-xs text-foreground/55 mb-2 tracking-[0.08em] font-medium">PRODUCTS</p>
+                  <p className="font-paragraph text-xs text-foreground/55 mb-2 tracking-[0.04em] font-medium">PRODUCTS</p>
                   <Link
                     to="/products/manufactured"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block font-paragraph text-xs tracking-[0.08em] text-foreground mb-2 font-medium"
+                    className="block font-paragraph text-xs tracking-[0.04em] text-foreground mb-2 font-medium"
                   >
                     MANUFACTURED PRODUCTS
                   </Link>
                   <Link
                     to="/products/stockist"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block font-paragraph text-xs tracking-[0.08em] text-foreground font-medium"
+                    className="block font-paragraph text-xs tracking-[0.04em] text-foreground font-medium"
                   >
                     STOCKIST PRODUCTS
                   </Link>
@@ -224,7 +224,7 @@ export default function Header() {
                 <Link
                   to="/distributor-enquiry"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/distributor-enquiry') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -234,7 +234,7 @@ export default function Header() {
                 <Link
                   to="/payments"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/payments') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -244,7 +244,7 @@ export default function Header() {
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`font-paragraph text-xs tracking-[0.08em] font-medium ${
+                  className={`font-paragraph text-xs tracking-[0.04em] font-medium ${
                     isActive('/contact') ? 'text-primary' : 'text-foreground'
                   }`}
                 >
@@ -252,7 +252,7 @@ export default function Header() {
                 </Link>
 
                 <Link to="/distributor-enquiry" onClick={() => setIsMenuOpen(false)}>
-                  <button className="w-full px-6 py-2.5 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-[0.12em] font-bold mt-3">
+                  <button className="w-full px-6 py-2.5 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-[0.08em] font-bold mt-3">
                     Get Started
                   </button>
                 </Link>

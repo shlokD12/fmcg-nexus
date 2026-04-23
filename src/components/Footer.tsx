@@ -4,19 +4,18 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="w-full bg-accent-dark text-secondary-foreground border-t border-secondary/15">
-      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-14 mb-14">
-          {/* Company Info */}
+      <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-11 h-11 bg-primary flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary flex items-center justify-center">
                 <span className="font-heading text-lg text-primary-foreground font-bold">T</span>
               </div>
               <div>
                 <h2 className="font-heading text-base text-secondary-foreground leading-tight font-bold tracking-tight">
                   TRISHA
                 </h2>
-                <p className="font-paragraph text-xs text-secondary-foreground/55 tracking-[0.08em] font-medium">
+                <p className="font-paragraph text-xs text-secondary-foreground/55 tracking-[0.04em] font-medium">
                   AGENCY
                 </p>
               </div>
@@ -38,7 +37,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="font-heading text-lg text-secondary-foreground mb-6 border-b border-primary pb-2 inline-block font-bold tracking-tight">
               QUICK LINKS
@@ -82,7 +80,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products */}
           <div>
             <h3 className="font-heading text-lg text-secondary-foreground mb-6 border-b border-primary pb-2 inline-block font-bold tracking-tight">
               PRODUCTS
@@ -116,7 +113,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="font-heading text-lg text-secondary-foreground mb-6 border-b border-primary pb-2 inline-block font-bold tracking-tight">
               CONTACT
@@ -155,11 +151,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-secondary-foreground/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-paragraph text-xs text-secondary-foreground/60 font-medium">
-              © 2026 Trisha Agency. All rights reserved.
+              Copyright 2026 Trisha Agency. All rights reserved.
             </p>
             <div className="flex items-center gap-8">
               <Link to="/contact" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">

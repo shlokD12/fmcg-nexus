@@ -85,7 +85,7 @@ export default function HomePage() {
       `}</style>
 
       {/* 1. HERO SECTION - Cinematic, Layered Industrial Statement */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[1000px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-24 pb-12">
+      <section ref={heroRef} className="relative w-full min-h-[880px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-20 pb-10">
         {/* Multi-layered background with depth */}
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
@@ -101,12 +101,12 @@ export default function HomePage() {
           <div className="absolute top-1/2 -left-60 w-[800px] h-[800px] bg-stockist-accent/6 rounded-full blur-3xl" />
         </motion.div>
 
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div style={{ opacity: opacityText }} className="max-w-6xl">
+        <div className="relative z-10 w-full max-w-[96rem] mx-auto px-5 lg:px-10">
+          <motion.div style={{ opacity: opacityText }} className="max-w-5xl">
             {/* Premium badge - refined */}
             <motion.div 
               initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
-              className="flex items-center gap-3 mb-16 overflow-hidden"
+              className="flex items-center gap-3 mb-12 overflow-hidden"
             >
               <motion.div 
                 initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
@@ -114,7 +114,7 @@ export default function HomePage() {
               />
               <motion.span 
                 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.12em] uppercase font-bold"
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.08em] uppercase font-bold"
               >
                 Industrial FMCG Distribution
               </motion.span>
@@ -123,7 +123,7 @@ export default function HomePage() {
             {/* Main headline - ultra-bold, cinematic */}
             <motion.h1 
               initial={{ opacity: 0, y: 120 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.3, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-heading text-[14vw] leading-[0.75] text-secondary-foreground tracking-tighter mb-12 font-black"
+              className="font-heading text-[clamp(4.5rem,12vw,11rem)] leading-[0.82] text-secondary-foreground tracking-[-0.04em] mb-10 font-black"
             >
               TRISHA<br />
               <span className="bg-gradient-to-r from-primary via-manufacturer-accent to-primary bg-clip-text text-transparent">AGENCY</span>
@@ -132,12 +132,12 @@ export default function HomePage() {
             {/* Subheading - editorial, premium */}
             <motion.div
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}
-              className="max-w-5xl mb-20"
+              className="max-w-4xl mb-16"
             >
-              <p className="font-heading text-xl md:text-3xl text-secondary-foreground/95 leading-tight font-bold mb-6">
+              <p className="font-heading text-xl md:text-[2rem] text-secondary-foreground/95 leading-[1.15] font-bold mb-5">
                 Manufacturing Excellence. Strategic Distribution. Uncompromising Quality.
               </p>
-              <p className="font-paragraph text-base md:text-lg text-secondary-foreground/75 leading-relaxed max-w-3xl">
+              <p className="font-paragraph text-base md:text-lg text-secondary-foreground/75 leading-[1.7] max-w-3xl">
                 Powering India's FMCG supply chain with 500+ manufactured products, 1000+ stocked brands, and a trusted network of 200+ distributors across 15 states.
               </p>
             </motion.div>
@@ -148,7 +148,7 @@ export default function HomePage() {
               className="flex flex-wrap gap-6 items-center"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-12 py-5 bg-primary text-primary-foreground font-heading text-sm uppercase tracking-[0.12em] overflow-hidden border border-primary hover:border-secondary-foreground transition-all duration-300 font-bold">
+                <button className="group relative px-10 py-4.5 bg-primary text-primary-foreground font-heading text-sm uppercase tracking-[0.08em] overflow-hidden border border-primary hover:border-secondary-foreground transition-all duration-300 font-bold">
                   <span className="relative z-10 flex items-center gap-2.5 font-bold">
                     Become a Distributor <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -159,7 +159,7 @@ export default function HomePage() {
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-12 py-5 border border-secondary-foreground text-secondary-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
+                <button className="px-10 py-4.5 border border-secondary-foreground text-secondary-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
                   Explore Products
                 </button>
               </Link>
@@ -171,10 +171,10 @@ export default function HomePage() {
         <motion.div 
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.5, repeat: Infinity }}
-          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12 flex justify-center"
+          className="relative z-10 w-full max-w-[96rem] mx-auto px-5 lg:px-10 flex justify-center"
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="font-paragraph text-xs text-secondary-foreground/50 uppercase tracking-[0.15em]">Scroll to explore</span>
+            <span className="font-paragraph text-xs text-secondary-foreground/50 uppercase tracking-[0.08em]">Scroll to explore</span>
             <div className="w-5 h-10 border-1.5 border-secondary-foreground/30 rounded-full flex justify-center">
               <motion.div className="w-1 h-2 bg-secondary-foreground/50 rounded-full mt-2" />
             </div>
@@ -184,7 +184,7 @@ export default function HomePage() {
 
       {/* 2. MARQUEE - Editorial, Cinematic */}
       <div className="w-full bg-gradient-to-r from-primary via-manufacturer-accent to-primary py-6 overflow-hidden border-y-2 border-secondary">
-        <div className="marquee-container font-heading text-2xl md:text-3xl text-primary-foreground uppercase tracking-[0.12em] whitespace-nowrap font-black">
+        <div className="marquee-container font-heading text-2xl md:text-3xl text-primary-foreground uppercase tracking-[0.08em] whitespace-nowrap font-black">
           <span className="mx-16">MANUFACTURING EXCELLENCE</span> <span className="mx-16">•</span>
           <span className="mx-16">STRATEGIC DISTRIBUTION</span> <span className="mx-16">•</span>
           <span className="mx-16">NATIONAL REACH</span> <span className="mx-16">•</span>
@@ -197,8 +197,8 @@ export default function HomePage() {
       </div>
 
       {/* 3. CAPABILITIES - Large Confident Blocks */}
-      <section className="w-full bg-background py-28 lg:py-36 border-b border-foreground/5">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section className="w-full bg-background py-24 lg:py-28 border-b border-foreground/5">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-20">
             <h2 className="font-heading text-6xl lg:text-8xl text-foreground uppercase leading-tight font-black">
               Why We<br />
@@ -232,13 +232,13 @@ export default function HomePage() {
       </section>
 
       {/* 4. STATS & NETWORK - Full Width Impact with Premium Spacing */}
-      <section className="w-full bg-accent-dark py-28 lg:py-36 border-y-2 border-primary relative overflow-hidden">
+      <section className="w-full bg-accent-dark py-24 lg:py-28 border-y-2 border-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-8">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-manufacturer-accent rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10 relative z-10">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
             <h2 className="font-heading text-6xl lg:text-8xl text-secondary-foreground uppercase leading-tight font-black mb-6">
               By The Numbers
@@ -271,7 +271,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="w-full bg-accent-dark border-y border-secondary relative overflow-hidden">
-        <div className="max-w-[120rem] mx-auto">
+        <div className="max-w-[96rem] mx-auto">
           <div className="grid lg:grid-cols-2 min-h-[85vh]">
             
             {/* Wholesale Division - Large, Confident */}
@@ -347,8 +347,8 @@ export default function HomePage() {
       </section>
 
       {/* 5. CATEGORIES - Large Editorial Showcase */}
-      <section className="w-full bg-background py-28 lg:py-36">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section className="w-full bg-background py-24 lg:py-28">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-10">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -379,7 +379,7 @@ export default function HomePage() {
                 
                 {/* Division Badge */}
                 <div className="absolute top-8 right-8 z-20">
-                  <span className={`inline-block px-4 py-2 font-paragraph text-xs uppercase tracking-[0.15em] font-bold ${cat.textAccent} bg-accent-dark/85 border-2 border-current`}>
+                  <span className={`inline-block px-4 py-2 font-paragraph text-xs uppercase tracking-[0.08em] font-bold ${cat.textAccent} bg-accent-dark/85 border-2 border-current`}>
                     {cat.division}
                   </span>
                 </div>
@@ -403,9 +403,9 @@ export default function HomePage() {
       </section>
 
       {/* 6. WHY CHOOSE US - Premium Trust Section */}
-      <section className="w-full bg-accent-dark py-28 lg:py-36 border-t border-secondary relative">
+      <section className="w-full bg-accent-dark py-24 lg:py-28 border-t border-secondary relative">
         
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10 relative z-10">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
             <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground uppercase font-black">
               Why Choose<br /><span className="text-primary">Trisha Agency</span>
@@ -434,8 +434,8 @@ export default function HomePage() {
       </section>
 
       {/* 7. BUSINESS SEGMENTS - Confident, Editorial Layout */}
-      <section className="w-full bg-background py-28 lg:py-36 border-t border-foreground/5">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section className="w-full bg-background py-24 lg:py-28 border-t border-foreground/5">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
             <h2 className="font-heading text-5xl lg:text-7xl text-foreground uppercase font-black">
               Our<br /><span className="text-primary">Business Segments</span>
@@ -561,8 +561,8 @@ export default function HomePage() {
       </section>
 
       {/* 8. QUICK ACTION SECTION - Premium CTA Grid */}
-      <section className="w-full bg-foreground py-20 lg:py-28 relative overflow-hidden">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section className="w-full bg-foreground py-20 lg:py-24 relative overflow-hidden">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <div className="grid md:grid-cols-4 gap-6">
             {/* Distributor Enquiry CTA */}
             <motion.div 
@@ -636,13 +636,13 @@ export default function HomePage() {
       </section>
 
       {/* 9. FINAL CTA - Premium, Cinematic Closing */}
-      <section className="w-full bg-primary py-28 lg:py-36 relative overflow-hidden">
+      <section className="w-full bg-primary py-24 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-secondary-foreground rounded-full blur-3xl"></div>
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary-foreground rounded-full blur-3xl"></div>
         </div>
         
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10 relative z-10 text-center">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h2 className="font-heading text-6xl lg:text-8xl text-primary-foreground mb-12 uppercase leading-none font-black">
               Ready to Partner<br />with Trisha Agency?

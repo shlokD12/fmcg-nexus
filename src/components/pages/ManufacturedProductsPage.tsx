@@ -37,7 +37,7 @@ export default function ManufacturedProductsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function ManufacturedProductsPage() {
 
       {/* Filter Section */}
       <section className="w-full bg-accent-dark py-8">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <Filter className="w-5 h-5 text-secondary-foreground" />
@@ -88,7 +88,7 @@ export default function ManufacturedProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <div className="min-h-[600px]">
           {isLoading ? (
             <div className="flex items-center justify-center py-24">
@@ -182,8 +182,8 @@ export default function ManufacturedProductsPage() {
       </section>
 
       {/* Quality Assurance */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section className="w-full bg-accent-dark py-20">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +241,7 @@ export default function ManufacturedProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

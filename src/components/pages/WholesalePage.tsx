@@ -53,14 +53,14 @@ export default function WholesalePage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block px-5 py-1.5 bg-manufacturer-accent/10 border border-manufacturer-accent mb-6">
-            <span className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.08em] font-medium">
+            <span className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.04em] font-medium">
               Wholesale Division
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function WholesalePage() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-9 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.12em] flex items-center gap-2.5 font-bold"
+                className="px-8 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
               >
                 REQUEST QUOTE
                 <ArrowRight className="w-4 h-4" />
@@ -90,7 +90,7 @@ export default function WholesalePage() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-9 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-foreground hover:text-background transition-colors font-bold"
+                className="px-8 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
                 VIEW PRODUCTS
               </motion.button>

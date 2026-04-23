@@ -11,14 +11,14 @@ export default function RetailPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block px-5 py-1.5 bg-stockist-accent/10 border border-stockist-accent mb-6">
-            <span className="font-paragraph text-xs text-stockist-accent-foreground uppercase tracking-[0.08em] font-medium">
+            <span className="font-paragraph text-xs text-stockist-accent-foreground uppercase tracking-[0.04em] font-medium">
               Retail Division
             </span>
           </div>
@@ -37,7 +37,7 @@ export default function RetailPage() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-9 py-4 bg-stockist-accent text-stockist-accent-foreground font-heading text-sm uppercase tracking-[0.12em] flex items-center gap-2.5 font-bold"
+                className="px-8 py-4 bg-stockist-accent text-stockist-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
               >
                 BROWSE PRODUCTS
                 <ArrowRight className="w-4 h-4" />
@@ -48,7 +48,7 @@ export default function RetailPage() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-9 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-foreground hover:text-background transition-colors font-bold"
+                className="px-8 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
                 PAYMENT OPTIONS
               </motion.button>
