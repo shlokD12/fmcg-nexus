@@ -51,7 +51,7 @@ export default function DistributorEnquiryPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ export default function DistributorEnquiryPage() {
 
       {/* Benefits Section */}
       <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function DistributorEnquiryPage() {
       </section>
 
       {/* Enquiry Form */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

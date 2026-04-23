@@ -85,16 +85,16 @@ export default function HomePage() {
       `}</style>
 
       {/* 1. HERO SECTION - Cinematic & Structural */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] bg-accent-dark overflow-hidden flex flex-col justify-end pb-24">
+      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[800px] bg-gradient-to-br from-accent-dark via-accent-dark to-secondary overflow-hidden flex flex-col justify-end pb-24">
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/92c2a1_4579c87bb8b34eda9573438f27ed1c5f~mv2.png?originWidth=1920&originHeight=1024"
             alt="Trisha Agency Industrial Facility"
             width={1920}
-            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/80 to-transparent" />
-          <div className="absolute inset-0 architectural-grid-dark" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent-dark via-accent-dark/70 to-transparent" />
+          <div className="absolute inset-0 architectural-grid-dark opacity-20" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
@@ -102,29 +102,29 @@ export default function HomePage() {
             <div className="flex items-center gap-4 mb-8 overflow-hidden">
               <motion.div 
                 initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.2 }}
-                className="h-[2px] w-16 bg-primary origin-left"
+                className="h-1 w-16 bg-gradient-to-r from-primary to-manufacturer-accent origin-left"
               />
               <motion.span 
                 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-paragraph text-sm md:text-base text-primary tracking-[0.2em] uppercase font-bold"
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.3em] uppercase font-bold"
               >
-                Manufacturer & Stockist
+                Premium Distribution Network
               </motion.span>
             </div>
 
             <motion.h1 
               initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="font-heading text-[12vw] leading-[0.85] text-secondary-foreground tracking-tighter mb-6"
+              className="font-heading text-[11vw] leading-[0.9] text-secondary-foreground tracking-tighter mb-6"
             >
               TRISHA<br />
-              <span className="text-primary">AGENCY</span>
+              <span className="bg-gradient-to-r from-primary to-manufacturer-accent bg-clip-text text-transparent">AGENCY</span>
             </motion.h1>
 
             <motion.p 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
-              className="font-paragraph text-lg md:text-xl text-secondary-foreground/70 max-w-2xl mb-12 border-l-2 border-secondary-foreground/20 pl-6"
+              className="font-paragraph text-lg md:text-xl text-secondary-foreground/80 max-w-2xl mb-12 border-l-2 border-primary/40 pl-6"
             >
-              Your trusted partner in FMCG and mouth-freshener distribution. Manufacturing quality products and stocking premium brands for wholesale and retail markets across India.
+              Industrial-grade FMCG distribution. Manufacturing excellence meets strategic wholesale reach across India.
             </motion.p>
 
             <motion.div 
@@ -132,7 +132,7 @@ export default function HomePage() {
               className="flex flex-wrap gap-4"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-8 py-5 bg-primary text-primary-foreground font-heading text-lg uppercase tracking-wider overflow-hidden">
+                <button className="group relative px-8 py-5 bg-primary text-primary-foreground font-heading text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground">
                   <span className="relative z-10 flex items-center gap-3">
                     Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -143,7 +143,7 @@ export default function HomePage() {
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-8 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-colors duration-300">
+                <button className="px-8 py-5 border-2 border-secondary-foreground text-secondary-foreground font-heading text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300">
                   View Products
                 </button>
               </Link>

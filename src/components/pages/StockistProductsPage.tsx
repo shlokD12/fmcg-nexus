@@ -37,7 +37,7 @@ export default function StockistProductsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function StockistProductsPage() {
 
       {/* Filter Section */}
       <section className="w-full bg-accent-dark py-8">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <Filter className="w-5 h-5 text-secondary-foreground" />
@@ -88,7 +88,7 @@ export default function StockistProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <div className="min-h-[600px]">
           {isLoading ? (
             <div className="flex items-center justify-center py-24">
@@ -185,7 +185,7 @@ export default function StockistProductsPage() {
 
       {/* Bulk Availability */}
       <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -246,7 +246,7 @@ export default function StockistProductsPage() {
       </section>
 
       {/* Brands We Stock */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -282,7 +282,7 @@ export default function StockistProductsPage() {
 
       {/* CTA Section */}
       <section className="w-full bg-stockist-accent py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

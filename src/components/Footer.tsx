@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-accent-dark text-secondary-foreground">
-      <div className="max-w-[100rem] mx-auto px-8 lg:px-16 py-16">
+    <footer className="w-full bg-accent-dark text-secondary-foreground border-t-2 border-secondary/20">
+      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
