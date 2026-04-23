@@ -91,13 +91,13 @@ export default function Header() {
                       to="/products/manufactured"
                       className="block px-5 py-3.5 font-paragraph text-[11px] text-foreground hover:bg-manufacturer-accent hover:text-manufacturer-accent-foreground transition-colors border-b border-foreground/10 tracking-[0.04em] font-medium"
                     >
-                      MANUFACTURED PRODUCTS
+                      RETAIL PRODUCTS
                     </Link>
                     <Link
                       to="/products/stockist"
                       className="block px-5 py-3.5 font-paragraph text-[11px] text-foreground hover:bg-stockist-accent hover:text-stockist-accent-foreground transition-colors tracking-[0.04em] font-medium"
                     >
-                      STOCKIST PRODUCTS
+                      WHOLESALE PRODUCTS
                     </Link>
                   </motion.div>
                 )}
@@ -210,14 +210,14 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className="block font-paragraph text-xs tracking-[0.04em] text-foreground mb-2 font-medium"
                   >
-                    MANUFACTURED PRODUCTS
+                    RETAIL PRODUCTS
                   </Link>
                   <Link
                     to="/products/stockist"
                     onClick={() => setIsMenuOpen(false)}
                     className="block font-paragraph text-xs tracking-[0.04em] text-foreground font-medium"
                   >
-                    STOCKIST PRODUCTS
+                    WHOLESALE PRODUCTS
                   </Link>
                 </div>
                 

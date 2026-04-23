@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Package, CreditCard, Truck, Shield, ArrowRight, CheckCircle } from 'lucide-react';
-import { Image } from '@/components/ui/image';
+import { ArrowRight, CreditCard, Factory, Package, Shield, Truck } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -9,57 +8,56 @@ export default function RetailPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Hero Section */}
+
       <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-4xl"
         >
-          <div className="inline-block px-5 py-1.5 bg-stockist-accent/10 border border-stockist-accent mb-6">
-            <span className="font-paragraph text-xs text-stockist-accent-foreground uppercase tracking-[0.04em] font-medium">
+          <div className="inline-block px-5 py-1.5 bg-manufacturer-accent/10 border border-manufacturer-accent mb-6">
+            <span className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.04em] font-medium">
               Retail Division
             </span>
           </div>
-          
+
           <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             DIRECT RETAIL
-            <span className="text-stockist-accent block">PRODUCT ACCESS</span>
+            <span className="text-manufacturer-accent block">BUYING</span>
           </h1>
-          
+
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed mb-10 font-medium">
-            Browse our complete catalog of FMCG and mouth-freshener products. Easy ordering, secure payments, and fast delivery for retailers and shop owners.
+            Retail buyers can order only Trisha Agency’s own manufactured product lines: herbal tobacco and sweet supari. This channel is meant for smaller pack quantities priced in INR.
           </p>
-          
+
           <div className="flex flex-wrap gap-5">
-            <Link to="/products/stockist">
+            <Link to="/products/manufactured">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-8 py-4 bg-stockist-accent text-stockist-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
+                className="px-8 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
               >
-                BROWSE PRODUCTS
+                Browse Retail Products
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
             </Link>
-            
+
             <Link to="/payments">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className="px-8 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
-                PAYMENT OPTIONS
+                Payment Options
               </motion.button>
             </Link>
           </div>
         </motion.div>
       </section>
 
-      {/* How It Works */}
       <section className="w-full bg-accent-dark py-20">
-        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,80 +67,37 @@ export default function RetailPage() {
           >
             <h2 className="font-heading text-4xl lg:text-6xl text-secondary-foreground mb-4 font-black">
               RETAIL
-              <span className="text-stockist-accent block">ORDER PROCESS</span>
+              <span className="text-manufacturer-accent block">ORDER PROCESS</span>
             </h2>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-4 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="w-18 h-18 bg-stockist-accent flex items-center justify-center mx-auto mb-5">
-                <span className="font-heading text-2xl text-stockist-accent-foreground font-black">1</span>
-              </div>
-              <h3 className="font-heading text-xl text-secondary-foreground mb-3 font-black">BROWSE</h3>
-              <p className="font-paragraph text-xs text-secondary-foreground/70 leading-relaxed font-medium">
-                Explore our product catalog and select items you need
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <span className="font-heading text-3xl text-stockist-accent-foreground">2</span>
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">ENQUIRE</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Contact us with your product list and quantity requirements
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <span className="font-heading text-3xl text-stockist-accent-foreground">3</span>
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">PAY</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Complete payment through our secure gateway or bank transfer
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <span className="font-heading text-3xl text-stockist-accent-foreground">4</span>
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">RECEIVE</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Get your products delivered to your location
-              </p>
-            </motion.div>
+            {[
+              ['1', 'CHOOSE', 'Select herbal tobacco or sweet supari in the retail catalog.'],
+              ['2', 'QUANTITY', 'Pick the pack size and quantity that suits your direct purchase requirement.'],
+              ['3', 'PAY', 'Proceed with INR-based payment through the listed payment methods.'],
+              ['4', 'DELIVERY', 'Receive your order through the scheduled dispatch and delivery process.'],
+            ].map(([step, title, desc], index) => (
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 bg-manufacturer-accent flex items-center justify-center mx-auto mb-6">
+                  <span className="font-heading text-3xl text-manufacturer-accent-foreground">{step}</span>
+                </div>
+                <h3 className="font-heading text-2xl text-secondary-foreground mb-4">{title}</h3>
+                <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">{desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Product Categories */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,184 +107,41 @@ export default function RetailPage() {
         >
           <h2 className="font-heading text-5xl lg:text-7xl text-foreground mb-6">
             RETAIL
-            <span className="text-stockist-accent block">PRODUCT RANGE</span>
+            <span className="text-manufacturer-accent block">PRODUCT LINES</span>
           </h2>
         </motion.div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_4a16cb1a731946a89848cddc13568826~mv2.png?originWidth=384&originHeight=256"
-                alt="Manufactured Products"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-8 border-t-4 border-manufacturer-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                MANUFACTURED PRODUCTS
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Our in-house herbal tobacco and sweet supari products
-              </p>
-              <Link to="/products/manufactured" className="font-paragraph text-sm text-manufacturer-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_f5f42bc912a54b64b55f832942353738~mv2.png?originWidth=384&originHeight=256"
-                alt="Pan Masala"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-accent-dark p-10 border-t-4 border-manufacturer-accent">
+            <div className="w-16 h-16 bg-manufacturer-accent/10 border border-manufacturer-accent flex items-center justify-center mb-6">
+              <Factory className="w-8 h-8 text-manufacturer-accent" />
             </div>
-            <div className="p-8 border-t-4 border-stockist-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                PAN MASALA
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Premium branded pan masala variants
-              </p>
-              <Link to="/products/stockist" className="font-paragraph text-sm text-stockist-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
+            <h3 className="font-heading text-3xl text-secondary-foreground mb-4">Herbal Tobacco</h3>
+            <p className="font-paragraph text-base text-secondary-foreground/75 leading-relaxed mb-6">
+              Trisha Agency’s own in-house manufactured herbal tobacco line for direct retail buying in pack quantities.
+            </p>
+            <Link to="/products/manufactured" className="font-paragraph text-sm text-manufacturer-accent hover:underline flex items-center gap-2">
+              View Retail Packs <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_bdc1fa6fd11a4759a86dfe9bc1eb0f71~mv2.png?originWidth=384&originHeight=256"
-                alt="Mouth Fresheners"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+          <div className="bg-accent-dark p-10 border-t-4 border-manufacturer-accent">
+            <div className="w-16 h-16 bg-manufacturer-accent/10 border border-manufacturer-accent flex items-center justify-center mb-6">
+              <Package className="w-8 h-8 text-manufacturer-accent" />
             </div>
-            <div className="p-8 border-t-4 border-stockist-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                MOUTH FRESHENERS
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Baba elaichi and premium freshener brands
-              </p>
-              <Link to="/products/stockist" className="font-paragraph text-sm text-stockist-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_f88dace8cf6645238d6d8ea45e02c21f~mv2.png?originWidth=384&originHeight=256"
-                alt="FMCG Products"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-8 border-t-4 border-stockist-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                FMCG PRODUCTS
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Fast-moving consumer goods
-              </p>
-              <Link to="/products/stockist" className="font-paragraph text-sm text-stockist-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_31ac4088f90348fa98e9ab1f82cc0a44~mv2.png?originWidth=384&originHeight=256"
-                alt="Trade Products"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-8 border-t-4 border-stockist-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                TRADE PRODUCTS
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Bulk trade items for retail shops
-              </p>
-              <Link to="/products/stockist" className="font-paragraph text-sm text-stockist-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="group relative overflow-hidden bg-accent-dark"
-          >
-            <div className="aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://static.wixstatic.com/media/92c2a1_914357bac1c64d679fc3eb8ccb242414~mv2.png?originWidth=384&originHeight=256"
-                alt="Branded Products"
-                width={400}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-8 border-t-4 border-stockist-accent">
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                BRANDED PRODUCTS
-              </h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 mb-6">
-                Trusted brands from major companies
-              </p>
-              <Link to="/products/stockist" className="font-paragraph text-sm text-stockist-accent hover:underline flex items-center gap-2">
-                VIEW PRODUCTS <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
+            <h3 className="font-heading text-3xl text-secondary-foreground mb-4">Sweet Supari</h3>
+            <p className="font-paragraph text-base text-secondary-foreground/75 leading-relaxed mb-6">
+              Trisha Agency sweet supari manufactured for pack-level retail purchase rather than distributor bulk trading.
+            </p>
+            <Link to="/products/manufactured" className="font-paragraph text-sm text-manufacturer-accent hover:underline flex items-center gap-2">
+              View Retail Packs <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Retail Benefits */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-20">
+        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -339,94 +151,51 @@ export default function RetailPage() {
           >
             <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground mb-6">
               RETAIL
-              <span className="text-stockist-accent block">ADVANTAGES</span>
+              <span className="text-manufacturer-accent block">ADVANTAGES</span>
             </h2>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent/10 border-2 border-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <Package className="w-10 h-10 text-stockist-accent" />
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">No Minimum Order</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Order any quantity based on your needs
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent/10 border-2 border-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <CreditCard className="w-10 h-10 text-stockist-accent" />
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">Secure Payments</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Multiple payment options with gateway integration
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent/10 border-2 border-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <Truck className="w-10 h-10 text-stockist-accent" />
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">Fast Delivery</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Quick dispatch and tracking support
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="w-20 h-20 bg-stockist-accent/10 border-2 border-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-10 h-10 text-stockist-accent" />
-              </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">Quality Products</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
-                Authentic products with proper certifications
-              </p>
-            </motion.div>
+            {[
+              [Package, 'Pack-Level Buying', 'Buy single packs or small direct quantities.'],
+              [CreditCard, 'INR Pricing', 'Retail prices are shown in Indian Rupees.'],
+              [Truck, 'Direct Delivery', 'Retail orders move through the normal delivery flow.'],
+              [Shield, 'Own Manufactured Products', 'Only Trisha Agency-made lines appear in retail.'],
+            ].map(([Icon, title, desc], index) => (
+              <motion.div
+                key={title as string}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 bg-manufacturer-accent/10 border-2 border-manufacturer-accent flex items-center justify-center mx-auto mb-6">
+                  <Icon className="w-10 h-10 text-manufacturer-accent" />
+                </div>
+                <h3 className="font-heading text-2xl text-secondary-foreground mb-4">{title as string}</h3>
+                <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">{desc as string}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-stockist-accent p-16 lg:p-24 text-center"
+          className="bg-manufacturer-accent p-16 lg:p-20 text-center"
         >
-          <h2 className="font-heading text-4xl lg:text-6xl text-stockist-accent-foreground mb-6">
-            START ORDERING TODAY
+          <h2 className="font-heading text-4xl lg:text-6xl text-manufacturer-accent-foreground mb-6">
+            Need Distributor or Bulk Supply?
           </h2>
-          <p className="font-paragraph text-lg text-stockist-accent-foreground/90 mb-12 max-w-3xl mx-auto">
-            Browse our complete product catalog and place your first order
+          <p className="font-paragraph text-lg text-manufacturer-accent-foreground/90 mb-12 max-w-3xl mx-auto">
+            Switch to the wholesale side if you need box or dozen-based brand supply for distribution instead of retail pack purchases.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-6">
             <Link to="/products/manufactured">
               <motion.button
@@ -434,19 +203,18 @@ export default function RetailPage() {
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-foreground text-background font-heading text-lg flex items-center gap-3"
               >
-                MANUFACTURED PRODUCTS
+                Retail Catalog
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>
-            
+
             <Link to="/products/stockist">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-foreground text-background font-heading text-lg flex items-center gap-3"
+                className="px-10 py-5 border-2 border-manufacturer-accent-foreground text-manufacturer-accent-foreground font-heading text-lg hover:bg-manufacturer-accent-foreground hover:text-manufacturer-accent transition-colors"
               >
-                STOCKIST PRODUCTS
-                <ArrowRight className="w-5 h-5" />
+                Wholesale Catalog
               </motion.button>
             </Link>
           </div>

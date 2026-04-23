@@ -6,6 +6,7 @@ import HomePage from '@/components/pages/HomePage';
 import AboutPage from '@/components/pages/AboutPage';
 import WholesalePage from '@/components/pages/WholesalePage';
 import RetailPage from '@/components/pages/RetailPage';
+import ProductsPage from '@/components/pages/ProductsPage';
 import ManufacturedProductsPage from '@/components/pages/ManufacturedProductsPage';
 import StockistProductsPage from '@/components/pages/StockistProductsPage';
 import DistributorEnquiryPage from '@/components/pages/DistributorEnquiryPage';
@@ -54,6 +55,13 @@ const router = createBrowserRouter([
         element: <RetailPage />,
         routeMetadata: {
           pageIdentifier: 'retail',
+        },
+      },
+      {
+        path: "products",
+        element: <ProductsPage />,
+        routeMetadata: {
+          pageIdentifier: 'products',
         },
       },
       {

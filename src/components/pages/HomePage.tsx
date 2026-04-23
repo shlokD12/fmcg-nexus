@@ -18,10 +18,8 @@ const STATS = [
 const CATEGORIES = [
   { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
   { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
-  { title: "PAN MASALA", desc: "Wide range of branded pan masala variants in stock", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "MOUTH FRESHENERS", desc: "Baba elaichi and premium mouth freshener brands", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "FMCG PRODUCTS", desc: "Fast-moving consumer goods from trusted brands", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "TRADE PRODUCTS", desc: "Bulk trade items for wholesale distribution", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" }
+  { title: "PAN MASALA", desc: "Distributor-focused stock of Rajnigandha, Pan Vilas, Vimal, and similar trade lines", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
+  { title: "ELAICHI & MOUTH FRESHENERS", desc: "Popular branded mouth fresheners such as Rajnigandha Silver Pearls and BABA Elaichi", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" }
 ];
 
 const TRUST_FACTORS = [
@@ -116,7 +114,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
                 className="font-paragraph text-xs md:text-sm text-primary tracking-[0.08em] uppercase font-bold"
               >
-                Industrial FMCG Distribution
+                Manufacturing & Wholesale Distribution
               </motion.span>
             </motion.div>
 
@@ -138,7 +136,7 @@ export default function HomePage() {
                 Manufacturing Excellence. Strategic Distribution. Uncompromising Quality.
               </p>
               <p className="font-paragraph text-base md:text-lg text-secondary-foreground/75 leading-[1.7] max-w-3xl">
-                Powering India's FMCG supply chain with 500+ manufactured products, 1000+ stocked brands, and a trusted network of 200+ distributors across 15 states.
+                Serving retail buyers and distributor networks with in-house herbal tobacco and sweet supari, alongside wholesale supply of established pan masala and elaichi brands across India.
               </p>
             </motion.div>
 
@@ -158,7 +156,7 @@ export default function HomePage() {
                   </span>
                 </button>
               </Link>
-              <Link to="/products/manufactured">
+              <Link to="/products">
                 <button className="px-10 py-4.5 border border-secondary-foreground text-secondary-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
                   Explore Products
                 </button>
@@ -244,7 +242,7 @@ export default function HomePage() {
               By The Numbers
             </h2>
             <p className="font-paragraph text-lg text-secondary-foreground/70 max-w-3xl mx-auto">
-              Proven scale and reliability across India's FMCG distribution network.
+              Proven scale and reliability across India's manufacturing and distribution network.
             </p>
           </motion.div>
 
@@ -288,11 +286,11 @@ export default function HomePage() {
                 </h3>
                 
                 <p className="font-paragraph text-xl text-secondary-foreground/75 mb-12 max-w-lg leading-relaxed">
-                  Bulk orders for distributors and retailers. Competitive pricing, minimum order quantities, and reliable supply chain management.
+                  Branded pan masala and elaichi lines supplied in distributor quantities, with trade pricing built around boxes and dozen packs.
                 </p>
                 
                 <ul className="space-y-5 mb-16">
-                  {["Bulk order discounts", "MOQ flexibility", "Dedicated account management", "Pan-India network"].map((item, i) => (
+                  {["Rajnigandha, Pan Vilas, and Vimal supply", "Bulk box and dozen-pack pricing", "Dedicated distributor support", "Pan-India dispatch coordination"].map((item, i) => (
                     <li key={i} className="flex items-center gap-4">
                       <CheckCircle className="w-6 h-6 text-manufacturer-accent flex-shrink-0" />
                       <span className="font-paragraph text-base text-secondary-foreground/90 uppercase tracking-wide font-semibold">{item}</span>
@@ -322,11 +320,11 @@ export default function HomePage() {
                 </h3>
                 
                 <p className="font-paragraph text-xl text-secondary-foreground/75 mb-12 max-w-lg leading-relaxed">
-                  Direct product access for smaller buyers and shop owners. Browse our complete catalog and receive prompt delivery.
+                  Direct online access to Trisha Agency herbal tobacco and sweet supari with unit pricing, low-quantity ordering, and secure checkout.
                 </p>
                 
                 <ul className="space-y-5 mb-16">
-                  {["No minimum order", "Easy online ordering", "Fast delivery tracking", "Secure payments"].map((item, i) => (
+                  {["Herbal tobacco retail packs", "Sweet supari retail jars", "Single and small-quantity orders", "Retail-ready packaging"].map((item, i) => (
                     <li key={i} className="flex items-center gap-4">
                       <CheckCircle className="w-6 h-6 text-stockist-accent flex-shrink-0" />
                       <span className="font-paragraph text-base text-secondary-foreground/90 uppercase tracking-wide font-semibold">{item}</span>
@@ -358,7 +356,7 @@ export default function HomePage() {
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p className="font-paragraph text-base text-foreground/70 max-w-lg border-l-2 border-primary pl-6 leading-relaxed">
-                Explore our diverse range of manufactured and stocked products, engineered for market demand.
+                Explore the actual product split: in-house retail packs on one side, branded wholesale trade lines on the other.
               </p>
             </motion.div>
           </div>
@@ -441,7 +439,7 @@ export default function HomePage() {
               Our<br /><span className="text-primary">Business Segments</span>
             </h2>
             <p className="font-paragraph text-lg text-foreground/70 max-w-3xl mx-auto mt-6 leading-relaxed">
-              Tailored solutions for every buyer type—from large distributors to individual retailers.
+              Clear buying paths for distributor-scale orders and direct retail purchase.
             </p>
           </motion.div>
 
@@ -458,7 +456,7 @@ export default function HomePage() {
                 <h3 className="font-heading text-4xl text-foreground uppercase font-black">In-House<br />Manufacturing</h3>
               </div>
               <p className="font-paragraph text-xl text-foreground/75 mb-10 leading-relaxed">
-                Premium FMCG and mouth-freshener products manufactured with strict quality control and compliance standards.
+                Trisha Agency&apos;s own herbal tobacco and sweet supari lines, packed for direct retail sale and repeat household buying.
               </p>
               <ul className="space-y-4 mb-12">
                 <li className="flex items-center gap-4">
@@ -467,16 +465,16 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-manufacturer-accent flex-shrink-0" />
-                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Custom formulations available</span>
+                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Retail-ready pouch and jar formats</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-manufacturer-accent flex-shrink-0" />
-                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Bulk manufacturing capacity</span>
+                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Direct retail ordering at unit pricing</span>
                 </li>
               </ul>
               <Link to="/products/manufactured">
                 <button className="px-10 py-5 bg-manufacturer-accent text-accent-dark font-heading text-lg uppercase tracking-wider hover:bg-manufacturer-accent/90 transition-colors flex items-center gap-3 font-bold">
-                  View Manufactured <ArrowRight className="w-5 h-5" />
+                  View Retail Catalog <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
             </motion.div>
@@ -493,25 +491,25 @@ export default function HomePage() {
                 <h3 className="font-heading text-4xl text-foreground uppercase font-black">Stocked<br />Brands</h3>
               </div>
               <p className="font-paragraph text-xl text-foreground/75 mb-10 leading-relaxed">
-                Extensive inventory of trusted national and regional brands for immediate distribution and retail access.
+                Stockist supply of established pan masala and elaichi brands procured in bulk for distributor resale.
               </p>
               <ul className="space-y-4 mb-12">
                 <li className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-stockist-accent flex-shrink-0" />
-                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Pan Masala & Mouth Fresheners</span>
+                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Rajnigandha, Pan Vilas, and Vimal lines</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-stockist-accent flex-shrink-0" />
-                  <span className="font-paragraph text-base text-foreground/85 font-semibold">FMCG & Trade Products</span>
+                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Rajnigandha Silver Pearls and BABA Elaichi</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="w-6 h-6 text-stockist-accent flex-shrink-0" />
-                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Ready-to-ship inventory</span>
+                  <span className="font-paragraph text-base text-foreground/85 font-semibold">Trade-ready box and dozen-pack quantities</span>
                 </li>
               </ul>
               <Link to="/products/stockist">
                 <button className="px-10 py-5 bg-stockist-accent text-accent-dark font-heading text-lg uppercase tracking-wider hover:bg-stockist-accent/90 transition-colors flex items-center gap-3 font-bold">
-                  View Stockist <ArrowRight className="w-5 h-5" />
+                  View Wholesale Catalog <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
             </motion.div>
@@ -526,10 +524,10 @@ export default function HomePage() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <Briefcase className="w-10 h-10 text-manufacturer-accent" />
-                <h3 className="font-heading text-3xl text-secondary-foreground uppercase font-black">Wholesale Buyers</h3>
+                <h3 className="font-heading text-3xl text-secondary-foreground uppercase font-black">Wholesale Partners</h3>
               </div>
               <p className="font-paragraph text-lg text-secondary-foreground/75 mb-8 leading-relaxed">
-                Bulk orders with competitive pricing, flexible MOQ, and dedicated account management for large-scale distribution.
+                Distributor-focused supply for branded pan masala and elaichi ranges with trade pricing, MOQ discussion, and account support.
               </p>
               <Link to="/wholesale">
                 <button className="px-8 py-4 bg-manufacturer-accent text-accent-dark font-heading text-base uppercase tracking-wider hover:bg-white transition-colors flex items-center gap-2 font-bold">
@@ -545,10 +543,10 @@ export default function HomePage() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <Package className="w-10 h-10 text-stockist-accent" />
-                <h3 className="font-heading text-3xl text-secondary-foreground uppercase font-black">Retail Buyers</h3>
+                <h3 className="font-heading text-3xl text-secondary-foreground uppercase font-black">Retail Customers</h3>
               </div>
               <p className="font-paragraph text-lg text-secondary-foreground/75 mb-8 leading-relaxed">
-                No minimum orders, easy online purchasing, fast delivery, and secure payment options for shop owners and retailers.
+                Direct purchase of Trisha Agency herbal tobacco and sweet supari in smaller pack quantities with straightforward INR pricing.
               </p>
               <Link to="/retail">
                 <button className="px-8 py-4 bg-stockist-accent text-accent-dark font-heading text-base uppercase tracking-wider hover:bg-white transition-colors flex items-center gap-2 font-bold">
@@ -572,7 +570,7 @@ export default function HomePage() {
               <Briefcase className="w-14 h-14 text-primary-foreground mx-auto mb-6 group-hover:scale-125 transition-transform" />
               <h3 className="font-heading text-2xl text-primary-foreground mb-4 uppercase font-black">Distributor<br />Enquiry</h3>
               <p className="font-paragraph text-base text-primary-foreground/85 mb-8 leading-relaxed">
-                Become a partner and grow your business with us.
+                Apply for distributor supply and wholesale account support.
               </p>
               <Link to="/distributor-enquiry" className="inline-block">
                 <button className="px-8 py-3 bg-primary-foreground text-primary font-heading text-base uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors font-bold">
@@ -589,7 +587,7 @@ export default function HomePage() {
               <Truck className="w-14 h-14 text-accent-dark mx-auto mb-6 group-hover:scale-125 transition-transform" />
               <h3 className="font-heading text-2xl text-accent-dark mb-4 uppercase font-black">Wholesale<br />Orders</h3>
               <p className="font-paragraph text-base text-accent-dark/85 mb-8 leading-relaxed">
-                Bulk pricing and dedicated support.
+                Explore branded trade stock and wholesale ordering.
               </p>
               <Link to="/wholesale" className="inline-block">
                 <button className="px-8 py-3 bg-accent-dark text-manufacturer-accent font-heading text-base uppercase tracking-wider hover:bg-white transition-colors font-bold">
@@ -606,7 +604,7 @@ export default function HomePage() {
               <Package className="w-14 h-14 text-accent-dark mx-auto mb-6 group-hover:scale-125 transition-transform" />
               <h3 className="font-heading text-2xl text-accent-dark mb-4 uppercase font-black">Retail<br />Buyers</h3>
               <p className="font-paragraph text-base text-accent-dark/85 mb-8 leading-relaxed">
-                No minimum orders, fast delivery.
+                Shop herbal tobacco and sweet supari retail packs.
               </p>
               <Link to="/retail" className="inline-block">
                 <button className="px-8 py-3 bg-accent-dark text-stockist-accent font-heading text-base uppercase tracking-wider hover:bg-white transition-colors font-bold">
@@ -648,7 +646,7 @@ export default function HomePage() {
               Ready to Partner<br />with Trisha Agency?
             </h2>
             <p className="font-paragraph text-2xl text-primary-foreground/90 mb-16 max-w-3xl mx-auto leading-relaxed">
-              Join hundreds of successful distributors and retailers across India who trust us for reliable FMCG supply.
+              Work with one partner for in-house retail products and branded wholesale distribution supply across India.
             </p>
             
             <div className="flex flex-wrap justify-center gap-8">

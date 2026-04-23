@@ -1,187 +1,153 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Package, Filter } from 'lucide-react';
-import { Image } from '@/components/ui/image';
+import { ArrowRight, Factory, Package, ShoppingBag } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BaseCrudService, useCurrency, formatPrice, DEFAULT_CURRENCY } from '@/integrations';
-import { ManufacturedProducts } from '@/entities';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { formatPrice } from '@/integrations';
+import { PRODUCT_CHANNELS, RETAIL_CATALOG } from '@/lib/productCatalog';
 
 export default function ManufacturedProductsPage() {
-  const [products, setProducts] = useState<ManufacturedProducts[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const { currency } = useCurrency();
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
-  const loadProducts = async () => {
-    setIsLoading(true);
-    const result = await BaseCrudService.getAll<ManufacturedProducts>('manufacturedproducts');
-    setProducts(result.items);
-    setIsLoading(false);
-  };
-
-  const categories = ['all', ...Array.from(new Set(products.map(p => p.productCategory).filter(Boolean)))];
-  
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(p => p.productCategory === selectedCategory);
+  const categories = ['All', 'Herbal Tobacco', 'Sweet Supari'] as const;
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Hero Section */}
+
       <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-4xl"
         >
-          <div className="inline-block px-6 py-2 bg-manufacturer-accent/10 border-2 border-manufacturer-accent mb-8">
-            <span className="font-paragraph text-sm text-manufacturer-accent uppercase tracking-wider">
-              Manufacturing Division
+          <div className="inline-block px-5 py-1.5 bg-manufacturer-accent/10 border border-manufacturer-accent mb-6">
+            <span className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.04em] font-medium">
+              Retail Products
             </span>
           </div>
-          
-          <h1 className="font-heading text-6xl lg:text-8xl text-foreground mb-8 leading-none">
-            MANUFACTURED
+
+          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
+            IN-HOUSE RETAIL
             <span className="text-manufacturer-accent block">PRODUCTS</span>
           </h1>
-          
-          <p className="font-paragraph text-xl text-foreground/70 max-w-4xl leading-relaxed">
-            Premium quality in-house manufactured FMCG products including herbal tobacco without nicotine and sweet supari, crafted with strict quality control.
+
+          <p className="font-paragraph text-lg text-foreground/70 leading-relaxed">
+            This section is only for Trisha Agency’s own manufactured retail lines. Retail buyers can purchase herbal tobacco and sweet supari in small pack quantities priced in Indian Rupees.
           </p>
         </motion.div>
       </section>
 
-      {/* Filter Section */}
       <section className="w-full bg-accent-dark py-8">
         <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-secondary-foreground" />
-              <span className="font-paragraph text-sm text-secondary-foreground">FILTER BY CATEGORY:</span>
-            </div>
+          <div className="flex flex-wrap gap-4 items-center justify-between">
             <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 font-paragraph text-sm uppercase tracking-wider transition-colors ${
-                    selectedCategory === category
-                      ? 'bg-manufacturer-accent text-manufacturer-accent-foreground'
-                      : 'bg-background text-foreground hover:bg-manufacturer-accent/10'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              {PRODUCT_CHANNELS.map((channel) => {
+                const isActive = channel.id === 'retail';
+                return (
+                  <Link key={channel.id} to={channel.link}>
+                    <button
+                      className={`px-5 py-3 font-heading text-xs uppercase tracking-[0.08em] transition-colors ${
+                        isActive
+                          ? 'bg-manufacturer-accent text-manufacturer-accent-foreground'
+                          : 'bg-background text-foreground hover:bg-background/80'
+                      }`}
+                    >
+                      {channel.title}
+                    </button>
+                  </Link>
+                );
+              })}
             </div>
+
+            <p className="font-paragraph text-sm text-secondary-foreground/70">
+              Retail pricing is shown per pack for direct buyers.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
-        <div className="min-h-[600px]">
-          {isLoading ? (
-            <div className="flex items-center justify-center py-24">
-              <LoadingSpinner />
-            </div>
-          ) : filteredProducts.length > 0 ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-10">
+        <div className="flex flex-wrap gap-3">
+          {categories.map((category) => (
+            <span
+              key={category}
+              className="px-4 py-2 bg-manufacturer-accent/10 text-manufacturer-accent font-paragraph text-xs uppercase tracking-[0.08em] font-semibold"
             >
-              {filteredProducts.map((product, index) => (
-                <motion.div
-                  key={product._id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-accent-dark group"
-                >
-                  <div className="aspect-square overflow-hidden">
-                    <Image
-                      src={product.itemImage || 'https://static.wixstatic.com/media/92c2a1_851977b1766c4a9ca0b9dd4ec9a3bfc5~mv2.png?originWidth=384&originHeight=384'}
-                      alt={product.itemName || 'Product'}
-                      width={400}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  
-                  <div className="p-8 border-t-4 border-manufacturer-accent">
-                    {product.productCategory && (
-                      <span className="inline-block px-3 py-1 bg-manufacturer-accent/10 font-paragraph text-xs text-manufacturer-accent uppercase tracking-wider mb-4">
-                        {product.productCategory}
-                      </span>
-                    )}
-                    
-                    <h3 className="font-heading text-2xl text-secondary-foreground mb-3">
-                      {product.itemName}
-                    </h3>
-                    
-                    {product.itemDescription && (
-                      <p className="font-paragraph text-sm text-secondary-foreground/70 mb-4 leading-relaxed line-clamp-3">
-                        {product.itemDescription}
-                      </p>
-                    )}
-                    
-                    {product.qualityHighlights && (
-                      <div className="mb-4">
-                        <p className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-wider mb-2">
-                          Quality Highlights:
-                        </p>
-                        <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed line-clamp-2">
-                          {product.qualityHighlights}
-                        </p>
-                      </div>
-                    )}
-                    
-                    {product.itemPrice !== undefined && (
-                      <div className="mb-6">
-                        <span className="font-heading text-3xl text-secondary-foreground">
-                          {formatPrice(product.itemPrice, currency ?? DEFAULT_CURRENCY)}
-                        </span>
-                        <span className="font-paragraph text-sm text-secondary-foreground/60 ml-2">per unit</span>
-                      </div>
-                    )}
-                    
-                    <Link to="/contact">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-full px-6 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm flex items-center justify-center gap-3"
-                      >
-                        ENQUIRE NOW
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.button>
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          ) : (
-            <div className="text-center py-24">
-              <Package className="w-16 h-16 text-foreground/20 mx-auto mb-6" />
-              <h3 className="font-heading text-3xl text-foreground mb-4">No Products Found</h3>
-              <p className="font-paragraph text-base text-foreground/70">
-                No products available in this category.
-              </p>
-            </div>
-          )}
+              {category}
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* Quality Assurance */}
+      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 pb-20">
+        <div className="grid md:grid-cols-2 gap-8">
+          {RETAIL_CATALOG.map((product, index) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="bg-accent-dark border-t-4 border-manufacturer-accent p-8 lg:p-10"
+            >
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-manufacturer-accent/10 font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.08em] mb-4">
+                    {product.category}
+                  </span>
+                  <h2 className="font-heading text-3xl text-secondary-foreground font-black mb-2">
+                    {product.itemName}
+                  </h2>
+                  <p className="font-paragraph text-sm text-secondary-foreground/60">
+                    Pack Size: {product.packSize}
+                  </p>
+                </div>
+                <div className="w-14 h-14 bg-manufacturer-accent/10 border border-manufacturer-accent flex items-center justify-center flex-shrink-0">
+                  <Factory className="w-7 h-7 text-manufacturer-accent" />
+                </div>
+              </div>
+
+              <p className="font-paragraph text-base text-secondary-foreground/75 leading-relaxed mb-6">
+                {product.description}
+              </p>
+
+              <div className="space-y-3 mb-8">
+                {product.highlights.map((highlight) => (
+                  <div key={highlight} className="flex items-center gap-3">
+                    <Package className="w-4 h-4 text-manufacturer-accent flex-shrink-0" />
+                    <span className="font-paragraph text-sm text-secondary-foreground/85">{highlight}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-end justify-between gap-4 pt-6 border-t border-secondary-foreground/10">
+                <div>
+                  <p className="font-paragraph text-xs uppercase tracking-[0.08em] text-secondary-foreground/55 mb-2">
+                    Retail Price
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-heading text-3xl text-secondary-foreground font-black">
+                      {formatPrice(product.price, 'INR')}
+                    </span>
+                    <span className="font-paragraph text-sm text-secondary-foreground/60">{product.pricingUnit}</span>
+                  </div>
+                </div>
+
+                <Link to="/payments">
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="px-6 py-3 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
+                  >
+                    Order Retail
+                    <ShoppingBag className="w-4 h-4" />
+                  </motion.button>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <section className="w-full bg-accent-dark py-20">
         <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
           <motion.div
@@ -192,89 +158,62 @@ export default function ManufacturedProductsPage() {
             className="text-center mb-16"
           >
             <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground mb-6">
-              QUALITY
-              <span className="text-manufacturer-accent block">ASSURANCE</span>
+              RETAIL
+              <span className="text-manufacturer-accent block">ORDER NOTES</span>
             </h2>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background p-8 border-l-4 border-manufacturer-accent"
-            >
-              <h3 className="font-heading text-2xl text-foreground mb-4">Strict Quality Control</h3>
+            <div className="bg-background p-8 border-l-4 border-manufacturer-accent">
+              <h3 className="font-heading text-2xl text-foreground mb-4">Small Quantity Buying</h3>
               <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
-                Every batch undergoes rigorous testing to ensure consistent quality and compliance with industry standards.
+                Retail buyers can purchase smaller pack quantities of Trisha Agency’s own manufactured products.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-background p-8 border-l-4 border-manufacturer-accent"
-            >
-              <h3 className="font-heading text-2xl text-foreground mb-4">Premium Ingredients</h3>
+            <div className="bg-background p-8 border-l-4 border-manufacturer-accent">
+              <h3 className="font-heading text-2xl text-foreground mb-4">Indian Rupee Pricing</h3>
               <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
-                We source the finest raw materials to ensure superior taste, aroma, and product consistency.
+                All retail prices are shown in INR with per-pack pricing for direct consumer-friendly ordering.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-background p-8 border-l-4 border-manufacturer-accent"
-            >
-              <h3 className="font-heading text-2xl text-foreground mb-4">Certified Manufacturing</h3>
+            <div className="bg-background p-8 border-l-4 border-manufacturer-accent">
+              <h3 className="font-heading text-2xl text-foreground mb-4">Only In-House Lines</h3>
               <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
-                Our facility maintains all necessary certifications and follows best practices in manufacturing.
+                The retail catalog only contains Trisha Agency manufactured herbal tobacco and sweet supari products.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-manufacturer-accent p-16 lg:p-24 text-center"
+          className="bg-manufacturer-accent p-16 lg:p-20"
         >
-          <h2 className="font-heading text-4xl lg:text-6xl text-manufacturer-accent-foreground mb-6">
-            INTERESTED IN BULK ORDERS?
-          </h2>
-          <p className="font-paragraph text-lg text-manufacturer-accent-foreground/90 mb-12 max-w-3xl mx-auto">
-            Contact our sales team for wholesale pricing and custom manufacturing options
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/wholesale">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="max-w-3xl">
+              <h2 className="font-heading text-4xl lg:text-6xl text-manufacturer-accent-foreground mb-5">
+                Need Distributor Quantities Instead?
+              </h2>
+              <p className="font-paragraph text-lg text-manufacturer-accent-foreground/90 leading-relaxed">
+                Retail is for direct pack-level buying. If you need distributor-facing bulk stock of pan masala or elaichi mouth fresheners, move to the wholesale catalog.
+              </p>
+            </div>
+
+            <Link to="/products/stockist">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-foreground text-background font-heading text-lg flex items-center gap-3"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="px-8 py-4 bg-foreground text-background font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
               >
-                WHOLESALE ENQUIRY
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
-            
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-manufacturer-accent-foreground text-manufacturer-accent-foreground font-heading text-lg hover:bg-manufacturer-accent-foreground hover:text-manufacturer-accent transition-colors"
-              >
-                CONTACT SALES
+                View Wholesale Products
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </Link>
           </div>
