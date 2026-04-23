@@ -363,7 +363,7 @@ export default function HomePage() {
 
           <motion.div 
             variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8"
           >
             {CATEGORIES.map((cat, index) => (
               <motion.div key={index} variants={fadeUp} className="group relative h-[520px] bg-accent-dark overflow-hidden border-2 border-transparent hover:border-foreground transition-all duration-300">

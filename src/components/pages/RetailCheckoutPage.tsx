@@ -156,7 +156,7 @@ export default function RetailCheckoutPage() {
                           onClick={() => setGatewayProvider(provider.name.toLowerCase())}
                           className={`text-left p-6 border-l-4 transition-colors ${
                             isActive
-                              ? 'bg-accent-dark border-primary'
+                              ? 'bg-primary text-primary-foreground border-primary'
                               : 'bg-background border-foreground/12 hover:bg-accent-dark'
                           }`}
                         >
@@ -166,8 +166,8 @@ export default function RetailCheckoutPage() {
                           >
                             {provider.logoText || provider.name.charAt(0)}
                           </div>
-                          <h3 className="font-heading text-xl text-foreground mb-2 font-black">{provider.name}</h3>
-                          <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                          <h3 className={`font-heading text-xl mb-2 font-black ${isActive ? 'text-primary-foreground' : 'text-foreground'}`}>{provider.name}</h3>
+                          <p className={`font-paragraph text-sm leading-relaxed ${isActive ? 'text-primary-foreground/85' : 'text-foreground/70'}`}>
                             Temporary checkout route ready for {provider.name}. Live credentials can be connected later.
                           </p>
                         </button>
