@@ -179,7 +179,7 @@ export default function RetailCheckoutPage() {
                           )}
                           <h3 className={`font-heading text-xl mb-2 font-black ${isActive ? 'text-primary-foreground' : 'text-foreground'}`}>{provider.name}</h3>
                           <p className={`font-paragraph text-sm leading-relaxed ${isActive ? 'text-primary-foreground/85' : 'text-foreground/70'}`}>
-                            Temporary checkout route ready for {provider.name}. Live credentials can be connected later.
+                            Checkout is prepared for {provider.name}. Live credentials can be connected when you are ready to go live.
                           </p>
                         </button>
                       );

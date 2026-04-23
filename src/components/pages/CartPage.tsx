@@ -27,13 +27,13 @@ export default function CartPage() {
             </span>
           </div>
 
-          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             YOUR
             <span className="text-manufacturer-accent block">SHOPPING CART</span>
           </h1>
 
           <p className="font-paragraph text-lg text-foreground/70 leading-relaxed">
-            Review your retail selection, adjust quantities, and proceed to checkout to choose a payment method and generate the next payment step.
+            Review your retail selection, adjust quantities, and proceed to checkout to enter customer details and continue to the payment gateway.
           </p>
         </motion.div>
       </section>
@@ -160,7 +160,7 @@ export default function CartPage() {
                 </div>
 
                 <p className="font-paragraph text-sm text-foreground/65 leading-relaxed mb-8">
-                  Continue to checkout to enter customer details, choose the payment method, and generate the temporary payment handoff.
+                  Continue to checkout to confirm customer details, select the gateway, and move straight into payment.
                 </p>
 
                 <div className="space-y-4">
@@ -188,3 +188,4 @@ export default function CartPage() {
     </div>
   );
 }
+

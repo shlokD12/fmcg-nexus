@@ -247,8 +247,8 @@ export default function PaymentsPage() {
       </section>
 
       {/* Order Confirmation Process */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-16 md:py-20 lg:py-24">
+        <div className="max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -331,7 +331,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* Payment Support */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10 py-16 md:py-20 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -400,7 +400,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* Security & Compliance Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10 py-16 md:py-20 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -431,8 +431,8 @@ export default function PaymentsPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-16 md:py-20 lg:py-24">
+        <div className="max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -514,7 +514,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* Payment Architecture Info */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10 py-16 md:py-20 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -618,8 +618,8 @@ export default function PaymentsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-primary py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-primary py-16 md:py-20 lg:py-24">
+        <div className="max-w-[96rem] mx-auto px-5 md:px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

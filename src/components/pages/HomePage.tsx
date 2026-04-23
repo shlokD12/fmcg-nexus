@@ -46,16 +46,6 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.05 } }
 };
 
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } }
-};
-
-const slideInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] } }
-};
-
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({
@@ -173,7 +163,7 @@ export default function HomePage() {
         >
           <div className="hidden sm:flex flex-col items-center gap-2">
             <span className="font-paragraph text-xs text-secondary-foreground/50 uppercase tracking-[0.08em]">Scroll to explore</span>
-            <div className="w-5 h-10 border-1.5 border-secondary-foreground/30 rounded-full flex justify-center">
+            <div className="w-5 h-10 border-[1.5px] border-secondary-foreground/30 rounded-full flex justify-center">
               <motion.div className="w-1 h-2 bg-secondary-foreground/50 rounded-full mt-2" />
             </div>
           </div>
@@ -212,12 +202,12 @@ export default function HomePage() {
               <motion.div 
                 key={index}
                 variants={fadeUp}
-                className="group relative bg-accent-dark border-3 border-foreground/10 p-8 md:p-10 lg:p-20 hover:border-primary transition-all duration-500 overflow-hidden"
+                className="group relative bg-accent-dark border-[3px] border-foreground/10 p-8 md:p-10 lg:p-20 hover:border-primary transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-primary/15 border-3 border-primary flex items-center justify-center mb-6 md:mb-8 lg:mb-10 group-hover:scale-125 transition-transform duration-300">
+                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-primary/15 border-[3px] border-primary flex items-center justify-center mb-6 md:mb-8 lg:mb-10 group-hover:scale-125 transition-transform duration-300">
                     <cap.icon className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />
                   </div>
                   <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl text-secondary-foreground mb-4 md:mb-6 lg:mb-8 uppercase font-black leading-tight">{cap.title}</h3>
@@ -257,7 +247,7 @@ export default function HomePage() {
                 className="bg-background/60 backdrop-blur-sm p-8 md:p-10 lg:p-14 border-2 border-secondary-foreground/15 hover:border-primary transition-all duration-300 group text-center"
               >
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
-                  <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-primary/12 border-3 border-primary flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
+                  <div className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-primary/12 border-[3px] border-primary flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
                     <stat.icon className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 ${stat.color}`} />
                   </div>
                 </div>
@@ -277,7 +267,7 @@ export default function HomePage() {
               <div className="absolute top-0 left-0 w-full h-2.5 bg-manufacturer-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               
               <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-10">
-                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-manufacturer-accent/12 border-3 border-manufacturer-accent mb-6 md:mb-8 lg:mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-manufacturer-accent/12 border-[3px] border-manufacturer-accent mb-6 md:mb-8 lg:mb-12">
                   <Truck className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-manufacturer-accent" />
                 </div>
                 
@@ -311,7 +301,7 @@ export default function HomePage() {
               <div className="absolute top-0 left-0 w-full h-2.5 bg-stockist-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               
               <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-10">
-                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-stockist-accent/12 border-3 border-stockist-accent mb-6 md:mb-8 lg:mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-stockist-accent/12 border-[3px] border-stockist-accent mb-6 md:mb-8 lg:mb-12">
                   <Package className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-stockist-accent" />
                 </div>
                 
@@ -418,7 +408,7 @@ export default function HomePage() {
                 className="bg-background p-8 md:p-10 border-t-4 border-transparent hover:border-current transition-all duration-300 group"
                 style={{ color: factor.color === 'text-primary' ? '#FF005C' : factor.color === 'text-manufacturer-accent' ? '#00C49F' : '#FFC107' }}
               >
-                <div className="w-20 h-20 bg-background/50 border-3 border-current flex items-center justify-center mb-10 group-hover:scale-125 transition-transform duration-300">
+                <div className="w-20 h-20 bg-background/50 border-[3px] border-current flex items-center justify-center mb-10 group-hover:scale-125 transition-transform duration-300">
                   <factor.icon className={`w-10 h-10 ${factor.color}`} />
                 </div>
                 <h3 className="font-heading text-2xl text-foreground mb-6 uppercase font-black">{factor.title}</h3>
@@ -447,10 +437,10 @@ export default function HomePage() {
             {/* Manufactured Products */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              className="bg-manufacturer-accent/8 border-3 border-manufacturer-accent p-8 md:p-10 lg:p-20"
+              className="bg-manufacturer-accent/8 border-[3px] border-manufacturer-accent p-8 md:p-10 lg:p-20"
             >
               <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
-                <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-manufacturer-accent/15 border-3 border-manufacturer-accent flex items-center justify-center">
+                <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-manufacturer-accent/15 border-[3px] border-manufacturer-accent flex items-center justify-center">
                   <Factory className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-manufacturer-accent" />
                 </div>
                 <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl text-foreground uppercase font-black">In-House<br />Manufacturing</h3>
@@ -482,10 +472,10 @@ export default function HomePage() {
             {/* Stockist Products */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }}
-              className="bg-stockist-accent/8 border-3 border-stockist-accent p-8 md:p-10 lg:p-20"
+              className="bg-stockist-accent/8 border-[3px] border-stockist-accent p-8 md:p-10 lg:p-20"
             >
               <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
-                <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-stockist-accent/15 border-3 border-stockist-accent flex items-center justify-center">
+                <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-stockist-accent/15 border-[3px] border-stockist-accent flex items-center justify-center">
                   <Warehouse className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-stockist-accent" />
                 </div>
                 <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl text-foreground uppercase font-black">Stocked<br />Brands</h3>
@@ -520,7 +510,7 @@ export default function HomePage() {
             {/* Wholesale Buyers */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}
-              className="bg-accent-dark p-8 md:p-10 lg:p-14 border-3 border-foreground/15 hover:border-primary transition-all duration-300"
+              className="bg-accent-dark p-8 md:p-10 lg:p-14 border-[3px] border-foreground/15 hover:border-primary transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-8">
                 <Briefcase className="w-10 h-10 text-manufacturer-accent" />
@@ -539,7 +529,7 @@ export default function HomePage() {
             {/* Retail Buyers */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.3 }}
-              className="bg-accent-dark p-8 md:p-10 lg:p-14 border-3 border-foreground/15 hover:border-primary transition-all duration-300"
+              className="bg-accent-dark p-8 md:p-10 lg:p-14 border-[3px] border-foreground/15 hover:border-primary transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-8">
                 <Package className="w-10 h-10 text-stockist-accent" />

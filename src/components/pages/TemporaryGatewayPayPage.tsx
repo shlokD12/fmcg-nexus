@@ -15,7 +15,6 @@ export default function TemporaryGatewayPayPage() {
   const orderId = searchParams.get('orderId') || 'N/A';
   const txnId = searchParams.get('txnId') || 'N/A';
   const amount = Number(searchParams.get('amount') || 0);
-  const method = searchParams.get('method') || 'online_gateway';
   const gateway = searchParams.get('gateway') || 'razorpay';
 
   const handlePay = () => {
@@ -31,7 +30,7 @@ export default function TemporaryGatewayPayPage() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="inline-block px-5 py-1.5 bg-primary/10 border border-primary mb-6">
             <span className="font-paragraph text-xs text-primary uppercase tracking-[0.04em] font-medium">
-              Temporary Gateway
+              Gateway Preview
             </span>
           </div>
           <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
@@ -39,7 +38,7 @@ export default function TemporaryGatewayPayPage() {
             <span className="text-primary block">PAYMENT SCREEN</span>
           </h1>
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
-            This is a temporary gateway page for the current retail checkout flow. It can later be replaced with a live {gateway} integration once real credentials are connected.
+            This preview screen simulates the live {gateway} checkout step for the current retail flow and can be replaced with the real gateway once credentials are connected.
           </p>
         </motion.div>
       </section>
@@ -79,7 +78,7 @@ export default function TemporaryGatewayPayPage() {
                 <CheckCircle className="w-12 h-12 text-manufacturer-accent mx-auto mb-4" />
                 <h3 className="font-heading text-2xl text-foreground mb-3 font-black">Payment Marked Successful</h3>
                 <p className="font-paragraph text-base text-foreground/75 mb-8">
-                  The temporary payment flow has been completed and the retail cart has been cleared.
+                  The payment preview has been completed and the retail cart has been cleared.
                 </p>
                 <Link to="/products/manufactured">
                   <button className="px-8 py-4 bg-primary text-primary-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold mx-auto">
