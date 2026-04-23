@@ -11,8 +11,6 @@ import ManufacturedProductsPage from '@/components/pages/ManufacturedProductsPag
 import StockistProductsPage from '@/components/pages/StockistProductsPage';
 import CartPage from '@/components/pages/CartPage';
 import RetailCheckoutPage from '@/components/pages/RetailCheckoutPage';
-import PaymentGatewayPage from '@/components/pages/PaymentGatewayPage';
-import PaymentConfirmationPage from '@/components/pages/PaymentConfirmationPage';
 import TemporaryGatewayPayPage from '@/components/pages/TemporaryGatewayPayPage';
 import DistributorEnquiryPage from '@/components/pages/DistributorEnquiryPage';
 import PaymentsPage from '@/components/pages/PaymentsPage';
@@ -97,20 +95,6 @@ const router = createBrowserRouter([
         element: <RetailCheckoutPage />,
         routeMetadata: {
           pageIdentifier: 'checkout',
-        },
-      },
-      {
-        path: "payment/checkout",
-        element: <PaymentGatewayPage />,
-        routeMetadata: {
-          pageIdentifier: 'payment-checkout',
-        },
-      },
-      {
-        path: "payment/confirmation",
-        element: <PaymentConfirmationPage />,
-        routeMetadata: {
-          pageIdentifier: 'payment-confirmation',
         },
       },
       {

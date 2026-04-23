@@ -16,6 +16,7 @@ export default function TemporaryGatewayPayPage() {
   const txnId = searchParams.get('txnId') || 'N/A';
   const amount = Number(searchParams.get('amount') || 0);
   const method = searchParams.get('method') || 'online_gateway';
+  const gateway = searchParams.get('gateway') || 'razorpay';
 
   const handlePay = () => {
     setIsPaid(true);
@@ -38,7 +39,7 @@ export default function TemporaryGatewayPayPage() {
             <span className="text-primary block">PAYMENT SCREEN</span>
           </h1>
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
-            This is a temporary gateway page for the current retail checkout flow. It can later be replaced with a live Razorpay, PayU, or Wix-connected payment redirect.
+            This is a temporary gateway page for the current retail checkout flow. It can later be replaced with a live {gateway} integration once real credentials are connected.
           </p>
         </motion.div>
       </section>
@@ -50,7 +51,7 @@ export default function TemporaryGatewayPayPage() {
             <div className="text-center mb-10">
               <h2 className="font-heading text-3xl text-foreground mb-4 font-black">Order Payment</h2>
               <p className="font-paragraph text-base text-foreground/75 leading-relaxed">
-                Order <span className="font-semibold">{orderId}</span> is ready for payment using <span className="font-semibold uppercase">{String(method).replace('_', ' ')}</span>.
+                Order <span className="font-semibold">{orderId}</span> is ready for payment using <span className="font-semibold uppercase">{gateway}</span>.
               </p>
             </div>
 
@@ -66,6 +67,10 @@ export default function TemporaryGatewayPayPage() {
               <div className="flex items-center justify-between">
                 <span className="font-paragraph text-sm text-secondary-foreground/70">Amount</span>
                 <span className="font-heading text-2xl text-secondary-foreground font-black">{formatPrice(amount, 'INR')}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-paragraph text-sm text-secondary-foreground/70">Gateway</span>
+                <span className="font-paragraph text-sm text-secondary-foreground uppercase">{gateway}</span>
               </div>
             </div>
 

@@ -1,47 +1,22 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, CreditCard, FileText, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { formatPrice } from '@/integrations';
-import { PaymentService, type PaymentMethod } from '@/lib/payment-gateway';
+import { PaymentGatewayRegistry, PaymentService } from '@/lib/payment-gateway';
 import { useRetailCart } from '@/lib/retailCart';
 import { useRetailCheckoutStore } from '@/lib/retailCheckout';
 
-const METHOD_META: Record<PaymentMethod, { title: string; description: string; icon: typeof CreditCard }> = {
-  online_gateway: {
-    title: 'Online Payment Gateway',
-    description: 'Generate a temporary secure payment link for card, UPI, wallet, or net banking payment.',
-    icon: CreditCard,
-  },
-  bank_transfer: {
-    title: 'Bank Transfer',
-    description: 'Get order confirmation and bank transfer instructions for manual payment.',
-    icon: FileText,
-  },
-  credit_terms: {
-    title: 'Credit Terms',
-    description: 'Only for approved commercial accounts. A confirmation page will be generated instead of a gateway payment link.',
-    icon: Shield,
-  },
-  upi: {
-    title: 'UPI',
-    description: 'Generate a temporary UPI payment handoff for quick device-based payment.',
-    icon: CreditCard,
-  },
-  wallet: {
-    title: 'Digital Wallet',
-    description: 'Generate a temporary wallet payment handoff for retail checkout.',
-    icon: CreditCard,
-  },
-};
+const GATEWAY_OPTIONS = PaymentGatewayRegistry.getAllProviders().filter(
+  (provider) => provider.type === 'external'
+);
 
 export default function RetailCheckoutPage() {
-  const navigate = useNavigate();
   const { items, itemCount, subtotal } = useRetailCart();
   const setSession = useRetailCheckoutStore((state) => state.setSession);
-  const [method, setMethod] = useState<PaymentMethod>('online_gateway');
+  const [gatewayProvider, setGatewayProvider] = useState('razorpay');
   const [customer, setCustomer] = useState({
     fullName: '',
     email: '',
@@ -58,7 +33,7 @@ export default function RetailCheckoutPage() {
     setIsSubmitting(true);
     const orderId = `RET-${Date.now()}`;
     const response = await PaymentService.initiatePayment({
-      method,
+      method: 'online_gateway',
       amount: subtotal,
       currency: 'INR',
       orderId,
@@ -68,20 +43,23 @@ export default function RetailCheckoutPage() {
       metadata: {
         customerName: customer.fullName,
         itemCount,
+        gatewayProvider,
       },
     });
 
     setSession({
       orderId,
       amount: subtotal,
-      method,
+      method: 'online_gateway',
       customer,
       response,
     });
 
-    if (response.redirectUrl) {
-      navigate(response.redirectUrl);
+    if (response.redirectUrl && typeof window !== 'undefined') {
+      window.location.assign(response.redirectUrl);
+      return;
     }
+
     setIsSubmitting(false);
   };
 
@@ -101,7 +79,7 @@ export default function RetailCheckoutPage() {
             <span className="text-manufacturer-accent block">AND PAYMENT</span>
           </h1>
           <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
-            Add customer details, choose a payment method, and generate the next payment step for your retail order.
+            Add customer details, choose your payment gateway, and continue directly to the payment screen.
           </p>
         </motion.div>
       </section>
@@ -167,26 +145,31 @@ export default function RetailCheckoutPage() {
                 </div>
 
                 <div>
-                  <h2 className="font-heading text-3xl text-foreground mb-6 font-black">Choose Payment Method</h2>
+                  <h2 className="font-heading text-3xl text-foreground mb-6 font-black">Choose Payment Gateway</h2>
                   <div className="grid md:grid-cols-3 gap-5">
-                    {(['online_gateway', 'bank_transfer', 'credit_terms'] as PaymentMethod[]).map((option) => {
-                      const meta = METHOD_META[option];
-                      const Icon = meta.icon;
-                      const isActive = method === option;
+                    {GATEWAY_OPTIONS.map((provider) => {
+                      const isActive = gatewayProvider === provider.name.toLowerCase();
                       return (
                         <button
-                          key={option}
+                          key={provider.name}
                           type="button"
-                          onClick={() => setMethod(option)}
+                          onClick={() => setGatewayProvider(provider.name.toLowerCase())}
                           className={`text-left p-6 border-l-4 transition-colors ${
                             isActive
                               ? 'bg-accent-dark border-primary'
                               : 'bg-background border-foreground/12 hover:bg-accent-dark'
                           }`}
                         >
-                          <Icon className={`w-9 h-9 mb-4 ${isActive ? 'text-primary' : 'text-foreground'}`} />
-                          <h3 className="font-heading text-xl text-foreground mb-3 font-black">{meta.title}</h3>
-                          <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">{meta.description}</p>
+                          <div
+                            className="w-14 h-14 flex items-center justify-center rounded-sm mb-4 text-white font-heading text-2xl font-black"
+                            style={{ backgroundColor: provider.brandColor || '#111827' }}
+                          >
+                            {provider.logoText || provider.name.charAt(0)}
+                          </div>
+                          <h3 className="font-heading text-xl text-foreground mb-2 font-black">{provider.name}</h3>
+                          <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">
+                            Temporary checkout route ready for {provider.name}. Live credentials can be connected later.
+                          </p>
                         </button>
                       );
                     })}
@@ -198,7 +181,7 @@ export default function RetailCheckoutPage() {
                   disabled={isSubmitting}
                   className="w-full px-8 py-5 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center justify-center gap-2.5 font-bold disabled:opacity-60"
                 >
-                  {isSubmitting ? 'Preparing Payment...' : 'Pay Now'}
+                  {isSubmitting ? 'Redirecting To Gateway...' : 'Pay Now'}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
@@ -236,7 +219,7 @@ export default function RetailCheckoutPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="font-paragraph text-sm text-secondary-foreground/75 leading-relaxed">
-                      Online gateway creates a temporary payment link. Bank transfer and credit terms create the next instruction page instead.
+                      Retail checkout is now dedicated to online gateway payment only. Bank transfer and credit terms remain informational on the payments page for non-retail flows.
                     </p>
                   </div>
                 </div>

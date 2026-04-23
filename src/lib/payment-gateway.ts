@@ -30,6 +30,8 @@ export interface PaymentResponse {
 
 export interface PaymentGatewayProvider {
   name: string;
+  logoText?: string;
+  brandColor?: string;
   type: 'internal' | 'external';
   supportedMethods: PaymentMethod[];
   isActive: boolean;
@@ -44,6 +46,8 @@ export class PaymentGatewayRegistry {
   private static providers: Map<string, PaymentGatewayProvider> = new Map([
     ['razorpay', {
       name: 'Razorpay',
+      logoText: 'R',
+      brandColor: '#3B5BDB',
       type: 'external',
       supportedMethods: ['online_gateway', 'upi', 'wallet'],
       isActive: false,
@@ -51,6 +55,8 @@ export class PaymentGatewayRegistry {
     }],
     ['payu', {
       name: 'PayU',
+      logoText: 'P',
+      brandColor: '#4C1D95',
       type: 'external',
       supportedMethods: ['online_gateway', 'upi'],
       isActive: false,
@@ -58,6 +64,8 @@ export class PaymentGatewayRegistry {
     }],
     ['stripe', {
       name: 'Stripe',
+      logoText: 'S',
+      brandColor: '#635BFF',
       type: 'external',
       supportedMethods: ['online_gateway'],
       isActive: false,
@@ -65,6 +73,8 @@ export class PaymentGatewayRegistry {
     }],
     ['internal_bank', {
       name: 'Bank Transfer',
+      logoText: 'B',
+      brandColor: '#0F766E',
       type: 'internal',
       supportedMethods: ['bank_transfer'],
       isActive: true,
@@ -72,6 +82,8 @@ export class PaymentGatewayRegistry {
     }],
     ['credit_facility', {
       name: 'Credit Terms',
+      logoText: 'C',
+      brandColor: '#B45309',
       type: 'internal',
       supportedMethods: ['credit_terms'],
       isActive: true,
@@ -144,9 +156,7 @@ export class PaymentService {
    * Handle online payment gateway (Razorpay, PayU, Stripe, etc.)
    */
   private static async handleOnlineGateway(config: PaymentConfig): Promise<PaymentResponse> {
-    // This will be connected to actual gateway APIs
-    // For now, return a response structure ready for integration
-    
+    const provider = String(config.metadata?.gatewayProvider || 'razorpay');
     const transactionId = `TXN_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
     return {
@@ -157,7 +167,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Payment gateway initialized. Redirecting to secure checkout...',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=online_gateway`
+      redirectUrl: `/gateway/pay?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=online_gateway&gateway=${provider}`
     };
   }
 
@@ -175,7 +185,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Bank transfer details sent to your email. Please complete payment within 48 hours.',
-      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=bank_transfer&amount=${config.amount}`
+      redirectUrl: `/payments?method=bank_transfer&orderId=${config.orderId}&amount=${config.amount}`
     };
   }
 
@@ -193,7 +203,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Credit terms approved. Invoice will be generated for payment within 30 days.',
-      redirectUrl: `/payment/confirmation?orderId=${config.orderId}&method=credit_terms&amount=${config.amount}`
+      redirectUrl: `/payments?method=credit_terms&orderId=${config.orderId}&amount=${config.amount}`
     };
   }
 
@@ -211,7 +221,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'UPI payment initiated. Please complete payment on your device.',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=upi`
+      redirectUrl: `/gateway/pay?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=upi&gateway=${String(config.metadata?.gatewayProvider || 'razorpay')}`
     };
   }
 
@@ -229,7 +239,7 @@ export class PaymentService {
       amount: config.amount,
       timestamp: new Date(),
       message: 'Wallet payment processing. Please confirm on your wallet app.',
-      redirectUrl: `/payment/checkout?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=wallet`
+      redirectUrl: `/gateway/pay?orderId=${config.orderId}&txnId=${transactionId}&amount=${config.amount}&method=wallet&gateway=${String(config.metadata?.gatewayProvider || 'razorpay')}`
     };
   }
 
