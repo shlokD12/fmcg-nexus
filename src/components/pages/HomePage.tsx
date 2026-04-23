@@ -16,10 +16,10 @@ const STATS = [
 ];
 
 const CATEGORIES = [
-  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_3dcf57eca138497381846030bf55ca0c~mv2.png?originWidth=576&originHeight=448" },
-  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_ac789f8cda9a4904b7876e3b5a7746e8~mv2.png?originWidth=576&originHeight=448" },
-  { title: "PAN MASALA", desc: "Distributor-focused stock of Rajnigandha, Pan Vilas, Vimal, and similar trade lines", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_8eb6865bf3fc4123b55a58c7d94d8d55~mv2.png?originWidth=576&originHeight=448" },
-  { title: "ELAICHI & MOUTH FRESHENERS", desc: "Popular branded mouth fresheners such as Rajnigandha Silver Pearls and BABA Elaichi", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_f495683b61174ca282a97d177b47b832~mv2.png?originWidth=576&originHeight=448" }
+  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_8912315dc875437c9635baa4af3ab0d3~mv2.png?originWidth=768&originHeight=768" },
+  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_c0bcbc7b42db4219892922d493fe4cfd~mv2.png?originWidth=768&originHeight=768" },
+  { title: "PAN MASALA", desc: "Distributor-focused stock of Rajnigandha, Pan Vilas, Vimal, and similar trade lines", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_fe3b4f5bf7244ca6bcd362f0736977ab~mv2.png?originWidth=768&originHeight=768" },
+  { title: "MOUTH FRESHNERS", desc: "Popular branded mouth fresheners such as Rajnigandha Silver Pearls and BABA Elaichi", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_f542f19d384743918c4b16113bb74385~mv2.png?originWidth=768&originHeight=768" }
 ];
 
 const TRUST_FACTORS = [
