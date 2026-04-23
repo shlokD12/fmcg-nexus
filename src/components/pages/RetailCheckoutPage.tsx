@@ -8,7 +8,6 @@ import { formatPrice } from '@/integrations';
 import { PaymentGatewayRegistry, PaymentService } from '@/lib/payment-gateway';
 import { useRetailCart } from '@/lib/retailCart';
 import { useRetailCheckoutStore } from '@/lib/retailCheckout';
-import { Image } from '@/components/ui/image';
 
 const GATEWAY_OPTIONS = PaymentGatewayRegistry.getAllProviders().filter(
   (provider) => provider.type === 'external'
@@ -150,12 +149,6 @@ export default function RetailCheckoutPage() {
                   <div className="grid md:grid-cols-3 gap-5">
                     {GATEWAY_OPTIONS.map((provider) => {
                       const isActive = gatewayProvider === provider.name.toLowerCase();
-                      const logoMap: Record<string, string> = {
-                        razorpay: 'https://static.wixstatic.com/media/92c2a1_b89d423595524038be739cc0ca0c0f4b~mv2.png?originWidth=128&originHeight=128',
-                        payu: 'https://static.wixstatic.com/media/92c2a1_71ee29dd01934c68942441d1a652d324~mv2.png?originWidth=128&originHeight=128',
-                        stripe: 'https://static.wixstatic.com/media/92c2a1_153e08a18d934effac03cf6a8083ee6e~mv2.png?originWidth=128&originHeight=128',
-                      };
-                      const logoUrl = logoMap[provider.name.toLowerCase()];
                       return (
                         <button
                           key={provider.name}
@@ -167,22 +160,12 @@ export default function RetailCheckoutPage() {
                               : 'bg-background border-foreground/12 hover:bg-accent-dark'
                           }`}
                         >
-                          {logoUrl ? (
-                            <Image
-                              src={logoUrl}
-                              alt={`${provider.name} logo`}
-                              width={56}
-                              height={56}
-                              className="mb-4 rounded-sm"
-                            />
-                          ) : (
-                            <div
-                              className="w-14 h-14 flex items-center justify-center rounded-sm mb-4 text-white font-heading text-2xl font-black"
-                              style={{ backgroundColor: provider.brandColor || '#111827' }}
-                            >
-                              {provider.logoText || provider.name.charAt(0)}
-                            </div>
-                          )}
+                          <div
+                            className="w-14 h-14 flex items-center justify-center rounded-sm mb-4 text-white font-heading text-2xl font-black"
+                            style={{ backgroundColor: provider.brandColor || '#111827' }}
+                          >
+                            {provider.logoText || provider.name.charAt(0)}
+                          </div>
                           <h3 className={`font-heading text-xl mb-2 font-black ${isActive ? 'text-primary-foreground' : 'text-foreground'}`}>{provider.name}</h3>
                           <p className={`font-paragraph text-sm leading-relaxed ${isActive ? 'text-primary-foreground/85' : 'text-foreground/70'}`}>
                             Temporary checkout route ready for {provider.name}. Live credentials can be connected later.
