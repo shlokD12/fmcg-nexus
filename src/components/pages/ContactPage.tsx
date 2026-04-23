@@ -70,7 +70,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <motion.div

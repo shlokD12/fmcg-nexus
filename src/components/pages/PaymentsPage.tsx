@@ -11,7 +11,7 @@ export default function PaymentsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

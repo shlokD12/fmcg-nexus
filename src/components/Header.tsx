@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-background border-b-2 border-foreground/8 sticky top-0 z-50 backdrop-blur-md shadow-sm">
-      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-5">
+      <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">

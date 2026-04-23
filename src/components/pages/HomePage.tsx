@@ -85,7 +85,7 @@ export default function HomePage() {
       `}</style>
 
       {/* 1. HERO SECTION - Cinematic, Layered Industrial Statement */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[1000px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-40 pb-24">
+      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[1000px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-28 pb-16">
         {/* Multi-layered background with depth */}
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
@@ -148,9 +148,9 @@ export default function HomePage() {
               className="flex flex-wrap gap-8 items-center"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-16 py-7 bg-primary text-primary-foreground font-heading text-base md:text-lg uppercase tracking-wider overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300 shadow-2xl hover:shadow-3xl">
+                <button className="group relative px-14 py-6 bg-primary text-primary-foreground font-heading text-base uppercase tracking-wide overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300">
                   <span className="relative z-10 flex items-center gap-3 font-bold">
-                    Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-secondary-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-400 ease-out" />
                   <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 font-bold">
@@ -159,7 +159,7 @@ export default function HomePage() {
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-16 py-7 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base md:text-lg uppercase tracking-wider hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 shadow-xl hover:shadow-2xl font-bold">
+                <button className="px-14 py-6 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base uppercase tracking-wide hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
                   Explore Products
                 </button>
               </Link>
@@ -169,22 +169,22 @@ export default function HomePage() {
 
         {/* Scroll indicator - refined */}
         <motion.div 
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.5, repeat: Infinity }}
           className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12 flex justify-center"
         >
-          <div className="flex flex-col items-center gap-3">
-            <span className="font-paragraph text-xs text-secondary-foreground/50 uppercase tracking-[0.2em]">Scroll to explore</span>
-            <div className="w-6 h-12 border-2 border-secondary-foreground/30 rounded-full flex justify-center">
-              <motion.div className="w-1.5 h-2.5 bg-secondary-foreground/50 rounded-full mt-2.5" />
+          <div className="flex flex-col items-center gap-2">
+            <span className="font-paragraph text-xs text-secondary-foreground/50 uppercase tracking-[0.15em]">Scroll to explore</span>
+            <div className="w-5 h-10 border-1.5 border-secondary-foreground/30 rounded-full flex justify-center">
+              <motion.div className="w-1 h-2 bg-secondary-foreground/50 rounded-full mt-2" />
             </div>
           </div>
         </motion.div>
       </section>
 
       {/* 2. MARQUEE - Editorial, Cinematic */}
-      <div className="w-full bg-gradient-to-r from-primary via-manufacturer-accent to-primary py-8 overflow-hidden border-y-2 border-secondary">
-        <div className="marquee-container font-heading text-3xl md:text-4xl text-primary-foreground uppercase tracking-[0.15em] whitespace-nowrap font-black">
+      <div className="w-full bg-gradient-to-r from-primary via-manufacturer-accent to-primary py-6 overflow-hidden border-y-2 border-secondary">
+        <div className="marquee-container font-heading text-2xl md:text-3xl text-primary-foreground uppercase tracking-[0.12em] whitespace-nowrap font-black">
           <span className="mx-16">MANUFACTURING EXCELLENCE</span> <span className="mx-16">•</span>
           <span className="mx-16">STRATEGIC DISTRIBUTION</span> <span className="mx-16">•</span>
           <span className="mx-16">NATIONAL REACH</span> <span className="mx-16">•</span>
@@ -197,10 +197,10 @@ export default function HomePage() {
       </div>
 
       {/* 3. CAPABILITIES - Large Confident Blocks */}
-      <section className="w-full bg-background py-32 lg:py-40 border-b border-foreground/5">
+      <section className="w-full bg-background py-28 lg:py-36 border-b border-foreground/5">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-24">
-            <h2 className="font-heading text-7xl lg:text-9xl text-foreground uppercase leading-none font-black">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-20">
+            <h2 className="font-heading text-6xl lg:text-8xl text-foreground uppercase leading-tight font-black">
               Why We<br />
               <span className="text-primary">Lead</span>
             </h2>
@@ -208,7 +208,7 @@ export default function HomePage() {
 
           <motion.div 
             variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-3 gap-12 lg:gap-16"
+            className="grid md:grid-cols-3 gap-10 lg:gap-14"
           >
             {CAPABILITIES.map((cap, index) => (
               <motion.div 
@@ -232,25 +232,25 @@ export default function HomePage() {
       </section>
 
       {/* 4. STATS & NETWORK - Full Width Impact with Premium Spacing */}
-      <section className="w-full bg-accent-dark py-32 lg:py-40 border-y-2 border-primary relative overflow-hidden">
+      <section className="w-full bg-accent-dark py-28 lg:py-36 border-y-2 border-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-8">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-manufacturer-accent rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-28">
-            <h2 className="font-heading text-7xl lg:text-9xl text-secondary-foreground uppercase leading-none font-black mb-8">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
+            <h2 className="font-heading text-6xl lg:text-8xl text-secondary-foreground uppercase leading-tight font-black mb-6">
               By The Numbers
             </h2>
-            <p className="font-paragraph text-2xl text-secondary-foreground/70 max-w-3xl mx-auto">
+            <p className="font-paragraph text-lg text-secondary-foreground/70 max-w-3xl mx-auto">
               Proven scale and reliability across India's FMCG distribution network.
             </p>
           </motion.div>
 
           <motion.div 
             variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-10"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {STATS.map((stat, index) => (
               <motion.div 
@@ -272,10 +272,10 @@ export default function HomePage() {
       </section>
       <section className="w-full bg-accent-dark border-y border-secondary relative overflow-hidden">
         <div className="max-w-[120rem] mx-auto">
-          <div className="grid lg:grid-cols-2 min-h-[90vh]">
+          <div className="grid lg:grid-cols-2 min-h-[85vh]">
             
             {/* Wholesale Division - Large, Confident */}
-            <div className="relative p-16 lg:p-32 border-b-2 lg:border-b-0 lg:border-r-2 border-secondary-foreground/10 group flex flex-col justify-center">
+            <div className="relative p-12 lg:p-28 border-b-2 lg:border-b-0 lg:border-r-2 border-secondary-foreground/10 group flex flex-col justify-center">
               <div className="absolute top-0 left-0 w-full h-2.5 bg-manufacturer-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               
               <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-10">
@@ -309,7 +309,7 @@ export default function HomePage() {
             </div>
 
             {/* Retail Division - Large, Confident */}
-            <div className="relative p-16 lg:p-32 group flex flex-col justify-center">
+            <div className="relative p-12 lg:p-28 group flex flex-col justify-center">
               <div className="absolute top-0 left-0 w-full h-2.5 bg-stockist-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               
               <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-10">
@@ -347,17 +347,17 @@ export default function HomePage() {
       </section>
 
       {/* 5. CATEGORIES - Large Editorial Showcase */}
-      <section className="w-full bg-background py-32 lg:py-40">
+      <section className="w-full bg-background py-28 lg:py-36">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-28 gap-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-10">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <h2 className="font-heading text-6xl lg:text-8xl text-foreground uppercase leading-none font-black">
+              <h2 className="font-heading text-5xl lg:text-7xl text-foreground uppercase leading-tight font-black">
                 Product<br /><span className="text-primary">Categories</span>
               </h2>
             </motion.div>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <p className="font-paragraph text-xl text-foreground/70 max-w-lg border-l-3 border-primary pl-8 leading-relaxed">
+              <p className="font-paragraph text-base text-foreground/70 max-w-lg border-l-2 border-primary pl-6 leading-relaxed">
                 Explore our diverse range of manufactured and stocked products, engineered for market demand.
               </p>
             </motion.div>
@@ -365,7 +365,7 @@ export default function HomePage() {
 
           <motion.div 
             variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {CATEGORIES.map((cat, index) => (
               <motion.div key={index} variants={fadeUp} className="group relative h-[520px] bg-accent-dark overflow-hidden border-2 border-transparent hover:border-foreground transition-all duration-300">
@@ -403,16 +403,16 @@ export default function HomePage() {
       </section>
 
       {/* 6. WHY CHOOSE US - Premium Trust Section */}
-      <section className="w-full bg-accent-dark py-32 lg:py-40 border-t border-secondary relative">
+      <section className="w-full bg-accent-dark py-28 lg:py-36 border-t border-secondary relative">
         
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-28">
-            <h2 className="font-heading text-6xl lg:text-8xl text-secondary-foreground uppercase font-black">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
+            <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground uppercase font-black">
               Why Choose<br /><span className="text-primary">Trisha Agency</span>
             </h2>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {TRUST_FACTORS.map((factor, index) => (
               <motion.div 
                 key={index}
@@ -434,18 +434,18 @@ export default function HomePage() {
       </section>
 
       {/* 7. BUSINESS SEGMENTS - Confident, Editorial Layout */}
-      <section className="w-full bg-background py-32 lg:py-40 border-t border-foreground/5">
+      <section className="w-full bg-background py-28 lg:py-36 border-t border-foreground/5">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-28">
-            <h2 className="font-heading text-6xl lg:text-8xl text-foreground uppercase font-black">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-24">
+            <h2 className="font-heading text-5xl lg:text-7xl text-foreground uppercase font-black">
               Our<br /><span className="text-primary">Business Segments</span>
             </h2>
-            <p className="font-paragraph text-2xl text-foreground/70 max-w-3xl mx-auto mt-8 leading-relaxed">
+            <p className="font-paragraph text-lg text-foreground/70 max-w-3xl mx-auto mt-6 leading-relaxed">
               Tailored solutions for every buyer type—from large distributors to individual retailers.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 mb-16">
+          <div className="grid lg:grid-cols-2 gap-14 mb-14">
             {/* Manufactured Products */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -561,9 +561,9 @@ export default function HomePage() {
       </section>
 
       {/* 8. QUICK ACTION SECTION - Premium CTA Grid */}
-      <section className="w-full bg-foreground py-24 lg:py-32 relative overflow-hidden">
+      <section className="w-full bg-foreground py-20 lg:py-28 relative overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-6">
             {/* Distributor Enquiry CTA */}
             <motion.div 
               variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -636,7 +636,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. FINAL CTA - Premium, Cinematic Closing */}
-      <section className="w-full bg-primary py-32 lg:py-40 relative overflow-hidden">
+      <section className="w-full bg-primary py-28 lg:py-36 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-secondary-foreground rounded-full blur-3xl"></div>
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary-foreground rounded-full blur-3xl"></div>
