@@ -70,6 +70,7 @@ export const RETAIL_CATALOG: RetailCatalogItem[] = [
     highlights: ['Nicotine-free herbal blend', 'Single-pack retail format', 'Suitable for repeat household purchase'],
     price: 20,
     pricingUnit: 'per pouch',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_fd55e275003341179cc9dc0cdd6f0b95~mv2.png',
   },
   {
     id: 'retail-herbal-tobacco-50',
@@ -82,6 +83,7 @@ export const RETAIL_CATALOG: RetailCatalogItem[] = [
     highlights: ['Nicotine-free formulation', 'Better value pack size', 'Manufactured by Trisha Agency'],
     price: 38,
     pricingUnit: 'per pouch',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_d8c2c1c3c75c4cf48caba0967f8e528d~mv2.png',
   },
   {
     id: 'retail-sweet-supari-100',
@@ -94,6 +96,7 @@ export const RETAIL_CATALOG: RetailCatalogItem[] = [
     highlights: ['Sweet supari recipe', 'Retail-ready packaging', 'Ideal for single and repeat orders'],
     price: 65,
     pricingUnit: 'per jar',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_34fe84c7b2bd438a8f378412470575f5~mv2.png',
   },
   {
     id: 'retail-sweet-supari-250',
@@ -106,6 +109,7 @@ export const RETAIL_CATALOG: RetailCatalogItem[] = [
     highlights: ['In-house manufactured', 'Larger family-size quantity', 'Retail purchase friendly'],
     price: 150,
     pricingUnit: 'per jar',
+    imageUrl: 'https://static.wixstatic.com/media/92c2a1_070c2eee856745cf8e93f4f753cce8c5~mv2.png',
   },
 ];
 
