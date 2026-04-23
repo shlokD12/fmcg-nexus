@@ -31,6 +31,7 @@ export interface PaymentResponse {
 export interface PaymentGatewayProvider {
   name: string;
   logoText?: string;
+  logoUrl?: string;
   brandColor?: string;
   type: 'internal' | 'external';
   supportedMethods: PaymentMethod[];
@@ -47,6 +48,7 @@ export class PaymentGatewayRegistry {
     ['razorpay', {
       name: 'Razorpay',
       logoText: 'R',
+      logoUrl: 'https://static.wixstatic.com/shapes/92c2a1_bb8f5f3477b7452a944be83e9eac55ee.svg',
       brandColor: '#3B5BDB',
       type: 'external',
       supportedMethods: ['online_gateway', 'upi', 'wallet'],
@@ -56,6 +58,7 @@ export class PaymentGatewayRegistry {
     ['payu', {
       name: 'PayU',
       logoText: 'P',
+      logoUrl: 'https://static.wixstatic.com/shapes/92c2a1_e066c47d69d24c7bb306f4b714d734d6.svg',
       brandColor: '#4C1D95',
       type: 'external',
       supportedMethods: ['online_gateway', 'upi'],
@@ -65,6 +68,7 @@ export class PaymentGatewayRegistry {
     ['stripe', {
       name: 'Stripe',
       logoText: 'S',
+      logoUrl: 'https://static.wixstatic.com/shapes/92c2a1_831278846e594811a6aa6ae62a83b5ec.svg',
       brandColor: '#635BFF',
       type: 'external',
       supportedMethods: ['online_gateway'],

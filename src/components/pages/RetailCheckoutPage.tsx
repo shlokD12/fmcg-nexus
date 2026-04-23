@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Image } from '@/components/ui/image';
 import { formatPrice } from '@/integrations';
 import { PaymentGatewayRegistry, PaymentService } from '@/lib/payment-gateway';
 import { useRetailCart } from '@/lib/retailCart';
@@ -161,10 +162,26 @@ export default function RetailCheckoutPage() {
                           }`}
                         >
                           <div
-                            className="w-14 h-14 flex items-center justify-center rounded-sm mb-4 text-white font-heading text-2xl font-black"
-                            style={{ backgroundColor: provider.brandColor || '#111827' }}
+                            className={`w-16 h-16 flex items-center justify-center rounded-sm mb-4 border ${
+                              isActive
+                                ? 'bg-primary-foreground/12 border-primary-foreground/20'
+                                : 'bg-accent-dark/5 border-foreground/10'
+                            }`}
                           >
-                            {provider.logoText || provider.name.charAt(0)}
+                            {provider.logoUrl ? (
+                              <Image
+                                src={provider.logoUrl}
+                                alt={`${provider.name} logo`}
+                                className="w-10 h-10 object-contain"
+                              />
+                            ) : (
+                              <div
+                                className="w-14 h-14 flex items-center justify-center rounded-sm text-white font-heading text-2xl font-black"
+                                style={{ backgroundColor: provider.brandColor || '#111827' }}
+                              >
+                                {provider.logoText || provider.name.charAt(0)}
+                              </div>
+                            )}
                           </div>
                           <h3 className={`font-heading text-xl mb-2 font-black ${isActive ? 'text-primary-foreground' : 'text-foreground'}`}>{provider.name}</h3>
                           <p className={`font-paragraph text-sm leading-relaxed ${isActive ? 'text-primary-foreground/85' : 'text-foreground/70'}`}>
