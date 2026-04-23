@@ -18,15 +18,15 @@ export default function Header() {
 
   return (
     <header className="w-full bg-background/95 border-b border-foreground/6 sticky top-0 z-50 backdrop-blur-md">
-      <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-3">
-        <div className="flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-3">
-            <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
+      <div className="max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 py-2.5 sm:py-3">
+        <div className="flex items-center justify-between gap-3 sm:gap-4">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-9 h-9 sm:w-11 sm:h-11 object-contain flex-shrink-0" />
             <div>
-              <h1 className="font-heading text-lg text-foreground leading-none font-bold tracking-tight">
+              <h1 className="font-heading text-base sm:text-lg text-foreground leading-none font-bold tracking-tight">
                 TRISHA
               </h1>
-              <p className="font-paragraph text-[11px] text-foreground/55 tracking-[0.08em] font-medium mt-0.5">
+              <p className="font-paragraph text-[10px] sm:text-[11px] text-foreground/55 tracking-[0.08em] font-medium mt-0.5">
                 AGENCY
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-foreground relative">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-foreground relative w-10 h-10 flex items-center justify-center border border-foreground/10 rounded-sm">
             {itemCount > 0 && (
               <span className="absolute -top-2 -right-2 min-w-5 h-5 px-1 bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center rounded-full">
                 {itemCount}
@@ -169,9 +169,9 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden mt-5 pt-5 border-t border-foreground/10"
+              className="lg:hidden mt-4 pt-4 border-t border-foreground/10"
             >
-              <div className="flex flex-col gap-3.5">
+              <div className="flex flex-col gap-3 rounded-sm bg-background/80 pb-2">
                 <Link to="/" onClick={() => setIsMenuOpen(false)} className={`font-paragraph text-xs tracking-[0.04em] font-medium ${isActive('/') ? 'text-primary' : 'text-foreground'}`}>
                   HOME
                 </Link>
@@ -179,7 +179,7 @@ export default function Header() {
                   ABOUT
                 </Link>
 
-                <div className="pl-3.5 border-l-2 border-primary">
+                <div className="pl-3.5 border-l-2 border-primary py-1">
                   <p className="font-paragraph text-xs text-foreground/55 mb-2 tracking-[0.04em] font-medium">PRODUCTS</p>
                   <Link to="/products" onClick={() => setIsMenuOpen(false)} className="block font-paragraph text-xs tracking-[0.04em] text-foreground mb-2 font-medium">
                     CHOOSE CHANNEL
@@ -206,7 +206,7 @@ export default function Header() {
                 </Link>
 
                 <Link to="/distributor-enquiry" onClick={() => setIsMenuOpen(false)}>
-                  <button className="w-full px-6 py-2.5 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-[0.08em] font-bold mt-3">
+                  <button className="w-full px-6 py-3 bg-primary text-primary-foreground font-heading text-xs uppercase tracking-[0.08em] font-bold mt-3">
                     Get Started
                   </button>
                 </Link>

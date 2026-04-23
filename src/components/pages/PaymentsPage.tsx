@@ -15,7 +15,7 @@ export default function PaymentsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
+      <section className="w-full max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 py-12 md:py-14 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function PaymentsPage() {
             </span>
           </div>
           
-          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             SECURE
             <span className="text-primary block">PAYMENTS</span>
           </h1>
@@ -39,7 +39,7 @@ export default function PaymentsPage() {
       </section>
 
       {items.length > 0 && (
-        <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 pb-8">
+        <section className="w-full max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 pb-8">
           <div className="bg-manufacturer-accent/10 border border-manufacturer-accent p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div className="max-w-3xl">
@@ -66,8 +66,8 @@ export default function PaymentsPage() {
       )}
 
       {/* Payment Methods */}
-      <section className="w-full bg-accent-dark py-16">
-        <div className="max-w-[96rem] mx-auto px-5 lg:px-10">
+      <section className="w-full bg-accent-dark py-16 md:py-20">
+        <div className="max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function PaymentsPage() {
             </h2>
           </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -176,8 +176,8 @@ export default function PaymentsPage() {
       </section>
 
       {/* Payment Gateway Integration */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="w-full max-w-[96rem] mx-auto px-4 sm:px-5 md:px-6 lg:px-10 py-16 md:py-20 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

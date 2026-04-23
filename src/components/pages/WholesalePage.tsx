@@ -136,7 +136,7 @@ export default function WholesalePage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="w-full max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
+      <section className="w-full max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 py-12 md:py-14 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ export default function WholesalePage() {
             </span>
           </div>
 
-          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             BULK ORDERS
             <span className="text-manufacturer-accent block">FOR DISTRIBUTORS</span>
           </h1>
@@ -158,12 +158,12 @@ export default function WholesalePage() {
             trade-focused pricing, mixed-load support, and reliable dispatch coordination across India.
           </p>
 
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5">
             <a href="#enquiry-form">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-8 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center gap-2.5 font-bold"
+                className="w-full sm:w-auto px-8 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.08em] flex items-center justify-center gap-2.5 font-bold"
               >
                 REQUEST QUOTE
                 <ArrowRight className="w-4 h-4" />
@@ -174,7 +174,7 @@ export default function WholesalePage() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="px-8 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-foreground hover:text-background transition-colors font-bold"
+                className="w-full sm:w-auto px-8 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.08em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
                 VIEW WHOLESALE CATALOG
               </motion.button>
@@ -183,8 +183,8 @@ export default function WholesalePage() {
         </motion.div>
       </section>
 
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-16 md:py-20 lg:py-24">
+        <div className="max-w-[96rem] mx-auto px-4 sm:px-5 md:px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +198,7 @@ export default function WholesalePage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {[
               ['ENQUIRY', 'Share your business details, preferred brands, and target order quantities.'],
               ['QUOTATION', 'Receive a trade quotation based on brand mix, pack format, and destination market.'],
@@ -224,8 +224,8 @@ export default function WholesalePage() {
         </div>
       </section>
 
-      <section className="w-full max-w-[100rem] mx-auto px-8 lg:px-16 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="w-full max-w-[96rem] mx-auto px-4 sm:px-5 md:px-6 lg:px-10 py-16 md:py-20 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

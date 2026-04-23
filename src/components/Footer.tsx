@@ -10,13 +10,13 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-accent-dark text-secondary-foreground border-t border-secondary/15">
-      <div className="max-w-[96rem] mx-auto px-5 lg:px-10 py-14">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
+      <div className="max-w-[96rem] mx-auto px-4 sm:px-5 lg:px-10 py-10 sm:py-12 lg:py-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-10 h-10 sm:w-11 sm:h-11 object-contain flex-shrink-0" />
               <div>
-                <h2 className="font-heading text-lg text-secondary-foreground leading-none font-bold tracking-tight">
+                <h2 className="font-heading text-base sm:text-lg text-secondary-foreground leading-none font-bold tracking-tight">
                   TRISHA
                 </h2>
                 <p className="font-paragraph text-[11px] text-secondary-foreground/55 tracking-[0.08em] font-medium mt-0.5">
@@ -27,13 +27,13 @@ export default function Footer() {
             <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed mb-6">
               Manufacturer of in-house herbal tobacco and sweet supari, and stockist supplier of branded pan masala and elaichi lines for distributors across India.
             </p>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-start gap-2 mb-3">
               <div className="w-8 h-8 bg-manufacturer-accent/10 border border-manufacturer-accent flex items-center justify-center">
                 <span className="font-paragraph text-xs text-manufacturer-accent font-medium">RTL</span>
               </div>
               <span className="font-paragraph text-xs text-secondary-foreground/70 font-medium">Retail: in-house manufactured products</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-start gap-2">
               <div className="w-8 h-8 bg-stockist-accent/10 border border-stockist-accent flex items-center justify-center">
                 <span className="font-paragraph text-xs text-stockist-accent-foreground font-medium">WHL</span>
               </div>
@@ -116,11 +116,11 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-secondary-foreground/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p className="font-paragraph text-xs text-secondary-foreground/60 font-medium">
               Copyright 2026 Trisha Agency. All rights reserved.
             </p>
-            <div className="flex items-center gap-8">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-5 sm:gap-8">
               <Link to="/privacy-policy" className="font-paragraph text-xs text-secondary-foreground/60 hover:text-primary transition-colors font-medium">
                 Privacy Policy
               </Link>
