@@ -85,7 +85,7 @@ export default function HomePage() {
       `}</style>
 
       {/* 1. HERO SECTION - Cinematic, Layered Industrial Statement */}
-      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[1000px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-28 pb-16">
+      <section ref={heroRef} className="relative w-full h-[100vh] min-h-[1000px] bg-gradient-to-br from-accent-dark via-[#0f1419] to-secondary overflow-hidden flex flex-col justify-between pt-24 pb-12">
         {/* Multi-layered background with depth */}
         <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
           <Image
@@ -106,15 +106,15 @@ export default function HomePage() {
             {/* Premium badge - refined */}
             <motion.div 
               initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
-              className="flex items-center gap-4 mb-20 overflow-hidden"
+              className="flex items-center gap-3 mb-16 overflow-hidden"
             >
               <motion.div 
                 initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                className="h-2 w-24 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
+                className="h-1.5 w-20 bg-gradient-to-r from-primary via-manufacturer-accent to-stockist-accent origin-left"
               />
               <motion.span 
                 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.5em] uppercase font-bold"
+                className="font-paragraph text-xs md:text-sm text-primary tracking-[0.12em] uppercase font-bold"
               >
                 Industrial FMCG Distribution
               </motion.span>
@@ -123,7 +123,7 @@ export default function HomePage() {
             {/* Main headline - ultra-bold, cinematic */}
             <motion.h1 
               initial={{ opacity: 0, y: 120 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.3, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-heading text-[16vw] leading-[0.7] text-secondary-foreground tracking-tighter mb-16 font-black"
+              className="font-heading text-[14vw] leading-[0.75] text-secondary-foreground tracking-tighter mb-12 font-black"
             >
               TRISHA<br />
               <span className="bg-gradient-to-r from-primary via-manufacturer-accent to-primary bg-clip-text text-transparent">AGENCY</span>
@@ -132,12 +132,12 @@ export default function HomePage() {
             {/* Subheading - editorial, premium */}
             <motion.div
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}
-              className="max-w-5xl mb-24"
+              className="max-w-5xl mb-20"
             >
-              <p className="font-heading text-2xl md:text-4xl text-secondary-foreground/95 leading-tight font-bold mb-8">
+              <p className="font-heading text-xl md:text-3xl text-secondary-foreground/95 leading-tight font-bold mb-6">
                 Manufacturing Excellence. Strategic Distribution. Uncompromising Quality.
               </p>
-              <p className="font-paragraph text-lg md:text-xl text-secondary-foreground/75 leading-relaxed max-w-3xl">
+              <p className="font-paragraph text-base md:text-lg text-secondary-foreground/75 leading-relaxed max-w-3xl">
                 Powering India's FMCG supply chain with 500+ manufactured products, 1000+ stocked brands, and a trusted network of 200+ distributors across 15 states.
               </p>
             </motion.div>
@@ -145,21 +145,21 @@ export default function HomePage() {
             {/* CTA Buttons - premium, confident */}
             <motion.div 
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1 }}
-              className="flex flex-wrap gap-8 items-center"
+              className="flex flex-wrap gap-6 items-center"
             >
               <Link to="/distributor-enquiry">
-                <button className="group relative px-14 py-6 bg-primary text-primary-foreground font-heading text-base uppercase tracking-wide overflow-hidden border-2 border-primary hover:border-secondary-foreground transition-all duration-300">
-                  <span className="relative z-10 flex items-center gap-3 font-bold">
-                    Become a Distributor <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <button className="group relative px-12 py-5 bg-primary text-primary-foreground font-heading text-sm uppercase tracking-[0.12em] overflow-hidden border border-primary hover:border-secondary-foreground transition-all duration-300 font-bold">
+                  <span className="relative z-10 flex items-center gap-2.5 font-bold">
+                    Become a Distributor <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-secondary-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-400 ease-out" />
-                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-3 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 font-bold">
-                    Become a Distributor <ArrowRight className="w-5 h-5" />
+                  <span className="absolute inset-0 z-0 flex items-center justify-center gap-2.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 font-bold">
+                    Become a Distributor <ArrowRight className="w-4 h-4" />
                   </span>
                 </button>
               </Link>
               <Link to="/products/manufactured">
-                <button className="px-14 py-6 border-2 border-secondary-foreground text-secondary-foreground font-heading text-base uppercase tracking-wide hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
+                <button className="px-12 py-5 border border-secondary-foreground text-secondary-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-secondary-foreground hover:text-accent-dark transition-all duration-300 font-bold">
                   Explore Products
                 </button>
               </Link>

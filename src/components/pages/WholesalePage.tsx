@@ -53,44 +53,44 @@ export default function WholesalePage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-20">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-6 py-2 bg-manufacturer-accent/10 border-2 border-manufacturer-accent mb-8">
-            <span className="font-paragraph text-sm text-manufacturer-accent uppercase tracking-wider">
+          <div className="inline-block px-5 py-1.5 bg-manufacturer-accent/10 border border-manufacturer-accent mb-6">
+            <span className="font-paragraph text-xs text-manufacturer-accent uppercase tracking-[0.08em] font-medium">
               Wholesale Division
             </span>
           </div>
           
-          <h1 className="font-heading text-6xl lg:text-8xl text-foreground mb-8 leading-none">
+          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             BULK ORDERS
             <span className="text-manufacturer-accent block">FOR DISTRIBUTORS</span>
           </h1>
           
-          <p className="font-paragraph text-xl text-foreground/70 max-w-4xl leading-relaxed mb-12">
+          <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed mb-10 font-medium">
             Partner with Trisha Agency for competitive wholesale pricing, flexible MOQ terms, and reliable supply of FMCG and mouth-freshener products across India.
           </p>
           
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-5">
             <a href="#enquiry-form">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-lg flex items-center gap-3"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="px-9 py-4 bg-manufacturer-accent text-manufacturer-accent-foreground font-heading text-sm uppercase tracking-[0.12em] flex items-center gap-2.5 font-bold"
               >
                 REQUEST QUOTE
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </a>
             
             <Link to="/products/manufactured">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-foreground text-foreground font-heading text-lg hover:bg-foreground hover:text-background transition-colors"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="px-9 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
                 VIEW PRODUCTS
               </motion.button>

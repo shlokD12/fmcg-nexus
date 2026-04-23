@@ -11,44 +11,44 @@ export default function RetailPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-20">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-6 py-2 bg-stockist-accent/10 border-2 border-stockist-accent mb-8">
-            <span className="font-paragraph text-sm text-stockist-accent-foreground uppercase tracking-wider">
+          <div className="inline-block px-5 py-1.5 bg-stockist-accent/10 border border-stockist-accent mb-6">
+            <span className="font-paragraph text-xs text-stockist-accent-foreground uppercase tracking-[0.08em] font-medium">
               Retail Division
             </span>
           </div>
           
-          <h1 className="font-heading text-6xl lg:text-8xl text-foreground mb-8 leading-none">
+          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             DIRECT RETAIL
             <span className="text-stockist-accent block">PRODUCT ACCESS</span>
           </h1>
           
-          <p className="font-paragraph text-xl text-foreground/70 max-w-4xl leading-relaxed mb-12">
+          <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed mb-10 font-medium">
             Browse our complete catalog of FMCG and mouth-freshener products. Easy ordering, secure payments, and fast delivery for retailers and shop owners.
           </p>
           
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-5">
             <Link to="/products/stockist">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-stockist-accent text-stockist-accent-foreground font-heading text-lg flex items-center gap-3"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="px-9 py-4 bg-stockist-accent text-stockist-accent-foreground font-heading text-sm uppercase tracking-[0.12em] flex items-center gap-2.5 font-bold"
               >
                 BROWSE PRODUCTS
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </Link>
             
             <Link to="/payments">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-foreground text-foreground font-heading text-lg hover:bg-foreground hover:text-background transition-colors"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="px-9 py-4 border border-foreground text-foreground font-heading text-sm uppercase tracking-[0.12em] hover:bg-foreground hover:text-background transition-colors font-bold"
               >
                 PAYMENT OPTIONS
               </motion.button>
@@ -58,22 +58,22 @@ export default function RetailPage() {
       </section>
 
       {/* How It Works */}
-      <section className="w-full bg-accent-dark py-24">
-        <div className="max-w-[100rem] mx-auto px-8 lg:px-16">
+      <section className="w-full bg-accent-dark py-20">
+        <div className="max-w-[120rem] mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-14"
           >
-            <h2 className="font-heading text-5xl lg:text-7xl text-secondary-foreground mb-6">
+            <h2 className="font-heading text-4xl lg:text-6xl text-secondary-foreground mb-4 font-black">
               RETAIL
               <span className="text-stockist-accent block">ORDER PROCESS</span>
             </h2>
           </motion.div>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,11 +81,11 @@ export default function RetailPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-20 h-20 bg-stockist-accent flex items-center justify-center mx-auto mb-6">
-                <span className="font-heading text-3xl text-stockist-accent-foreground">1</span>
+              <div className="w-18 h-18 bg-stockist-accent flex items-center justify-center mx-auto mb-5">
+                <span className="font-heading text-2xl text-stockist-accent-foreground font-black">1</span>
               </div>
-              <h3 className="font-heading text-2xl text-secondary-foreground mb-4">BROWSE</h3>
-              <p className="font-paragraph text-sm text-secondary-foreground/70 leading-relaxed">
+              <h3 className="font-heading text-xl text-secondary-foreground mb-3 font-black">BROWSE</h3>
+              <p className="font-paragraph text-xs text-secondary-foreground/70 leading-relaxed font-medium">
                 Explore our product catalog and select items you need
               </p>
             </motion.div>

@@ -46,32 +46,32 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-6 py-2 bg-primary/10 border-2 border-primary mb-8">
-            <span className="font-paragraph text-sm text-primary uppercase tracking-wider">
+          <div className="inline-block px-5 py-1.5 bg-primary/10 border border-primary mb-6">
+            <span className="font-paragraph text-xs text-primary uppercase tracking-[0.08em] font-medium">
               Get In Touch
             </span>
           </div>
           
-          <h1 className="font-heading text-6xl lg:text-8xl text-foreground mb-8 leading-none">
+          <h1 className="font-heading text-5xl lg:text-7xl text-foreground mb-6 leading-tight font-black">
             CONTACT
             <span className="text-primary block">US</span>
           </h1>
           
-          <p className="font-paragraph text-xl text-foreground/70 max-w-4xl leading-relaxed">
+          <p className="font-paragraph text-lg text-foreground/70 max-w-4xl leading-relaxed font-medium">
             Have questions about our products or services? Our team is here to help. Reach out through any of the channels below or fill out the contact form.
           </p>
         </motion.div>
       </section>
 
       {/* Contact Info & Form */}
-      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-24">
-        <div className="grid lg:grid-cols-2 gap-16">
+      <section className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 py-20">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -79,39 +79,39 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-5xl text-foreground mb-12 leading-tight">
+            <h2 className="font-heading text-4xl text-foreground mb-10 leading-tight font-black">
               CONTACT
               <span className="text-primary block">INFORMATION</span>
             </h2>
             
-            <div className="space-y-8">
-              <div className="bg-accent-dark p-8 border-l-4 border-primary">
-                <div className="flex items-start gap-4">
-                  <Phone className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <div className="space-y-6">
+              <div className="bg-accent-dark p-6 border-l-4 border-primary">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-7 h-7 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-heading text-xl text-secondary-foreground mb-3">Phone</h3>
-                    <p className="font-paragraph text-base text-secondary-foreground/80 mb-2">
+                    <h3 className="font-heading text-lg text-secondary-foreground mb-2 font-black">Phone</h3>
+                    <p className="font-paragraph text-sm text-secondary-foreground/80 mb-1 font-medium">
                       Sales: +91 98765 43210
                     </p>
-                    <p className="font-paragraph text-base text-secondary-foreground/80">
+                    <p className="font-paragraph text-sm text-secondary-foreground/80 font-medium">
                       Support: +91 98765 43211
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-accent-dark p-8 border-l-4 border-manufacturer-accent">
-                <div className="flex items-start gap-4">
-                  <Mail className="w-8 h-8 text-manufacturer-accent flex-shrink-0 mt-1" />
+              <div className="bg-accent-dark p-6 border-l-4 border-manufacturer-accent">
+                <div className="flex items-start gap-3">
+                  <Mail className="w-7 h-7 text-manufacturer-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-heading text-xl text-secondary-foreground mb-3">Email</h3>
-                    <p className="font-paragraph text-base text-secondary-foreground/80 mb-2">
+                    <h3 className="font-heading text-lg text-secondary-foreground mb-2 font-black">Email</h3>
+                    <p className="font-paragraph text-sm text-secondary-foreground/80 mb-1 font-medium">
                       Sales: sales@trishaagency.com
                     </p>
-                    <p className="font-paragraph text-base text-secondary-foreground/80 mb-2">
+                    <p className="font-paragraph text-sm text-secondary-foreground/80 mb-1 font-medium">
                       Info: info@trishaagency.com
                     </p>
-                    <p className="font-paragraph text-base text-secondary-foreground/80">
+                    <p className="font-paragraph text-sm text-secondary-foreground/80 font-medium">
                       Accounts: accounts@trishaagency.com
                     </p>
                   </div>
