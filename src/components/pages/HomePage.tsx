@@ -16,10 +16,10 @@ const STATS = [
 ];
 
 const CATEGORIES = [
-  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
-  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED" },
-  { title: "PAN MASALA", desc: "Distributor-focused stock of Rajnigandha, Pan Vilas, Vimal, and similar trade lines", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" },
-  { title: "ELAICHI & MOUTH FRESHENERS", desc: "Popular branded mouth fresheners such as Rajnigandha Silver Pearls and BABA Elaichi", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST" }
+  { title: "HERBAL TOBACCO", desc: "Nicotine-free herbal tobacco products manufactured in-house", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_3dcf57eca138497381846030bf55ca0c~mv2.png?originWidth=576&originHeight=448" },
+  { title: "SWEET SUPARI", desc: "Premium quality sweet supari manufactured with finest ingredients", link: "/products/manufactured", textAccent: "text-manufacturer-accent", division: "MANUFACTURED", image: "https://static.wixstatic.com/media/92c2a1_ac789f8cda9a4904b7876e3b5a7746e8~mv2.png?originWidth=576&originHeight=448" },
+  { title: "PAN MASALA", desc: "Distributor-focused stock of Rajnigandha, Pan Vilas, Vimal, and similar trade lines", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_8eb6865bf3fc4123b55a58c7d94d8d55~mv2.png?originWidth=576&originHeight=448" },
+  { title: "ELAICHI & MOUTH FRESHENERS", desc: "Popular branded mouth fresheners such as Rajnigandha Silver Pearls and BABA Elaichi", link: "/products/stockist", textAccent: "text-stockist-accent", division: "STOCKIST", image: "https://static.wixstatic.com/media/92c2a1_f495683b61174ca282a97d177b47b832~mv2.png?originWidth=576&originHeight=448" }
 ];
 
 const TRUST_FACTORS = [
@@ -368,7 +368,7 @@ export default function HomePage() {
             {CATEGORIES.map((cat, index) => (
               <motion.div key={index} variants={fadeUp} className="group relative h-[520px] bg-accent-dark overflow-hidden border-2 border-transparent hover:border-foreground transition-all duration-300">
                 <Image
-                  src="https://static.wixstatic.com/media/92c2a1_e07dac4af2e14a70806d24658a590a2c~mv2.png?originWidth=576&originHeight=448"
+                  src={cat.image}
                   alt={cat.title}
                   width={600}
                   className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-25 group-hover:scale-125 transition-all duration-700"

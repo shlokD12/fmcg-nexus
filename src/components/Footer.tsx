@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, ShoppingCart } from 'lucide-react';
 import { useRetailCart } from '@/lib/retailCart';
+import { Image } from '@/components/ui/image';
 
 const SITE_LOGO_URL = 'https://static.wixstatic.com/shapes/92c2a1_b158c75737cf4d0f9d99bfb085a8122f.svg';
 
@@ -13,7 +14,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
+              <Image src={SITE_LOGO_URL} alt="Trisha Agency" className="w-11 h-11 object-contain flex-shrink-0" />
               <div>
                 <h2 className="font-heading text-lg text-secondary-foreground leading-none font-bold tracking-tight">
                   TRISHA
